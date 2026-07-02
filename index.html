@@ -8,10 +8,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
+<!-- Google tag (gtag.js) & Consent Mode -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JTLGSC04"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  
+  // Default Consent (Denied before user choice)
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+
   gtag('js', new Date());
   gtag('config', 'G-H1JTLGSC04');
 </script>
@@ -198,7 +208,7 @@
   .hero-location svg { color: var(--primary); }
 
   .hero-desc {
-    font-size: 1.05rem; color: var(--fg-muted); max-width: 560px;
+    font-size: 1.05rem; color: var(--fg-muted); max-width: 580px;
     line-height: 1.75; margin-top: 1.5rem;
     animation: fadeUp 0.5s 0.3s ease both;
   }
@@ -560,6 +570,57 @@
     .btn-primary, .btn-outline { width: 100%; justify-content: center; }
     .contact-socials { gap: 1.5rem; }
   }
+
+  /* ─── COOKIE BANNER ─── */
+  #cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .cookie-text {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    line-height: 1.6;
+  }
+  .cookie-text strong { color: var(--fg); font-family: var(--font-mono); }
+  .cookie-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+  .btn-cookie {
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-accept {
+    background: var(--primary);
+    color: #09101f;
+    border: none;
+  }
+  .btn-accept:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-decline {
+    background: transparent;
+    color: var(--fg);
+    border: 1px solid var(--border);
+  }
+  .btn-decline:hover { border-color: var(--fg-muted); }
 </style>
 </head>
 <body>
@@ -598,6 +659,18 @@
   <a onclick="navScrollTo('#contact'); closeMenu()">Contact</a>
 </div>
 
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner">
+  <div class="cookie-text">
+    <strong>Privacy & Analytics</strong><br>
+    I use cookies and Google Analytics to understand how visitors interact with my portfolio. Do you consent to sharing this anonymous data?
+  </div>
+  <div class="cookie-buttons">
+    <button class="btn-cookie btn-decline" onclick="handleConsent('denied')">Decline</button>
+    <button class="btn-cookie btn-accept" onclick="handleConsent('granted')">Accept</button>
+  </div>
+</div>
+
 <section id="about">
   <div class="hero-radial"></div>
   <div class="hero-grid"></div>
@@ -617,7 +690,7 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Alexandria, Egypt
       </div>
-      <p class="hero-desc">Passionate about combining financial knowledge with data analytics to help organizations improve performance, optimize operations, and drive business growth through data-driven solutions.</p>
+      <p class="hero-desc">Passionate about combining financial knowledge with data analytics to bridge finance and operations. Proven track record in leveraging Excel, SQL, and Power BI for data cleaning, KPI tracking, and driving business insights.</p>
       
       <div class="hero-buttons">
         <button class="btn-primary" onclick="navScrollTo('#projects')">
@@ -690,6 +763,37 @@
           <div class="tl-item reveal" style="transition-delay:0.15s">
             <div class="tl-dot"><span></span></div>
             <div class="tl-card">
+              <div class="tl-role">Sales Analyst</div>
+              <div class="tl-company">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Re-Lease
+              </div>
+              <div class="tl-date">May 2026 – Present | Alexandria, Hybrid</div>
+              <ul class="tl-bullets">
+                <li>Analyze sales data and performance indicators to optimize business operations.</li>
+                <li>Support business decision-making through accurate reporting and insights.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item reveal" style="transition-delay:0.2s">
+            <div class="tl-dot"><span></span></div>
+            <div class="tl-card">
+              <div class="tl-role">Data Analytics Intern</div>
+              <div class="tl-company">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Matsuo-Iwasawa Lab U-Tokyo (GCI World)
+              </div>
+              <div class="tl-date">Apr 2026 – Present | Remote</div>
+              <ul class="tl-bullets">
+                <li>Collected, cleaned, and transformed datasets to enhance data accuracy and usability.</li>
+                <li>Conducted exploratory data analysis (EDA) to uncover trends and actionable insights.</li>
+                <li>Developed dashboards and reports for clear communication of findings to stakeholders.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item reveal" style="transition-delay:0.25s">
+            <div class="tl-dot"><span></span></div>
+            <div class="tl-card">
               <div class="tl-role">DataCamp 25/26 Program Intern</div>
               <div class="tl-company">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -697,60 +801,12 @@
               </div>
               <div class="tl-date">Jun 2026 – Present</div>
               <ul class="tl-bullets">
-                <li>Accepted into the GDSC E-JUST and DataCamp 25/26 Program.</li>
-                <li>Executing structured workflows for data modeling and preparation.</li>
-                <li>Honing advanced SQL capabilities and analytical skills.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tl-item reveal" style="transition-delay:0.2s">
-            <div class="tl-dot"><span></span></div>
-            <div class="tl-card">
-              <div class="tl-role">Sales Analyst</div>
-              <div class="tl-company">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Re-Lease
-              </div>
-              <div class="tl-date">May 2026 – Present</div>
-              <ul class="tl-bullets">
-                <li>Analyze sales data and evaluate performance indicators.</li>
-                <li>Support business decision-making through comprehensive reporting and insights.</li>
-                <li>Monitor sales trends to identify continuous growth opportunities.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tl-item reveal" style="transition-delay:0.25s">
-            <div class="tl-dot"><span></span></div>
-            <div class="tl-card">
-              <div class="tl-role">Sales Internship Program</div>
-              <div class="tl-company">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                iCareer
-              </div>
-              <div class="tl-date">May 2026 – Present</div>
-              <ul class="tl-bullets">
-                <li>Acquiring practical exposure in sales processes and analytical strategies.</li>
-                <li>Bridging data-driven insights with real-world sales operations.</li>
+                <li>Accepted into the exclusive GDSC E-JUST x DataCamp program.</li>
+                <li>Focusing on Data Modeling, Data Preparation, and writing efficient SQL queries.</li>
               </ul>
             </div>
           </div>
           <div class="tl-item reveal" style="transition-delay:0.3s">
-            <div class="tl-dot"><span></span></div>
-            <div class="tl-card">
-              <div class="tl-role">Data Analytics Intern (GCI World)</div>
-              <div class="tl-company">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Matsuo-Iwasawa Lab, University of Tokyo
-              </div>
-              <div class="tl-date">Apr 2026 – Present</div>
-              <ul class="tl-bullets">
-                <li>Collected, cleaned, and transformed datasets to improve data quality.</li>
-                <li>Conducted exploratory data analysis to uncover trends and insights.</li>
-                <li>Collaborated with international teams to drive problem-solving.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tl-item reveal" style="transition-delay:0.35s">
             <div class="tl-dot"><span></span></div>
             <div class="tl-card">
               <div class="tl-role">Data Analytics Intern</div>
@@ -758,11 +814,10 @@
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                 Knowledge4All
               </div>
-              <div class="tl-date">Jun 2025 – Present</div>
+              <div class="tl-date">Jun 2025 – Present | Remote</div>
               <ul class="tl-bullets">
-                <li>Applied Google Data Analytics concepts to practical projects.</li>
-                <li>Built Power BI dashboards and KPI reports.</li>
-                <li>Extracted actionable insights from business datasets.</li>
+                <li>Completed hands-on training in Google Data Analytics.</li>
+                <li>Utilized Excel, SQL, and Power BI to create dashboards and monitor KPIs.</li>
               </ul>
             </div>
           </div>
@@ -791,7 +846,7 @@
           <span class="skill-tag">Data Cleaning</span>
           <span class="skill-tag">Data Visualization</span>
           <span class="skill-tag">KPI Analysis</span>
-          <span class="skill-tag">Data Storytelling</span>
+          <span class="skill-tag">Data Modeling</span>
         </div>
       </div>
       <div class="skill-card reveal" style="transition-delay:0.15s">
@@ -802,11 +857,11 @@
           <div class="skill-card-title">Analytics Tools</div>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">Power Query</span>
-          <span class="skill-tag">DAX</span>
-          <span class="skill-tag">Excel</span>
           <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">DAX</span>
+          <span class="skill-tag">Power Query</span>
+          <span class="skill-tag">Excel</span>
         </div>
       </div>
       <div class="skill-card reveal" style="transition-delay:0.2s">
@@ -817,11 +872,10 @@
           <div class="skill-card-title">Productivity Tools</div>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Looker Studio</span>
+          <span class="skill-tag">Google Workspace</span>
           <span class="skill-tag">Notion</span>
           <span class="skill-tag">Trello</span>
           <span class="skill-tag">Zapier</span>
-          <span class="skill-tag">Google Workspace</span>
         </div>
       </div>
       <div class="skill-card reveal" style="transition-delay:0.25s">
@@ -833,8 +887,7 @@
         </div>
         <div class="skill-tags">
           <span class="skill-tag">ChatGPT</span>
-          <span class="skill-tag">Claude</span>
-          <span class="skill-tag">AI Productivity Tools</span>
+          <span class="skill-tag">Canva AI</span>
           <span class="skill-tag">Workflow Automation</span>
         </div>
       </div>
@@ -849,46 +902,7 @@
       <div class="section-divider"></div>
     </div>
     <div class="projects-grid">
-      <a href="https://github.com/mostafa-elsawahly/salla-call-center-performance" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.1s">
-        <div>
-          <div class="project-top">
-            <div class="project-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <div class="project-ext">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </div>
-          </div>
-          <h3 class="project-title">Salla Call Center Performance</h3>
-          <p class="project-desc">Designed an interactive Power BI Dashboard to track 2M calls and analyze KPIs like ASA and Abandonment Rate. Utilized Claude AI for complex DAX measures.</p>
-        </div>
-        <div class="project-footer">
-          <span class="project-tag">Power BI</span>
-          <span class="project-tag">DAX</span>
-          <span class="project-tag">Call Center Analytics</span>
-          <span class="project-tag">Claude</span>
-        </div>
-      </a>
-      <a href="https://github.com/mostafa-elsawahly/Dynamic-Dashboard/blob/main/Dynamic%20Dashboard.html" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.15s">
-        <div>
-          <div class="project-top">
-            <div class="project-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-            </div>
-            <div class="project-ext">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </div>
-          </div>
-          <h3 class="project-title">Dynamic Dashboard</h3>
-          <p class="project-desc">A tool to auto-parse raw CSV/Excel data into instant, actionable insights. Features AI agent integration for automated performance breakdowns and bottleneck alerts.</p>
-        </div>
-        <div class="project-footer">
-          <span class="project-tag">Dynamic Analytics</span>
-          <span class="project-tag">AI Agents</span>
-          <span class="project-tag">CSV/Excel Parsing</span>
-        </div>
-      </a>
-      <a href="https://github.com/mostafa-elsawahly/-Electronics-Retail-Executive-Dashboard" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.2s">
+      <a href="https://github.com/mostafa-elsawahly/-Electronics-Retail-Executive-Dashboard" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.1s">
         <div>
           <div class="project-top">
             <div class="project-icon">
@@ -899,29 +913,66 @@
             </div>
           </div>
           <h3 class="project-title">Electronics Retail Executive Dashboard</h3>
-          <p class="project-desc">Analyzed sales performance to highlight VIP customer liquidity and a specific supplier's 17% return rate. Built a dark-themed interactive UI using a robust Star Schema.</p>
+          <p class="project-desc">Built a robust Star Schema and developed precise DAX KPIs (AOV, ARPC). Analyzed a 17% return rate and VIP customer liquidity to drive targeted loyalty programs.</p>
         </div>
         <div class="project-footer">
           <span class="project-tag">Power BI</span>
-          <span class="project-tag">Power Query</span>
           <span class="project-tag">DAX</span>
           <span class="project-tag">Data Modeling</span>
         </div>
       </a>
-      <a href="#" class="project-card reveal" style="transition-delay:0.25s">
+      <a href="https://github.com/mostafa-elsawahly/salla-call-center-performance" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.15s">
         <div>
           <div class="project-top">
             <div class="project-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="project-ext">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </div>
           </div>
-          <h3 class="project-title">Tech for Non-Techies (Digitera) Workflow</h3>
-          <p class="project-desc">Designed a complete digital workflow to solve real business problems without coding. Integrated Google Workspace, Notion, Zapier, and Canva AI following the SCQA framework.</p>
+          <h3 class="project-title">Salla Call Center Performance</h3>
+          <p class="project-desc">Analyzed 2M handled calls, achieving a 90% Overall Efficiency Score and 91% Service Level. Automated DAX calculations using Claude to pinpoint peak hours.</p>
+        </div>
+        <div class="project-footer">
+          <span class="project-tag">E-commerce</span>
+          <span class="project-tag">Call Center Analytics</span>
+          <span class="project-tag">Performance KPIs</span>
+        </div>
+      </a>
+      <a href="https://github.com/mostafa-elsawahly/Dynamic-Dashboard/blob/main/Dynamic%20Dashboard.html" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.2s">
+        <div>
+          <div class="project-top">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            </div>
+            <div class="project-ext">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </div>
+          </div>
+          <h3 class="project-title">Dynamic Dashboard</h3>
+          <p class="project-desc">Developed an automated parser for CSV/Excel data with AI Agent integration. Features dynamic trend lines, bottleneck alerts, and a paginated dataset viewer.</p>
+        </div>
+        <div class="project-footer">
+          <span class="project-tag">Dynamic Analytics</span>
+          <span class="project-tag">AI Agent</span>
+          <span class="project-tag">Self-Service UI</span>
+        </div>
+      </a>
+      <a href="#" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.25s">
+        <div>
+          <div class="project-top">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+          </div>
+          <h3 class="project-title">Workflow Automation (Digitera)</h3>
+          <p class="project-desc">Led the final project for the Tech for Non-Techies program. Designed a digital workflow solving a business problem using Notion, Trello, Zapier, and Canva AI following the SCQA framework.</p>
         </div>
         <div class="project-footer">
           <span class="project-tag">Workflow Automation</span>
           <span class="project-tag">Zapier</span>
-          <span class="project-tag">Process Mapping</span>
+          <span class="project-tag">SCQA Framework</span>
         </div>
       </a>
     </div>
@@ -941,7 +992,7 @@
       <div class="cert-card reveal" style="transition-delay:0.1s">
         <div class="cert-initials">DC</div>
         <h3 class="cert-title">Introduction to SQL</h3>
-        <p class="cert-sub">(Associate Data Analyst in SQL Track)</p>
+        <p class="cert-sub">Associate Data Analyst Track</p>
         <div class="cert-footer"><div class="cert-issuer">DataCamp</div></div>
       </div>
       <div class="cert-card reveal" style="transition-delay:0.15s">
@@ -950,16 +1001,15 @@
         <div class="cert-footer"><div class="cert-issuer">Google</div></div>
       </div>
       <div class="cert-card reveal" style="transition-delay:0.2s">
-        <div class="cert-initials">IBM</div>
-        <h3 class="cert-title">Artificial Intelligence Fundamentals</h3>
-        <p class="cert-sub">with Capstone Project</p>
-        <div class="cert-footer"><div class="cert-issuer">IBM</div></div>
-      </div>
-      <div class="cert-card reveal" style="transition-delay:0.25s">
         <div class="cert-initials">HW</div>
         <h3 class="cert-title">Huawei Cloud Developer Certification</h3>
         <p class="cert-sub">(HCCDA – Tech Essentials)</p>
         <div class="cert-footer"><div class="cert-issuer">Huawei</div></div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:0.25s">
+        <div class="cert-initials">IBM</div>
+        <h3 class="cert-title">IBM Artificial Intelligence Fundamentals</h3>
+        <div class="cert-footer"><div class="cert-issuer">IBM</div></div>
       </div>
     </div>
   </div>
@@ -1034,6 +1084,36 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   revealEls.forEach(el => observer.observe(el));
+
+  // Cookie Consent Logic
+  document.addEventListener("DOMContentLoaded", function() {
+    const banner = document.getElementById('cookie-banner');
+    const storedConsent = localStorage.getItem('portfolio_cookie_consent');
+
+    if (!storedConsent) {
+      banner.style.display = 'flex';
+    } else if (storedConsent === 'granted') {
+      updateGoogleConsent('granted');
+    }
+  });
+
+  function handleConsent(status) {
+    localStorage.setItem('portfolio_cookie_consent', status);
+    document.getElementById('cookie-banner').style.display = 'none';
+    
+    if (status === 'granted') {
+      updateGoogleConsent('granted');
+    }
+  }
+
+  function updateGoogleConsent(status) {
+    gtag('consent', 'update', {
+      'analytics_storage': status,
+      'ad_storage': status,
+      'ad_user_data': status,
+      'ad_personalization': status
+    });
+  }
 </script>
 </body>
 </html>
