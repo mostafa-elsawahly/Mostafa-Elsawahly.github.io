@@ -7,6 +7,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JTLGSC04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1JTLGSC04');
+</script>
+
 <style>
   :root {
     --bg: #09101f;
@@ -42,12 +51,10 @@
 
   a { color: inherit; text-decoration: none; }
 
-  /* ─── SCROLLBAR ─── */
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 
-  /* ─── NOISE OVERLAY ─── */
   body::before {
     content: '';
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
@@ -55,7 +62,6 @@
     opacity: 0.4;
   }
 
-  /* ─── NAV ─── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     height: 72px;
@@ -123,7 +129,6 @@
   }
   .mobile-menu a:hover { color: var(--primary); }
 
-  /* ─── HERO ─── */
   #about {
     min-height: 100dvh; display: flex; align-items: center;
     padding: 90px clamp(1.5rem, 5vw, 4rem) 4rem;
@@ -215,6 +220,7 @@
     border: 1px solid var(--border);
     font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600;
     cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;
+    text-decoration: none;
   }
   .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
 
@@ -233,7 +239,6 @@
   .social-link:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-dim); }
   .social-link svg { width: 18px; height: 18px; }
 
-  /* Orbit widget */
   .hero-orbit {
     position: relative; width: 280px; height: 280px;
     flex-shrink: 0;
@@ -268,7 +273,6 @@
     width: 60%; height: 1px; background: rgba(251,191,36,0.15); margin: 12px auto;
   }
 
-  /* ─── SECTION COMMONS ─── */
   section { padding: 7rem clamp(1.5rem, 5vw, 4rem); position: relative; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
 
@@ -286,11 +290,9 @@
     margin-bottom: 4rem;
   }
 
-  /* reveal on scroll */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ─── EXPERIENCE ─── */
   #experience { background: var(--bg); }
   .exp-grid { display: grid; grid-template-columns: 340px 1fr; gap: 5rem; align-items: start; }
 
@@ -362,10 +364,7 @@
     content: '›'; color: rgba(251,191,36,0.5); font-size: 1rem; margin-top: -1px; flex-shrink: 0;
   }
 
-  /* ─── SKILLS ─── */
-  #skills {
-    background: var(--bg2);
-  }
+  #skills { background: var(--bg2); }
   #skills::before {
     content: '';
     position: absolute; inset: 0; pointer-events: none;
@@ -400,7 +399,6 @@
   }
   .skill-card:hover .skill-tag { border-color: rgba(251,191,36,0.2); }
 
-  /* ─── PROJECTS ─── */
   #projects { background: var(--bg); }
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
   .project-card {
@@ -451,7 +449,6 @@
     background: var(--bg); border: 1px solid var(--border); color: var(--fg-muted);
   }
 
-  /* ─── CERTIFICATIONS ─── */
   #certifications { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .certs-header { text-align: center; margin-bottom: 4rem; }
   .certs-header .section-heading { justify-content: center; }
@@ -490,7 +487,6 @@
     color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em;
   }
 
-  /* ─── CONTACT ─── */
   #contact { background: var(--bg); padding-bottom: 5rem; }
   .contact-inner { max-width: 680px; margin: 0 auto; text-align: center; }
   .contact-kicker {
@@ -530,13 +526,11 @@
   .contact-social-icon svg { width: 22px; height: 22px; }
   .contact-social span { font-family: var(--font-mono); font-size: 0.72rem; }
 
-  /* ─── FOOTER ─── */
   .footer {
     text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     font-family: var(--font-mono); font-size: 0.72rem; color: var(--fg-subtle);
   }
 
-  /* ─── BACK TO TOP ─── */
   #back-top {
     position: fixed; bottom: 2rem; right: 2rem; z-index: 50;
     width: 46px; height: 46px; border-radius: 50%;
@@ -550,11 +544,6 @@
   #back-top:hover { border-color: var(--primary); background: var(--primary-dim); box-shadow: 0 0 14px rgba(251,191,36,0.2); }
   #back-top svg { width: 18px; height: 18px; }
 
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-  /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero-orbit { display: none; }
@@ -575,7 +564,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
   <div class="nav-logo" onclick="navScrollTo('#about')">
     <div class="nav-logo-icon">
@@ -610,7 +598,6 @@
   <a onclick="navScrollTo('#contact'); closeMenu()">Contact</a>
 </div>
 
-<!-- HERO -->
 <section id="about">
   <div class="hero-radial"></div>
   <div class="hero-grid"></div>
@@ -631,16 +618,22 @@
         Alexandria, Egypt
       </div>
       <p class="hero-desc">Passionate about combining financial knowledge with data analytics to help organizations improve performance, optimize operations, and drive business growth through data-driven solutions.</p>
+      
       <div class="hero-buttons">
         <button class="btn-primary" onclick="navScrollTo('#projects')">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
           View Projects
         </button>
+        <a href="Mostafa_Elsawahly_CV.pdf" target="_blank" class="btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
         <button class="btn-outline" onclick="window.open('mailto:mostafasamerwork@gmail.com','_blank')">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Contact Me
         </button>
       </div>
+
       <div class="hero-socials">
         <a href="https://www.linkedin.com/in/mostafa-elsawahly" target="_blank" rel="noopener" class="social-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -670,7 +663,6 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-inner">
     <div class="reveal">
@@ -678,7 +670,6 @@
       <div class="section-divider"></div>
     </div>
     <div class="exp-grid">
-      <!-- Education -->
       <div class="reveal" style="transition-delay:0.1s">
         <div class="edu-card">
           <div class="edu-card-label">
@@ -694,7 +685,6 @@
           <span class="badge">Grade: Very Good</span>
         </div>
       </div>
-      <!-- Timeline -->
       <div>
         <div class="timeline">
           <div class="tl-item reveal" style="transition-delay:0.15s">
@@ -752,7 +742,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-inner" style="position:relative;z-index:1">
     <div class="reveal">
@@ -822,7 +811,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
     <div class="reveal">
@@ -911,7 +899,6 @@
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="section-inner">
     <div class="certs-header reveal">
@@ -942,7 +929,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner reveal">
     <div class="contact-kicker">05. What's Next?</div>
@@ -979,23 +965,19 @@
   <p>Built with precision. &nbsp;©&nbsp;<span id="year"></span>&nbsp;Mostafa Elsawahly</p>
 </div>
 
-<!-- BACK TO TOP -->
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
 <script>
-  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Scroll nav
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 30);
     document.getElementById('back-top').classList.toggle('visible', window.scrollY > 400);
   });
 
-  // Smooth scroll helper
   function navScrollTo(id) {
     const el = document.querySelector(id);
     if (el) {
@@ -1004,7 +986,6 @@
     }
   }
 
-  // Mobile menu
   function toggleMenu() {
     document.getElementById('mobile-menu').classList.toggle('open');
   }
@@ -1012,7 +993,6 @@
     document.getElementById('mobile-menu').classList.remove('open');
   }
 
-  // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
