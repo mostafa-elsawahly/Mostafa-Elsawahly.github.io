@@ -1299,7 +1299,7 @@
       navLinks.forEach(function(link) {
         link.classList.remove('active');
         const onclick = link.getAttribute('onclick') || '';
-        if (onclick.includes('#' + current)) {
+        if (current && onclick.includes('#' + current)) {
           link.classList.add('active');
         }
       });
