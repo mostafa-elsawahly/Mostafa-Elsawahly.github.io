@@ -595,40 +595,30 @@
     .certs-header .section-heading { justify-content: center; }
     .certs-header p { font-size: 0.95rem; color: var(--fg-muted); margin-top: 0.75rem; }
     .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
-    .cert-card {
-      display: flex; flex-direction: column; align-items: center; text-align: center;
+     .cert-card {
       background: var(--bg); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2.5rem 1.75rem;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-      position: relative; overflow: hidden;
-    }
-    .cert-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(251,191,36,0.04), transparent);
-      opacity: 0; transition: opacity 0.3s;
+      border-radius: var(--radius); overflow: hidden;
+      padding: 15px; text-align: center;
+      transition: all 0.3s ease;
     }
     .cert-card:hover {
       border-color: var(--border-hover);
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       box-shadow: var(--shadow-card);
     }
-    .cert-card:hover::before { opacity: 1; }
-    .cert-initials {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--primary-dim); border: 1px solid rgba(251,191,36,0.25);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--primary);
-      margin-bottom: 1.5rem; z-index: 1; position: relative;
-      transition: background 0.25s, transform 0.25s;
+    .cert-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 5px;
     }
-    .cert-card:hover .cert-initials { background: rgba(251,191,36,0.2); transform: scale(1.08); }
-    .cert-title { font-size: 1rem; font-weight: 700; line-height: 1.35; z-index: 1; margin-bottom: 4px; }
-    .cert-sub { font-family: var(--font-mono); font-size: 0.7rem; color: var(--fg-muted); z-index: 1; }
-    .cert-footer { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); width: 100%; z-index: 1; }
-    .cert-issuer {
-      font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
-      color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em;
-    }
+    .cert-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--fg); }
+    .cert-sub { font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-muted); }
+    .cert-footer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .cert-issuer { color: var(--primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
     /* ═══════════════════════════════════════════════
        CONTACT SECTION
     ═══════════════════════════════════════════════ */
@@ -1187,30 +1177,36 @@
           <h2 class="section-heading"><span class="section-num">04.</span> Certifications</h2>
           <p>Verified expertise from industry leaders</p>
         </div>
-        <div class="certs-grid">
-          <div class="cert-card reveal" style="transition-delay:0.1s">
-            <div class="cert-initials">DC</div>
-            <h3 class="cert-title">Introduction to SQL</h3>
-            <p class="cert-sub">Associate Data Analyst Track</p>
-            <div class="cert-footer"><div class="cert-issuer">DataCamp</div></div>
-          </div>
-          <div class="cert-card reveal" style="transition-delay:0.15s">
-            <div class="cert-initials">G</div>
-            <h3 class="cert-title">Google Data Analytics Professional Certificate</h3>
-            <div class="cert-footer"><div class="cert-issuer">Google</div></div>
-          </div>
-          <div class="cert-card reveal" style="transition-delay:0.2s">
-            <div class="cert-initials">HW</div>
-            <h3 class="cert-title">Huawei Cloud Developer Certification</h3>
-            <p class="cert-sub">(HCCDA – Tech Essentials)</p>
-            <div class="cert-footer"><div class="cert-issuer">Huawei</div></div>
-          </div>
-          <div class="cert-card reveal" style="transition-delay:0.25s">
-            <div class="cert-initials">IBM</div>
-            <h3 class="cert-title">IBM Artificial Intelligence Fundamentals</h3>
-            <div class="cert-footer"><div class="cert-issuer">IBM</div></div>
-          </div>
-        </div>
+        
+<div class="certs-grid">
+  <div class="cert-card reveal" style="transition-delay:0.1s">
+      <img src="google-data-analytics.jpg" alt="Google Data Analytics">
+      <h3 class="cert-title">Google Data Analytics Professional Certificate</h3>
+      <p class="cert-sub">Google / Coursera</p>
+      <div class="cert-footer"><div class="cert-issuer">Google</div></div>
+  </div>
+
+  <div class="cert-card reveal" style="transition-delay:0.15s">
+      <img src="ibm-ai.jpg" alt="IBM AI Fundamentals">
+      <h3 class="cert-title">Artificial Intelligence Fundamentals</h3>
+      <p class="cert-sub">IBM SkillsBuild</p>
+      <div class="cert-footer"><div class="cert-issuer">IBM</div></div>
+  </div>
+
+  <div class="cert-card reveal" style="transition-delay:0.2s">
+      <img src="huawei.jpg" alt="Huawei HCCDA">
+      <h3 class="cert-title">Huawei Cloud HCCDA Tech Essentials</h3>
+      <p class="cert-sub">Huawei Cloud</p>
+      <div class="cert-footer"><div class="cert-issuer">Huawei</div></div>
+  </div>
+
+  <div class="cert-card reveal" style="transition-delay:0.25s">
+      <img src="digitera.jpg" alt="Digitera">
+      <h3 class="cert-title">Tech for Non-Techies</h3>
+      <p class="cert-sub">Digitera Program</p>
+      <div class="cert-footer"><div class="cert-issuer">Digitera</div></div>
+  </div>
+</div>
       </div>
     </section>
     <!-- CONTACT -->
