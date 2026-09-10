@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mostafa Elsawahly | Data Analyst & Business Intelligence</title>
+  <title>Mostafa Elsawahly | Data Analyst &amp; Business Intelligence</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Mostafa Elsawahly — Junior Data Analyst specializing in Banking & Investment Sciences. Skilled in Excel, SQL, Power BI, DAX, and data visualization. Based in Alexandria, Egypt." />
-  <meta name="keywords" content="Data Analyst, Portfolio, Mostafa Elsawahly, SQL, Power BI, DAX, Excel, Data Visualization, Banking, Investment Sciences" />
+  <meta name="description" content="Mostafa Elsawahly — Data-driven undergraduate in Banking & Investment Sciences, specializing in Business Intelligence and Data Analytics. Proficient in Python, SQL, Power BI, DAX, and data visualization. Based in Alexandria, Egypt." />
+  <meta name="keywords" content="Data Analyst, Portfolio, Mostafa Elsawahly, SQL, Power BI, DAX, Excel, Data Visualization, Banking, Investment Sciences, Python, Data Modeling, Looker Studio, Star Schema" />
   <meta name="author" content="Mostafa Elsawahly" />
   <meta name="robots" content="index, follow" />
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Mostafa Elsawahly | Data Analyst & Business Intelligence" />
-  <meta property="og:description" content="Junior Data Analyst specializing in Banking & Investment Sciences. Skilled in Excel, SQL, Power BI, DAX, and data visualization." />
+  <meta property="og:title" content="Mostafa Elsawahly | Data Analyst &amp; Business Intelligence" />
+  <meta property="og:description" content="Data-driven undergraduate specializing in Business Intelligence and Data Analytics. Proficient in Python, SQL, Power BI, and data visualization." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta name="theme-color" content="#09101f" />
+  <meta name="theme-color" content="#050505" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050505'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='48' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3EME%3C/text%3E%3Ccircle cx='82' cy='60' r='5' fill='%23fbbf24'/%3E%3C/svg%3E" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -62,10 +65,17 @@
     /* Reset & Base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    body { font-family: var(--font-sans); background: var(--bg); color: var(--fg); line-height: 1.65; overflow-x: hidden; }
+    body { font-family: var(--font-sans); background: var(--bg); color: var(--fg); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    ::selection { background: rgba(251,191,36,0.25); color: var(--primary); }
     a { color: inherit; text-decoration: none; transition: color var(--transition-fast); }
     img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
     button { font-family: inherit; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
     
     /* Reveal Animation */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -80,47 +90,87 @@
     
     /* Navigation */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem, 5vw, 4rem); border-bottom: 1px solid transparent; transition: all 0.3s ease; }
-    nav.scrolled { background: rgba(9,16,31,0.88); backdrop-filter: blur(20px); border-color: var(--border); box-shadow: 0 2px 24px rgba(0,0,0,0.3); }
+    nav.scrolled { background: rgba(5,5,5,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-color: var(--border); box-shadow: 0 2px 24px rgba(0,0,0,0.3); }
     .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; cursor: pointer; }
-    .nav-logo-icon { background: var(--primary-dim); border: 1px solid rgba(251,191,36,0.2); border-radius: 10px; padding: 7px; color: var(--primary); }
+    .nav-logo-icon { background: var(--primary-dim); border: 1px solid rgba(251,191,36,0.2); border-radius: 10px; padding: 7px; color: var(--primary); display: flex; align-items: center; transition: background var(--transition-fast); }
+    .nav-logo:hover .nav-logo-icon { background: rgba(251,191,36,0.2); }
     .nav-logo span em { font-style: normal; color: var(--primary); }
     .nav-links { display: flex; align-items: center; gap: 2rem; }
     .nav-links a { font-family: var(--font-mono); font-size: 0.8rem; color: var(--fg-muted); cursor: pointer; position: relative; }
-    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 6px; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--fg); transition: 0.3s; }
-    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(17,27,46,0.98); padding: 1.5rem; flex-direction: column; gap: 0.5rem; z-index: 99; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--primary); transform: scaleX(0); transform-origin: right; transition: transform 0.3s ease; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+    .nav-links a.active { color: var(--primary); }
+    .nav-links a.active::after { transform: scaleX(1); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 6px; z-index: 101; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--fg); transition: 0.3s; transform-origin: center; border-radius: 2px; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(5,5,5,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 1.5rem clamp(1.5rem, 5vw, 4rem); flex-direction: column; gap: 0.5rem; z-index: 99; }
     .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-mono); font-size: 0.9rem; color: var(--fg-muted); padding: 0.75rem 0; border-bottom: 1px solid rgba(30,45,72,0.5); cursor: pointer; transition: color var(--transition-fast), padding-left var(--transition-fast); }
+    .mobile-menu a:hover { color: var(--primary); padding-left: 8px; }
+    .mobile-menu a:last-child { border-bottom: none; }
     
     /* Hero */
     #about { min-height: 100dvh; display: flex; align-items: center; padding-top: 100px; }
-    .hero-name { font-size: clamp(3rem, 7.5vw, 6.5rem); font-family: var(--font-serif); font-weight: 600; line-height: .92; }
-    .hero-name .accent { color: var(--primary); }
-    .hero-title { font-family: var(--font-mono); font-size: 1rem; color: var(--fg-muted); margin-top: 1rem; }
-    .hero-desc { font-size: 1.05rem; color: var(--fg-muted); max-width: 580px; margin-top: 1.5rem; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 99px; background: var(--primary-dim); border: 1px solid rgba(251,191,36,0.25); font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); margin-bottom: 1.5rem; }
+    .hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 8px var(--primary), 0 0 16px rgba(251,191,36,0.3); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes glowPulse { 0%, 100% { box-shadow: 0 0 8px var(--primary), 0 0 16px rgba(251,191,36,0.2); } 50% { box-shadow: 0 0 16px var(--primary), 0 0 32px rgba(251,191,36,0.3); } }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    
+    /* Noise texture overlay */
+    body::before { content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); opacity: 0.4; }
+    
+    /* Hero decorative elements */
+    .hero-radial { position: absolute; top: -10%; right: -10%; width: 55%; height: 65%; background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 70%); pointer-events: none; animation: fadeIn 1.5s ease both; }
+    .hero-grid { position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 28px 28px; mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%); }
+
+    .hero-name { font-size: clamp(3rem, 7.5vw, 6.5rem); font-family: var(--font-serif); font-weight: 600; line-height: .92; animation: fadeUp 0.6s 0.1s ease both; }
+    .hero-name .accent { background: linear-gradient(135deg, var(--primary) 0%, #fde68a 50%, var(--primary) 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 4s linear infinite; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 99px; background: var(--primary-dim); border: 1px solid rgba(251,191,36,0.25); font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); margin-bottom: 1.5rem; animation: fadeUp 0.5s ease both; }
+    .hero-title { font-family: var(--font-mono); font-size: 1rem; color: var(--fg-muted); margin-top: 1rem; animation: fadeUp 0.5s 0.2s ease both; }
+    .hero-location { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--fg-muted); margin-top: 1rem; animation: fadeUp 0.5s 0.25s ease both; }
+    .hero-location svg { color: var(--primary); flex-shrink: 0; }
+    .hero-desc { font-size: 1.05rem; color: var(--fg-muted); max-width: 580px; margin-top: 1.5rem; line-height: 1.75; animation: fadeUp 0.5s 0.3s ease both; }
     
     /* Buttons */
-    .hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; animation: fadeUp 0.5s 0.4s ease both; }
     .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; padding: 12px 24px; border-radius: 10px; cursor: pointer; transition: all var(--transition-fast); }
     .btn-primary { background: var(--primary); color: #000; border: none; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(251,191,36,0.3); }
     .btn-outline { background: transparent; color: var(--fg); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
     
+    /* Hero Socials */
+    .hero-socials { display: flex; align-items: center; gap: 0.75rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); animation: fadeUp 0.5s 0.55s ease both; }
+    .social-link { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border); color: var(--fg-muted); transition: all var(--transition-fast); }
+    .social-link:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-dim); transform: translateY(-2px); }
+    .social-link svg { width: 18px; height: 18px; }
+    
     /* Sub-headings for Sections */
     .sub-heading-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; color: var(--primary); }
     .sub-heading { font-size: 1.4rem; font-weight: 700; color: var(--fg); letter-spacing: -0.02em; }
     
-    /* Education Card (Enhanced) */
+    /* Education Card */
     .edu-card { background: linear-gradient(145deg, var(--card), var(--bg2)); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius); padding: 2rem; margin-bottom: 3.5rem; transition: all 0.3s ease; position: relative; }
     .edu-card:hover { border-color: var(--primary); box-shadow: 0 10px 30px rgba(251,191,36,0.1); transform: translateY(-4px); }
     .edu-card h3 { font-size: 1.4rem; font-weight: 800; color: var(--fg); margin-bottom: 8px; }
-    .edu-card .degree { font-family: var(--font-mono); color: var(--primary); font-size: 1rem; margin-bottom: 15px; }
+    .edu-card .degree { font-family: var(--font-mono); color: var(--primary); font-size: 1rem; margin-bottom: 6px; }
+    .edu-card .edu-minor { font-family: var(--font-mono); font-size: 0.82rem; color: var(--fg-muted); margin-bottom: 4px; }
+    .edu-card .edu-dept { font-family: var(--font-mono); font-size: 0.78rem; color: var(--fg-muted); margin-bottom: 15px; }
     .edu-card .date-grade { display: flex; flex-wrap: wrap; gap: 12px; }
     .edu-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-family: var(--font-mono); font-weight: 700; border: 1px solid var(--border); background: var(--bg); color: var(--fg-muted); }
     .edu-badge.success { background: rgba(74, 222, 128, 0.1); color: #4ade80; border-color: rgba(74, 222, 128, 0.25); }
     
-    /* Timeline (Experience) */
+    /* Timeline */
     .timeline { border-left: 2px solid var(--border); margin-left: 20px; padding-left: 30px; }
     .tl-item { margin-bottom: 2.5rem; position: relative; }
     .tl-dot { position: absolute; left: -40px; top: 0; width: 18px; height: 18px; border-radius: 50%; background: var(--primary); border: 4px solid var(--bg); }
@@ -130,15 +180,37 @@
     .tl-company { font-family: var(--font-mono); font-size: 0.85rem; color: var(--primary); margin: 5px 0; }
     .tl-date { font-size: 0.8rem; color: var(--fg-muted); margin-bottom: 15px; }
     .tl-bullets { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .tl-bullets li { font-size: 0.875rem; color: var(--fg-muted); display: flex; gap: 8px; }
-    .tl-bullets li::before { content: '›'; color: var(--primary); font-weight: 700; }
+    .tl-bullets li { font-size: 0.875rem; color: var(--fg-muted); display: flex; gap: 8px; line-height: 1.6; }
+    .tl-bullets li::before { content: '›'; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+    
+    /* Skills Section */
+    #skills { background: var(--bg2); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; }
+    .skill-card:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: var(--shadow-card); }
+    .skill-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.25rem; }
+    .skill-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--primary-dim); display: flex; align-items: center; justify-content: center; color: var(--primary); transition: all var(--transition-fast); }
+    .skill-icon svg { width: 18px; height: 18px; }
+    .skill-card:hover .skill-icon { background: var(--primary); color: #000; transform: scale(1.05); }
+    .skill-card-title { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .skill-tag { padding: 5px 12px; border-radius: 7px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); font-size: 0.78rem; color: var(--fg-muted); transition: border-color var(--transition-fast), color var(--transition-fast); }
+    .skill-card:hover .skill-tag { border-color: rgba(251,191,36,0.2); color: var(--fg); }
+    .skills-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.25rem; }
+    .skills-extra-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: border-color 0.25s, transform 0.25s; }
+    .skills-extra-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .skills-extra-title { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+    .skills-extra-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .skills-extra-list li { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--fg-muted); }
+    .skills-extra-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
     
     /* Projects */
-    .projects-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
     .project-card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: 0.3s; }
     .project-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-card); }
-    .project-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--primary); }
-    .project-desc { font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 15px; }
+    .project-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
+    .project-date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-muted); margin-bottom: 12px; }
+    .project-desc { font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 15px; line-height: 1.65; }
     .project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
     .project-tag { font-family: var(--font-mono); font-size: 0.75rem; padding: 4px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--fg-muted); }
     
@@ -151,9 +223,27 @@
     .cert-title { font-size: 1rem; font-weight: 700; color: var(--fg); margin-bottom: 5px; }
     .cert-issuer { font-family: var(--font-mono); font-size: 0.85rem; color: var(--primary); margin-bottom: 5px; }
     .cert-date { font-size: 0.8rem; color: var(--fg-muted); }
+    
+    /* Contact Section */
+    #contact { background: var(--bg); padding-bottom: 5rem; }
+    .contact-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .contact-kicker { font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary); letter-spacing: 0.1em; margin-bottom: 1.25rem; text-transform: uppercase; }
+    .contact-heading { font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 1.5rem; }
+    .contact-desc { font-size: 1rem; color: var(--fg-muted); line-height: 1.8; max-width: 500px; margin: 0 auto 3rem; }
+    .contact-email-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 99px; background: var(--primary-dim); border: 1px solid rgba(251,191,36,0.25); font-family: var(--font-mono); font-size: 0.85rem; color: var(--primary); margin-bottom: 2rem; transition: all var(--transition-fast); }
+    .contact-email-pill:hover { background: rgba(251,191,36,0.2); border-color: rgba(251,191,36,0.5); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(251,191,36,0.15); }
+    .contact-cta-row { display: flex; align-items: center; justify-content: center; margin-bottom: 4rem; }
+    .contact-socials { display: flex; align-items: center; justify-content: center; gap: 2.5rem; padding-top: 3rem; border-top: 1px solid var(--border); }
+    .contact-social { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--fg-muted); transition: color var(--transition-fast); }
+    .contact-social:hover { color: var(--primary); }
+    .contact-social-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast); }
+    .contact-social:hover .contact-social-icon { border-color: var(--primary); background: var(--primary-dim); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(251,191,36,0.15); }
+    .contact-social-icon svg { width: 22px; height: 22px; }
+    .contact-social span { font-family: var(--font-mono); font-size: 0.72rem; }
 
     /* Footer & Back to top */
     .footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.8rem; color: var(--fg-muted); }
+    .footer a { color: var(--primary); }
     #back-top { position: fixed; bottom: 2rem; right: 2rem; z-index: 50; width: 46px; height: 46px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); opacity: 0; pointer-events: none; transition: 0.3s; }
     #back-top.visible { opacity: 1; pointer-events: auto; }
     #back-top:hover { border-color: var(--primary); background: var(--primary-dim); }
@@ -165,6 +255,19 @@
       .hero-buttons { flex-direction: column; }
       .btn { justify-content: center; }
     }
+    @media (max-width: 600px) {
+      section { padding: 4.5rem 1.25rem; }
+      .skills-extra { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
+      .contact-socials { gap: 1.5rem; }
+      .section-divider { margin-bottom: 2.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -173,69 +276,80 @@
        NAVIGATION
        ========================================== -->
   <header>
-    <nav id="navbar">
-      <div class="nav-logo" onclick="navScrollTo('#about')">
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-logo" onclick="navScrollTo('#about')" role="button" tabindex="0" aria-label="Go to top">
         <div class="nav-logo-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
             <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
           </svg>
         </div>
         <span>ME<em>.</em></span>
       </div>
       <div class="nav-links">
-        <a onclick="navScrollTo('#about')">About</a>
-        <a onclick="navScrollTo('#experience')">Background</a>
-        <a onclick="navScrollTo('#projects')">Projects</a>
-        <a onclick="navScrollTo('#certifications')">Certifications</a>
+        <a href="#about">About</a>
+        <a href="#experience">Background</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
       </div>
-      <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
   </header>
   
-  <div class="mobile-menu" id="mobile-menu">
-    <a onclick="navScrollTo('#about'); closeMenu()">About</a>
-    <a onclick="navScrollTo('#experience'); closeMenu()">Background</a>
-    <a onclick="navScrollTo('#projects'); closeMenu()">Projects</a>
-    <a onclick="navScrollTo('#certifications'); closeMenu()">Certifications</a>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#experience" onclick="closeMenu()">Background</a>
+    <a href="#skills" onclick="closeMenu()">Skills</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#certifications" onclick="closeMenu()">Certifications</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
   </div>
 
+  <main>
   <!-- ==========================================
        HERO SECTION
        ========================================== -->
-  <section id="about">
-    <div class="section-inner reveal visible">
+  <section id="about" aria-label="About Mostafa Elsawahly">
+    <div class="section-inner">
+      <div class="hero-badge">
+        <div class="hero-badge-dot" aria-hidden="true"></div>
+        Available for new opportunities
+      </div>
       <h1 class="hero-name">Mostafa <br><span class="accent">Elsawahly</span></h1>
-      <p class="hero-title">Junior Data Analyst | Banking & Investment Sciences</p>
-      <p class="hero-desc">Data modeling, business intelligence, and cloud fundamentals. Transforming complex raw data into actionable, accurate business insights.</p>
+      <p class="hero-title">Junior Data Analyst | Banking &amp; Investment Sciences</p>
+      <div class="hero-location">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Alexandria, Egypt
+      </div>
+      <p class="hero-desc">Data-driven third-year undergraduate in Banking &amp; Investment Sciences, specializing in Business Intelligence and Data Analytics. Proven track record of transforming complex sales and customer datasets into actionable business insights using Python, SQL, and Power BI.</p>
       
-      <!-- HERO BUTTONS -->
       <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary" onclick="navScrollTo('#projects')">View Projects</a>
-        
-        <!-- CV Download -->
-        <a href="Mostafa_Elsawahly_CV.pdf" target="_blank" class="btn btn-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <a href="#projects" class="btn btn-primary" onclick="event.preventDefault(); navScrollTo('#projects')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          View Projects
+        </a>
+        <a href="Mostafa_Elsawahly_CV.pdf" target="_blank" rel="noopener" class="btn btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download CV
         </a>
-        
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/mostafa-elsawahly" target="_blank" class="btn btn-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        
-        <!-- Phone (Replace 0000000000 with your number) -->
-        <a href="tel:+201032598976" class="btn btn-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call Me
-        </a>
-        
-        <!-- Email -->
         <a href="mailto:mostafasamerwork@gmail.com" class="btn btn-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Email
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/mostafa-elsawahly" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/mostafa-elsawahly" target="_blank" rel="noopener" class="social-link" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="tel:+201032598976" class="social-link" aria-label="Phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </a>
       </div>
     </div>
@@ -244,44 +358,50 @@
   <!-- ==========================================
        BACKGROUND (EDUCATION & EXPERIENCE)
        ========================================== -->
-  <section id="experience">
-    <div class="section-inner reveal">
-      <h2 class="section-heading"><span class="section-num">01.</span> Background</h2>
-      <div class="section-divider"></div>
+  <section id="experience" aria-label="Experience and Education">
+    <div class="section-inner">
+      <div class="reveal">
+        <h2 class="section-heading"><span class="section-num">01.</span> Background</h2>
+        <div class="section-divider"></div>
+      </div>
       
-      <!-- === EDUCATION SUB-HEADING === -->
+      <!-- === EDUCATION === -->
       <div class="sub-heading-wrap reveal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
         </svg>
         <h3 class="sub-heading">Education</h3>
       </div>
 
-      <!-- === EDUCATION CARD === -->
       <div class="edu-card reveal">
         <h3>Science Valley Academy</h3>
-        <p class="degree">Bachelor's in Banking & Investment Sciences</p>
+        <p class="degree">B.Sc. Finance — Banking &amp; Investment Sciences</p>
+        <p class="edu-minor">Minor in Data Analytics</p>
+        <p class="edu-dept">Dept. of Management, Finance &amp; Information Systems</p>
         <div class="date-grade">
           <span class="edu-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Oct 2023 – Jul 2027
           </span>
+          <span class="edu-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Cairo, Egypt
+          </span>
           <span class="edu-badge success">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             Grade: Very Good
           </span>
         </div>
       </div>
       
-      <!-- === EXPERIENCE SUB-HEADING === -->
+      <!-- === EXPERIENCE === -->
       <div class="sub-heading-wrap reveal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
         </svg>
         <h3 class="sub-heading">Professional Experience</h3>
       </div>
 
-      <!-- === EXPERIENCE TIMELINE === -->
       <div class="timeline">
         
         <div class="tl-item reveal">
@@ -289,9 +409,10 @@
           <div class="tl-card">
             <div class="tl-role">Trainee Professional Data Analyst</div>
             <div class="tl-company">Digital Egypt Pioneers Initiative (DEPI)</div>
-            <div class="tl-date">Jul 2026 – Present | Alexandria, Egypt (Hybrid)</div>
+            <div class="tl-date">Jul 2026 – Present | Alexandria, Hybrid</div>
             <ul class="tl-bullets">
-              <li>Focusing on Data Modeling and advanced Data Analytics frameworks.</li>
+              <li>Developing practical skills in data analysis, data visualization, and business intelligence.</li>
+              <li>Building a stronger foundation in data-driven decision-making and professional data analysis.</li>
             </ul>
           </div>
         </div>
@@ -299,12 +420,12 @@
         <div class="tl-item reveal">
           <div class="tl-dot"></div>
           <div class="tl-card">
-            <div class="tl-role">DataCamp 25/26 Program</div>
-            <div class="tl-company">GDSC - EJUST</div>
-            <div class="tl-date">Jun 2026 – Present | Internship</div>
+            <div class="tl-role">DataCamp 25/26 Internship Program</div>
+            <div class="tl-company">GDSC – EJUST</div>
+            <div class="tl-date">Jun 2026 – Present | Remote</div>
             <ul class="tl-bullets">
-              <li>Accepted into the exclusive GDSC E-JUST x DataCamp Program.</li>
-              <li>Specializing in Data Modeling and Data Preparation.</li>
+              <li>Participating in the DataCamp 25/26 program to strengthen technical and data-related skills.</li>
+              <li>Developing practical knowledge through structured learning and hands-on activities.</li>
             </ul>
           </div>
         </div>
@@ -312,24 +433,12 @@
         <div class="tl-item reveal">
           <div class="tl-dot"></div>
           <div class="tl-card">
-            <div class="tl-role">Business Development & Sales Intern</div>
+            <div class="tl-role">Business Development &amp; Sales Intern</div>
             <div class="tl-company">Nile University</div>
-            <div class="tl-date">Jun 2026 – Present | Internship</div>
+            <div class="tl-date">Jun 2026 – Present | Remote</div>
             <ul class="tl-bullets">
-              <li>Analyzing market trends and supporting business development strategies.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item reveal">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-role">Data Analytics Intern</div>
-            <div class="tl-company">Knowledge4All</div>
-            <div class="tl-date">Jun 2025 – Present | Remote</div>
-            <ul class="tl-bullets">
-              <li>Completed hands-on training in Google Data Analytics, specializing in data cleaning, analysis, and visualization.</li>
-              <li>Utilized Excel, SQL, and Power BI to create dashboards and monitor key performance indicators (KPIs).</li>
+              <li>Supporting business development and sales activities.</li>
+              <li>Developing practical experience in communication, business operations, and customer-focused processes.</li>
             </ul>
           </div>
         </div>
@@ -339,9 +448,10 @@
           <div class="tl-card">
             <div class="tl-role">Sales Analyst</div>
             <div class="tl-company">Re-Lease</div>
-            <div class="tl-date">May 2026 – Present | Alexandria, Egypt (Hybrid)</div>
+            <div class="tl-date">May 2026 – Present | Alexandria, Hybrid</div>
             <ul class="tl-bullets">
-              <li>Conducting data analysis to evaluate sales performance and optimize processes.</li>
+              <li>Supporting sales analysis and business-related activities.</li>
+              <li>Applying analytical thinking to understand sales performance and support business decisions.</li>
             </ul>
           </div>
         </div>
@@ -363,10 +473,12 @@
           <div class="tl-card">
             <div class="tl-role">Power BI Intern</div>
             <div class="tl-company">Creativa Hub Alexandria</div>
-            <div class="tl-date">Feb 2026 – Mar 2026 | Alexandria, Egypt (On-site)</div>
+            <div class="tl-date">Feb 2026 – Mar 2026 | Alexandria, On-site</div>
             <ul class="tl-bullets">
-              <li>Developed interactive dashboards in Power BI to visualize essential business metrics.</li>
-              <li>Utilized Power Query for data cleaning and created DAX measures for complex reporting.</li>
+              <li>Developed interactive Power BI dashboards to visualize key business metrics.</li>
+              <li>Used Power Query for data cleaning, transformation, and preparation.</li>
+              <li>Created DAX measures and calculated columns to enhance reporting and analysis.</li>
+              <li>Worked with team members to translate business requirements into data-driven solutions.</li>
             </ul>
           </div>
         </div>
@@ -376,7 +488,7 @@
           <div class="tl-card">
             <div class="tl-role">Tech for Non-Techies Trainee (Digitera Program)</div>
             <div class="tl-company">iCareer</div>
-            <div class="tl-date">Nov 2025 – Dec 2025 | Alexandria, Egypt (Hybrid)</div>
+            <div class="tl-date">Nov 2025 – Dec 2025 | Alexandria, Hybrid</div>
             <ul class="tl-bullets">
               <li>Applied the SCQA framework to develop structured digital solutions for business challenges.</li>
             </ul>
@@ -386,11 +498,26 @@
         <div class="tl-item reveal">
           <div class="tl-dot"></div>
           <div class="tl-card">
+            <div class="tl-role">Data Analytics Intern</div>
+            <div class="tl-company">Knowledge4All</div>
+            <div class="tl-date">Jun 2025 – Present | Remote</div>
+            <ul class="tl-bullets">
+              <li>Completed hands-on training in Google Data Analytics, specializing in data cleaning, analysis, and visualization.</li>
+              <li>Utilized Excel, SQL, and Power BI to create dashboards and monitor key performance indicators (KPIs).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
             <div class="tl-role">Egyptian Banking System Model (EBSM) Intern</div>
             <div class="tl-company">EBANK</div>
-            <div class="tl-date">Oct 2024 – Nov 2024 | Egypt (Hybrid)</div>
+            <div class="tl-date">Oct 2024 – Nov 2024 | Remote</div>
             <ul class="tl-bullets">
-              <li>Developed the EBSM to effectively simulate banking operations in Egypt.</li>
+              <li>Developed the Egyptian Banking System Model (EBSM) to simulate banking operations in Egypt.</li>
+              <li>Analyzed financial data to better understand banking workflows and customer interactions.</li>
+              <li>Conducted scenario testing to support decision-making related to risk management and liquidity.</li>
             </ul>
           </div>
         </div>
@@ -400,19 +527,152 @@
   </section>
 
   <!-- ==========================================
+       SKILLS SECTION
+       ========================================== -->
+  <section id="skills" aria-label="Technical skills">
+    <div class="section-inner">
+      <div class="reveal">
+        <h2 class="section-heading"><span class="section-num">02.</span> Technical Arsenal</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div class="skill-card-title">Data Analytics</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Data Cleaning</span>
+            <span class="skill-tag">Data Transformation</span>
+            <span class="skill-tag">EDA</span>
+            <span class="skill-tag">KPI Analysis</span>
+            <span class="skill-tag">Data Modeling</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-4"/></svg>
+            </div>
+            <div class="skill-card-title">Business Intelligence</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Dashboard Development</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">Business Reporting</span>
+            <span class="skill-tag">Looker Studio</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="skill-card-title">Data &amp; Querying</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">CSV Data Processing</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <div class="skill-card-title">Power BI</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Power Query</span>
+            <span class="skill-tag">Data Modeling</span>
+            <span class="skill-tag">Star Schema</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            </div>
+            <div class="skill-card-title">Cloud &amp; Technology</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Huawei Cloud</span>
+            <span class="skill-tag">Cloud Computing</span>
+            <span class="skill-tag">Cloud Infrastructure</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <div class="skill-card-title">AI &amp; Automation</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Generative AI</span>
+            <span class="skill-tag">ChatGPT</span>
+            <span class="skill-tag">Canva AI</span>
+            <span class="skill-tag">Zapier</span>
+            <span class="skill-tag">Notion</span>
+            <span class="skill-tag">Trello</span>
+            <span class="skill-tag">Google Workspace</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-extra reveal">
+        <div class="skills-extra-card">
+          <div class="skills-extra-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Soft Skills
+          </div>
+          <ul class="skills-extra-list">
+            <li>Technical Documentation</li>
+            <li>Presentation Skills</li>
+            <li>Communication</li>
+          </ul>
+        </div>
+        <div class="skills-extra-card">
+          <div class="skills-extra-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Languages
+          </div>
+          <ul class="skills-extra-list">
+            <li>Arabic — Native (Egyptian Arabic)</li>
+            <li>English — B1 (Intermediate)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
        PROJECTS SECTION
        ========================================== -->
-  <section id="projects">
-    <div class="section-inner reveal">
-      <h2 class="section-heading"><span class="section-num">02.</span> Projects</h2>
-      <div class="section-divider"></div>
+  <section id="projects" aria-label="Featured projects">
+    <div class="section-inner">
+      <div class="reveal">
+        <h2 class="section-heading"><span class="section-num">03.</span> Projects</h2>
+        <div class="section-divider"></div>
+      </div>
 
       <div class="projects-grid">
         
-        <!-- Project 1 -->
-        <a href="https://github.com/mostafa-elsawahly/salla-call-center-performance" target="_blank" class="project-card reveal">
+        <a href="https://github.com/mostafa-elsawahly/salla-call-center-performance" target="_blank" rel="noopener" class="project-card reveal">
           <h3 class="project-title">Salla Call Center Performance Dashboard</h3>
-          <p class="project-desc">Designed an interactive Power BI Dashboard to analyze 2M handled calls. Structured into Overview and Analysis Zones to track KPIs like ASA, 90% Overall Efficiency, and 91% Service Level. Utilized Claude to write complex DAX measures and pinpoint peak hours.</p>
+          <div class="project-date">Jun 2026</div>
+          <p class="project-desc">Developed an interactive Power BI dashboard to analyze call center performance and operational efficiency. Built KPI measures to track 2M calls handled, 90% efficiency, 91% service level, and 1% abandonment rate. Applied data modeling and DAX to support accurate calculations and dynamic filtering.</p>
           <div class="project-tags">
             <span class="project-tag">Power BI</span>
             <span class="project-tag">DAX</span>
@@ -420,10 +680,10 @@
           </div>
         </a>
 
-        <!-- Project 2 -->
-        <a href="https://github.com/mostafa-elsawahly/Dynamic-Dashboard/blob/main/Dynamic%20Dashboard.html" target="_blank" class="project-card reveal">
+        <a href="https://github.com/mostafa-elsawahly/Dynamic-Dashboard/blob/main/Dynamic%20Dashboard.html" target="_blank" rel="noopener" class="project-card reveal">
           <h3 class="project-title">Dynamic Data Dashboard</h3>
-          <p class="project-desc">Built to streamline raw data analysis instantly. Features automated parsing for CSV/Excel files, AI Agent integration for generating insights and bottleneck alerts, and dynamic trend lines. Built for rapid "data to decisions" extraction.</p>
+          <div class="project-date">May 2026</div>
+          <p class="project-desc">Developed a dynamic dashboard to transform raw CSV and Excel files into actionable business insights. Implemented automated data parsing and data-type detection for single and multiple datasets. Built KPI visualizations, trend analysis, distribution charts, and a searchable raw-data explorer. Integrated AI-generated insights to identify top performers, bottlenecks, and volume trends.</p>
           <div class="project-tags">
             <span class="project-tag">Data Visualization</span>
             <span class="project-tag">AI Integration</span>
@@ -431,10 +691,10 @@
           </div>
         </a>
 
-        <!-- Project 3 -->
-        <a href="https://github.com/mostafa-elsawahly/-Electronics-Retail-Executive-Dashboard" target="_blank" class="project-card reveal">
+        <a href="https://github.com/mostafa-elsawahly/-Electronics-Retail-Executive-Dashboard" target="_blank" rel="noopener" class="project-card reveal">
           <h3 class="project-title">Electronics Retail Executive Dashboard</h3>
-          <p class="project-desc">Associated with Creativa Hub Alexandria. Built a robust Star Schema and resolved complex relationships. Developed precise DAX KPIs (AOV, ARPC, Return Rates). Analyzed a 17% return rate and VIP customer liquidity to drive targeted loyalty programs.</p>
+          <div class="project-date">Mar 2026 – Apr 2026</div>
+          <p class="project-desc">Developed an end-to-end Power BI dashboard to analyze electronics sales performance and customer behavior. Built a Star Schema and optimized relationships for reliable business analysis. Created DAX measures for AOV, ARPC, and return rates. Identified key insights including a 17% return rate and high-value customer segments.</p>
           <div class="project-tags">
             <span class="project-tag">Power BI</span>
             <span class="project-tag">Power Query</span>
@@ -442,10 +702,10 @@
           </div>
         </a>
 
-        <!-- Project 4 (No Link Provided) -->
         <div class="project-card reveal">
           <h3 class="project-title">Workflow Automation (Digitera Program)</h3>
-          <p class="project-desc">Led the final project using the SCQA framework. Designed a complete digital workflow solving a real business problem using no-code tools (Google Workspace, Notion, Trello, Zapier, Canva AI) to improve efficiency and reduce manual effort.</p>
+          <div class="project-date">Nov 2025 – Dec 2025</div>
+          <p class="project-desc">Designed an end-to-end digital workflow to address a real business problem using no-code and automation tools. Mapped processes, organized data, managed tasks, and implemented workflow automation. Applied the SCQA framework to structure the problem, analysis, solution, and expected impact.</p>
           <div class="project-tags">
             <span class="project-tag">Zapier</span>
             <span class="project-tag">Automation</span>
@@ -460,10 +720,12 @@
   <!-- ==========================================
        CERTIFICATIONS SECTION
        ========================================== -->
-  <section id="certifications">
-    <div class="section-inner reveal">
-      <h2 class="section-heading"><span class="section-num">03.</span> Licenses & Certifications</h2>
-      <div class="section-divider"></div>
+  <section id="certifications" aria-label="Professional certifications">
+    <div class="section-inner">
+      <div class="reveal">
+        <h2 class="section-heading"><span class="section-num">04.</span> Licenses &amp; Certifications</h2>
+        <div class="section-divider"></div>
+      </div>
 
       <div class="certs-grid">
 
@@ -478,7 +740,7 @@
           <div class="cert-img-wrapper"><img src="powerbi-dashboard-certificate.jpg" alt="Power BI Dashboard"></div>
           <div class="cert-title">Power BI Dashboard (Beginner Level)</div>
           <div class="cert-issuer">Creativa Hub Alexandria</div>
-          <div class="cert-date">Issued Jun 2026</div>
+          <div class="cert-date">Issued Jun 2026 · 24 Hours</div>
         </div>
 
         <div class="cert-card reveal">
@@ -490,16 +752,16 @@
 
         <div class="cert-card reveal">
           <div class="cert-img-wrapper"><img src="huawei.jpg" alt="Huawei Cloud"></div>
-          <div class="cert-title">Huawei Cloud Developer - HCCDA</div>
+          <div class="cert-title">Huawei Cloud Developer – HCCDA: Tech Essentials</div>
           <div class="cert-issuer">Huawei</div>
-          <div class="cert-date">Issued Feb 2026</div>
+          <div class="cert-date">Issued Feb 2026 · Valid Until Feb 2029</div>
         </div>
 
         <div class="cert-card reveal">
           <div class="cert-img-wrapper"><img src="ibm-ai.jpg" alt="AI Fundamentals"></div>
           <div class="cert-title">Artificial Intelligence Fundamentals</div>
           <div class="cert-issuer">IBM</div>
-          <div class="cert-date">Issued Jan 2026</div>
+          <div class="cert-date">Issued Jan 2026 · +10 Hours</div>
         </div>
 
         <div class="cert-card reveal">
@@ -511,7 +773,7 @@
 
         <div class="cert-card reveal">
           <div class="cert-img-wrapper"><img src="digitera.jpg" alt="Digitera"></div>
-          <div class="cert-title">Digitera - Tech for Non-Techies</div>
+          <div class="cert-title">Digitera – Tech for Non-Techies</div>
           <div class="cert-issuer">iCareer</div>
           <div class="cert-date">Issued Dec 2025</div>
         </div>
@@ -519,8 +781,8 @@
         <div class="cert-card reveal">
           <div class="cert-img-wrapper"><img src="google-data-analytics.jpg" alt="Google Data Analytics"></div>
           <div class="cert-title">Google Data Analytics Professional Certificate</div>
-          <div class="cert-issuer">Coursera & Google</div>
-          <div class="cert-date">Issued Sep 2025</div>
+          <div class="cert-issuer">Coursera &amp; Google</div>
+          <div class="cert-date">Issued Dec 2025 · 6 Months at 10 Hours/Week</div>
         </div>
         
         <div class="cert-card reveal">
@@ -535,14 +797,56 @@
   </section>
 
   <!-- ==========================================
+       CONTACT SECTION
+       ========================================== -->
+  <section id="contact" aria-label="Contact information">
+    <div class="contact-inner reveal">
+      <div class="contact-kicker">05. What's Next?</div>
+      <h2 class="contact-heading">Get In Touch</h2>
+      <p class="contact-desc">I'm currently looking for new opportunities to apply my data analytics and financial skills. Whether you have a question, a project, or just want to say hi, I'll try my best to get back to you!</p>
+      <a href="mailto:mostafasamerwork@gmail.com" class="contact-email-pill">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        mostafasamerwork@gmail.com
+      </a>
+      <div class="contact-cta-row">
+        <a href="mailto:mostafasamerwork@gmail.com" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Say Hello
+        </a>
+      </div>
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/mostafa-elsawahly" target="_blank" rel="noopener" class="contact-social" aria-label="LinkedIn profile">
+          <div class="contact-social-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/mostafa-elsawahly" target="_blank" rel="noopener" class="contact-social" aria-label="GitHub profile">
+          <div class="contact-social-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <span>GitHub</span>
+        </a>
+        <a href="tel:+201032598976" class="contact-social" aria-label="Call me">
+          <div class="contact-social-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span>Phone</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ==========================================
        FOOTER & BACK TO TOP
        ========================================== -->
-  <footer class="footer">
-    <p>Built with precision. &nbsp;©&nbsp;<span id="year"></span>&nbsp;<a href="#about" style="color: var(--primary);">Mostafa Elsawahly</a></p>
+  <footer class="footer" role="contentinfo">
+    <p>Built with precision. &nbsp;©&nbsp;<span id="year"></span>&nbsp;<a href="#about">Mostafa Elsawahly</a></p>
   </footer>
 
   <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
   <!-- ==========================================
@@ -567,7 +871,7 @@
       else backTop.classList.remove('visible');
 
       let current = '';
-      sections.forEach(section => {
+      sections.forEach(function(section) {
         const sectionTop = section.offsetTop - 120;
         const sectionBottom = sectionTop + section.offsetHeight;
         if (scrollY >= sectionTop && scrollY < sectionBottom) {
@@ -575,9 +879,10 @@
         }
       });
 
-      navLinks.forEach(link => {
+      navLinks.forEach(function(link) {
         link.classList.remove('active');
-        if (current && link.getAttribute('onclick').includes('#' + current)) {
+        var href = link.getAttribute('href') || '';
+        if (current && href === '#' + current) {
           link.classList.add('active');
         }
       });
@@ -586,9 +891,25 @@
     onScroll();
 
     function navScrollTo(selector) {
-      const el = document.querySelector(selector);
+      var el = document.querySelector(selector);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    /* Smooth scroll for nav links */
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* Keyboard support */
+    document.querySelectorAll('[role="button"][tabindex="0"]').forEach(function(el) {
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+      });
+    });
 
     /* Mobile Menu */
     const hamburger = document.getElementById('hamburger');
@@ -599,31 +920,43 @@
       menuOpen = !menuOpen;
       hamburger.classList.toggle('open', menuOpen);
       mobileMenu.classList.toggle('open', menuOpen);
+      hamburger.setAttribute('aria-expanded', menuOpen.toString());
       document.body.style.overflow = menuOpen ? 'hidden' : '';
     }
     function closeMenu() {
       menuOpen = false;
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menuOpen) closeMenu();
+    });
+    document.addEventListener('click', function(e) {
+      if (menuOpen && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
 
-    /* Scroll Reveal (Intersection Observer) */
+    /* Scroll Reveal */
     const revealElements = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+      const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             revealObserver.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-      
-      revealElements.forEach(el => revealObserver.observe(el));
+      revealElements.forEach(function(el) { revealObserver.observe(el); });
     } else {
-      revealElements.forEach(el => el.classList.add('visible'));
+      revealElements.forEach(function(el) { el.classList.add('visible'); });
     }
+
+    /* Resize handler */
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 900 && menuOpen) closeMenu();
+    });
   </script>
 </body>
 </html>
