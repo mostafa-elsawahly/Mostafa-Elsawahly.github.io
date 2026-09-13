@@ -24,7 +24,7 @@
     gtag('js',new Date());gtag('config','G-H1JTLGSC04');
   </script>
   <style>
-    :root{--bg:#050505;--bg2:#0b0b0b;--card:#101010;--border:#1a2540;--border-hover:rgba(251,191,36,.35);--primary:#fbbf24;--primary-dim:rgba(251,191,36,.12);--primary-glow:rgba(251,191,36,.08);--fg:#e8edf5;--fg-muted:#7a92b4;--fg-subtle:#3d5278;--radius:14px;--font-sans:'Syne',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--font-serif:'Cormorant Garamond',serif;--transition-fast:.2s ease;--shadow-card:0 4px 24px rgba(0,0,0,.2);--shadow-glow:0 12px 32px rgba(251,191,36,.1)}
+    :root{--bg:#050505;--bg2:#0b0b0b;--card:#101010;--border:#1a2540;--border-hover:rgba(251,191,36,.35);--primary:#fbbf24;--primary-dim:rgba(251,191,36,.12);--primary-glow:rgba(251,191,36,.08);--fg:#e8edf5;--fg-muted:#7a92b4;--fg-subtle:#3d5278;--radius:14px;--font-sans:'Syne',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--font-serif:'Cormorant Garamond',serif;--transition-fast:.5s ease;--shadow-card:0 4px 24px rgba(0,0,0,.2);--shadow-glow:0 12px 32px rgba(251,191,36,.1)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;scroll-padding-top:80px}
     body{font-family:var(--font-sans);background:var(--bg);color:var(--fg);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -49,9 +49,9 @@
     @keyframes scaleIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
     @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    @keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-4px) rotate(3deg)}}
-    @keyframes float3{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(-3deg)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-2px) rotate(1deg)}}
+    @keyframes float3{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-3px) rotate(-1deg)}}
     @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
     @keyframes spinReverse{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
     @keyframes glowPulse{0%,100%{box-shadow:0 0 6px var(--primary),0 0 12px rgba(251,191,36,.15)}50%{box-shadow:0 0 12px var(--primary),0 0 24px rgba(251,191,36,.2)}}
@@ -63,13 +63,13 @@
     @keyframes dashOffset{to{stroke-dashoffset:0}}
 
     /* ═══ REVEAL SYSTEM ═══ */
-    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 1.2s cubic-bezier(.23,1,.32,1),transform 1.2s cubic-bezier(.23,1,.32,1)}
     .reveal.visible{opacity:1;transform:translateY(0)}
-    .reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
+    .reveal-left{opacity:0;transform:translateX(-30px);transition:opacity 1.2s cubic-bezier(.23,1,.32,1),transform 1.2s cubic-bezier(.23,1,.32,1)}
     .reveal-left.visible{opacity:1;transform:translateX(0)}
-    .reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
+    .reveal-right{opacity:0;transform:translateX(30px);transition:opacity 1.2s cubic-bezier(.23,1,.32,1),transform 1.2s cubic-bezier(.23,1,.32,1)}
     .reveal-right.visible{opacity:1;transform:translateX(0)}
-    .reveal-scale{opacity:0;transform:scale(.9);transition:opacity .6s ease,transform .6s ease}
+    .reveal-scale{opacity:0;transform:scale(.9);transition:opacity 1s ease,transform 1s ease}
     .reveal-scale.visible{opacity:1;transform:scale(1)}
 
     /* ═══ LAYOUT ═══ */
@@ -90,7 +90,7 @@
     .quote-deco{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.5rem}
     .quote-line{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--primary));opacity:.5}
     .quote-line:last-child{background:linear-gradient(90deg,var(--primary),transparent)}
-    .quote-icon{width:48px;height:48px;border-radius:50%;background:var(--primary-dim);border:1px solid rgba(251,191,36,.2);display:flex;align-items:center;justify-content:center;color:var(--primary);animation:float 10s ease-in-out infinite}
+    .quote-icon{width:48px;height:48px;border-radius:50%;background:var(--primary-dim);border:1px solid rgba(251,191,36,.2);display:flex;align-items:center;justify-content:center;color:var(--primary);animation:float 20s ease-in-out infinite}
     .quote-icon svg{width:24px;height:24px}
     .quote-text{font-family:var(--font-serif);font-size:clamp(1.15rem,2.5vw,1.45rem);color:var(--fg);line-height:1.8;font-weight:500;letter-spacing:.01em}
     .quote-text .q-highlight{color:var(--primary);font-weight:600}
@@ -129,9 +129,9 @@
     .hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 60%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 60%,transparent 100%)}
     .hero-layout{display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center;position:relative;z-index:1}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:99px;background:var(--primary-dim);border:1px solid rgba(251,191,36,.25);font-family:var(--font-mono);font-size:.75rem;color:var(--primary);margin-bottom:1.5rem;animation:fadeUp .5s ease both}
-    .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px var(--primary),0 0 16px rgba(251,191,36,.3);animation:pulse 4s ease-in-out infinite}
+    .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px var(--primary),0 0 16px rgba(251,191,36,.3);animation:pulse 6s ease-in-out infinite}
     .hero-name{font-size:clamp(2.8rem,6.5vw,5.5rem);font-family:var(--font-serif);font-weight:600;line-height:.92;animation:fadeUp .6s .1s ease both}
-    .hero-name .accent{background:linear-gradient(135deg,var(--primary) 0%,#fde68a 50%,var(--primary) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 10s linear infinite}
+    .hero-name .accent{background:linear-gradient(135deg,var(--primary) 0%,#fde68a 50%,var(--primary) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 20s linear infinite}
     .hero-title{font-family:var(--font-mono);font-size:.95rem;color:var(--fg-muted);margin-top:1rem;animation:fadeUp .5s .2s ease both}
     .hero-location{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.8rem;color:var(--fg-muted);margin-top:.75rem;animation:fadeUp .5s .25s ease both}
     .hero-location svg{color:var(--primary);flex-shrink:0}
@@ -155,9 +155,9 @@
     .orbit-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
     .orbit-photo-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--card),var(--bg2));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:3.5rem;font-weight:700;color:var(--primary)}
     .orbit-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(251,191,36,.1)}
-    .orbit-ring-1{width:240px;height:240px;margin:-120px 0 0 -120px;animation:spin 90s linear infinite}
-    .orbit-ring-2{width:320px;height:320px;margin:-160px 0 0 -160px;animation:spinReverse 120s linear infinite;border-style:dashed;border-color:rgba(251,191,36,.08)}
-    .orbit-ring-3{width:380px;height:380px;margin:-190px 0 0 -190px;animation:spin 150s linear infinite;border-color:rgba(251,191,36,.05)}
+    .orbit-ring-1{width:240px;height:240px;margin:-120px 0 0 -120px;animation:spin 200s linear infinite}
+    .orbit-ring-2{width:320px;height:320px;margin:-160px 0 0 -160px;animation:spinReverse 280s linear infinite;border-style:dashed;border-color:rgba(251,191,36,.08)}
+    .orbit-ring-3{width:380px;height:380px;margin:-190px 0 0 -190px;animation:spin 360s linear infinite;border-color:rgba(251,191,36,.05)}
     .orbit-node{position:absolute;width:42px;height:42px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--primary);box-shadow:0 4px 12px rgba(0,0,0,.3);transition:all .3s}
     .orbit-node:hover{transform:scale(1.2);border-color:var(--primary);box-shadow:0 0 20px rgba(251,191,36,.3)}
     .orbit-node svg{width:18px;height:18px}
@@ -175,10 +175,10 @@
     /* ═══ FLOATING DECORATIONS ═══ */
     .float-icon{position:absolute;color:rgba(251,191,36,.08);pointer-events:none;z-index:0}
     .float-icon svg{width:100%;height:100%}
-    .fi-1{width:60px;height:60px;top:20%;right:8%;animation:float 14s ease-in-out infinite}
-    .fi-2{width:45px;height:45px;bottom:25%;left:5%;animation:float2 16s ease-in-out infinite}
-    .fi-3{width:50px;height:50px;top:15%;left:10%;animation:float3 18s ease-in-out infinite}
-    .fi-4{width:40px;height:40px;bottom:15%;right:12%;animation:float 12s ease-in-out infinite 1s}
+    .fi-1{width:60px;height:60px;top:20%;right:8%;animation:float 28s ease-in-out infinite}
+    .fi-2{width:45px;height:45px;bottom:25%;left:5%;animation:float2 32s ease-in-out infinite}
+    .fi-3{width:50px;height:50px;top:15%;left:10%;animation:float3 35s ease-in-out infinite}
+    .fi-4{width:40px;height:40px;bottom:15%;right:12%;animation:float 25s ease-in-out infinite 2s}
 
     /* ═══ SUB HEADINGS ═══ */
     .sub-heading-wrap{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;color:var(--primary)}
@@ -199,7 +199,7 @@
     .timeline{border-left:2px solid var(--border);margin-left:20px;padding-left:30px;position:relative}
     .timeline::before{content:'';position:absolute;left:-2px;top:0;width:2px;height:100%;background:linear-gradient(180deg,var(--primary),var(--primary) 20%,var(--border) 60%)}
     .tl-item{margin-bottom:2.5rem;position:relative}
-    .tl-dot{position:absolute;left:-40px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--primary);border:4px solid var(--bg);animation:glowPulse 6s ease-in-out infinite;z-index:2}
+    .tl-dot{position:absolute;left:-40px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--primary);border:4px solid var(--bg);animation:glowPulse 10s ease-in-out infinite;z-index:2}
     .tl-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:.3s}
     .tl-card:hover{border-color:var(--primary);transform:translateX(6px);box-shadow:var(--shadow-glow)}
     .tl-role{font-size:1.05rem;font-weight:700;color:var(--fg);display:flex;align-items:center;gap:8px}
@@ -286,7 +286,7 @@
     .footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:.8rem;color:var(--fg-muted)}
     .footer a{color:var(--primary)}
     #back-top{position:fixed;bottom:2rem;right:2rem;z-index:50;width:46px;height:46px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--primary);opacity:0;pointer-events:none;transition:.3s}
-    #back-top.visible{opacity:1;pointer-events:auto;animation:float 6s ease-in-out infinite}
+    #back-top.visible{opacity:1;pointer-events:auto;animation:float 10s ease-in-out infinite}
     #back-top:hover{border-color:var(--primary);background:var(--primary-dim);animation:none;transform:translateY(-3px)}
 
     /* ═══ RESPONSIVE ═══ */
@@ -387,10 +387,11 @@
         <div>
           <div class="hero-orbit">
             <!-- Photo in center -->
-            <div class="orbit-photo">
-              <!-- Replace src with your photo: <img src="photo.jpg" alt="Mostafa Elsawahly"> -->
-              <div class="orbit-photo-placeholder">ME</div>
-            </div>
+            <a href="https://wa.me/201032598976" target="_blank" rel="noopener" class="orbit-photo" style="background: #25D366; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+              <svg viewBox="0 0 24 24" width="70" height="70" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+              </svg>
+            </a>
             <!-- Ring 1: Data Analytics icons -->
             <div class="orbit-ring orbit-ring-1">
               <!-- Bar Chart (Data) -->
