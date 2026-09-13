@@ -80,12 +80,14 @@
     .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary),#fde68a,var(--primary));z-index:200;width:0%;transition:width 50ms linear;box-shadow:0 0 10px var(--primary)}
 
     /* ═══ PRELOADER ═══ */
-    #preloader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .5s ease,visibility .5s ease}
+    #preloader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .5s ease,visibility .5s ease}
     #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
     .preloader-logo{font-family:var(--font-mono);font-weight:700;font-size:1.8rem;color:var(--fg);letter-spacing:.02em}
     .preloader-logo em{font-style:normal;color:var(--primary)}
+    .preloader-count{font-family:var(--font-mono);font-weight:800;font-size:2.6rem;color:var(--primary);letter-spacing:.05em;min-width:2ch;text-align:center}
+    .preloader-label{font-family:var(--font-mono);font-size:.72rem;color:var(--fg-muted);letter-spacing:.15em;text-transform:uppercase;margin-top:-10px}
     .preloader-bar{width:160px;height:2px;background:var(--border);border-radius:2px;overflow:hidden}
-    .preloader-bar-fill{height:100%;width:0;background:var(--primary);animation:preloaderFill 1s ease forwards}
+    .preloader-bar-fill{height:100%;width:0;background:var(--primary);animation:preloaderFill 3s linear forwards}
     @keyframes preloaderFill{to{width:100%}}
 
     /* ═══ SPOTLIGHT ═══ */
@@ -420,6 +422,8 @@
   <!-- PRELOADER -->
   <div id="preloader">
     <div class="preloader-logo">ME<em>.</em></div>
+    <div class="preloader-count" id="preloaderCount">3</div>
+    <div class="preloader-label">Loading</div>
     <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
   </div>
 
@@ -853,11 +857,24 @@
     updateClock();
     setInterval(updateClock,1000);
 
-    /* Preloader */
-    window.addEventListener('load',function(){
+    /* Preloader: fixed 5-second countdown */
+    (function(){
       var pre=document.getElementById('preloader');
-      setTimeout(function(){if(pre)pre.classList.add('hidden')},500);
-    });
+      var countEl=document.getElementById('preloaderCount');
+      if(!pre)return;
+      document.body.style.overflow='hidden';
+      var secondsLeft=3;
+      if(countEl)countEl.textContent=secondsLeft;
+      var countdown=setInterval(function(){
+        secondsLeft--;
+        if(countEl)countEl.textContent=Math.max(secondsLeft,0);
+        if(secondsLeft<=0){
+          clearInterval(countdown);
+          pre.classList.add('hidden');
+          document.body.style.overflow='';
+        }
+      },1000);
+    })();
 
     /* Theme toggle */
     function setThemeColorMeta(isLight){
