@@ -153,7 +153,7 @@
 
     /* ═══ ORBIT (PHOTO + ICONS) ═══ */
     .hero-orbit{position:relative;width:380px;height:380px;animation:scaleIn .8s .3s ease both}
-    .orbit-photo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;height:160px;border-radius:50%;border:3px solid var(--primary);overflow:hidden;z-index:10;box-shadow:0 0 30px rgba(251,191,36,.2),0 0 60px rgba(251,191,36,.1)}
+    .orbit-photo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;height:160px;border-radius:50%;border:3px solid var(--primary);overflow:hidden;z-index:10;box-shadow:0 0 30px rgba(251,191,36,.2),0 0 60px rgba(251,191,36,.1);transition:transform .2s ease-out}
     .orbit-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
     .orbit-photo-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--card),var(--bg2));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:3.5rem;font-weight:700;color:var(--primary)}
     .orbit-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(251,191,36,.1)}
@@ -185,6 +185,13 @@
     .fi-2{width:45px;height:45px;bottom:25%;left:5%;animation:float2 16s ease-in-out infinite}
     .fi-3{width:50px;height:50px;top:15%;left:10%;animation:float3 18s ease-in-out infinite}
     .fi-4{width:40px;height:40px;bottom:15%;right:12%;animation:float 12s ease-in-out infinite 1s}
+
+    /* ═══ SCROLL CUE ═══ */
+    .scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--fg-muted);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;z-index:2;background:none;border:none;padding:0;animation:fadeIn 1s 1.2s ease both;transition:color .3s}
+    .scroll-cue:hover{color:var(--primary)}
+    .scroll-cue svg{width:16px;height:16px;color:var(--primary);animation:scrollBounce 2s ease-in-out infinite}
+    @keyframes scrollBounce{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(6px);opacity:1}}
+    @media(max-width:900px){.scroll-cue{display:none}}
 
     /* ═══ SUB HEADINGS ═══ */
     .sub-heading-wrap{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;color:var(--primary)}
@@ -258,6 +265,9 @@
     .project-tags{display:flex;gap:8px;flex-wrap:wrap}
     .project-tag{font-family:var(--font-mono);font-size:.72rem;padding:4px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--fg-muted);transition:all .3s}
     .project-card:hover .project-tag{border-color:rgba(251,191,36,.2)}
+    .project-cta{display:flex;align-items:center;gap:6px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--primary)}
+    .project-cta svg{width:14px;height:14px;transition:transform .3s cubic-bezier(.23,1,.32,1)}
+    .project-card:hover .project-cta svg{transform:translateX(4px)}
 
     /* ═══ CERTIFICATIONS ═══ */
     .certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
@@ -279,6 +289,12 @@
     .contact-desc{font-size:1rem;color:var(--fg-muted);line-height:1.8;max-width:500px;margin:0 auto 3rem}
     .contact-email-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:99px;background:var(--primary-dim);border:1px solid rgba(251,191,36,.25);font-family:var(--font-mono);font-size:.85rem;color:var(--primary);margin-bottom:2rem;transition:all var(--transition-fast)}
     .contact-email-pill:hover{background:rgba(251,191,36,.2);border-color:rgba(251,191,36,.5);transform:translateY(-2px);box-shadow:0 4px 16px rgba(251,191,36,.15)}
+    .contact-email-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:2rem;flex-wrap:wrap}
+    .contact-email-row .contact-email-pill{margin-bottom:0}
+    .copy-email-btn{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--card);border:1px solid var(--border);color:var(--fg-muted);cursor:pointer;transition:all var(--transition-fast)}
+    .copy-email-btn:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-dim);transform:translateY(-2px)}
+    .copy-email-btn svg{width:16px;height:16px}
+    .copy-email-btn.copied{color:#4ade80;border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.1)}
     .contact-cta-row{display:flex;align-items:center;justify-content:center;margin-bottom:4rem}
     .contact-socials{display:flex;align-items:center;justify-content:center;gap:2.5rem;padding-top:3rem;border-top:1px solid var(--border)}
     .contact-social{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--fg-muted);transition:color var(--transition-fast)}
@@ -437,6 +453,10 @@
         </div>
       </div>
     </div>
+    <button class="scroll-cue" onclick="navScrollTo('#experience')" aria-label="Scroll down">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
   </section>
 
   <!-- ═══ HERITAGE QUOTE ═══ -->
@@ -563,18 +583,21 @@
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jun 2026</div>
           <p class="project-desc">Developed an interactive Power BI dashboard to analyze call center performance. Built KPI measures to track 2M calls handled, 90% efficiency, 91% service level. Applied data modeling and DAX.</p>
           <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">DAX</span><span class="project-tag">Data Modeling</span></div>
+          <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/Dynamic-Dashboard/blob/main/Dynamic%20Dashboard.html" target="_blank" rel="noopener" class="project-card reveal-scale">
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3 class="project-title">Dynamic Data Dashboard</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>May 2026</div>
           <p class="project-desc">Dynamic dashboard transforming raw CSV/Excel into insights. Automated parsing, data-type detection, KPI visualizations, trend analysis, and AI-generated insights for bottlenecks.</p>
           <div class="project-tags"><span class="project-tag">Data Visualization</span><span class="project-tag">AI Integration</span><span class="project-tag">Excel/CSV</span></div>
+          <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/-Electronics-Retail-Executive-Dashboard" target="_blank" rel="noopener" class="project-card reveal-scale">
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><h3 class="project-title">Electronics Retail Executive Dashboard</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mar – Apr 2026</div>
           <p class="project-desc">End-to-end Power BI dashboard for electronics sales. Built Star Schema, DAX measures for AOV, ARPC, return rates. Identified 17% return rate and high-value customer segments.</p>
           <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">Power Query</span><span class="project-tag">Star Schema</span></div>
+          <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <div class="project-card reveal-scale">
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3 class="project-title">Workflow Automation (Digitera)</h3></div>
@@ -618,7 +641,12 @@
       <div class="contact-kicker">05. What's Next?</div>
       <h2 class="contact-heading">Get In Touch</h2>
       <p class="contact-desc">I'm currently looking for new opportunities to apply my data analytics and financial skills. Whether you have a question, a project, or just want to say hi — I'll try my best to get back to you!</p>
-      <a href="mailto:mostafasamerwork@gmail.com" class="contact-email-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>mostafasamerwork@gmail.com</a>
+      <div class="contact-email-row">
+        <a href="mailto:mostafasamerwork@gmail.com" class="contact-email-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>mostafasamerwork@gmail.com</a>
+        <button type="button" class="copy-email-btn" onclick="copyEmail(this)" aria-label="Copy email address">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
       <div class="contact-cta-row"><a href="mailto:mostafasamerwork@gmail.com" class="btn btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Say Hello</a></div>
       <div class="contact-socials">
         <a href="https://www.linkedin.com/in/mostafa-elsawahly" target="_blank" rel="noopener" class="contact-social" aria-label="LinkedIn"><div class="contact-social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><span>LinkedIn</span></a>
@@ -686,6 +714,32 @@
     }
 
     window.addEventListener('resize',function(){if(window.innerWidth>900&&menuOpen)closeMenu()});
+
+    /* Copy email */
+    function copyEmail(btn){
+      var email='mostafasamerwork@gmail.com';
+      navigator.clipboard.writeText(email).then(function(){
+        var original=btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
+        setTimeout(function(){btn.classList.remove('copied');btn.innerHTML=original},1600);
+      }).catch(function(){});
+    }
+
+    /* Photo tilt on mouse move */
+    var heroOrbit=document.querySelector('.hero-orbit'),orbitPhoto=document.querySelector('.orbit-photo');
+    if(heroOrbit&&orbitPhoto&&window.matchMedia('(hover: hover)').matches){
+      heroOrbit.addEventListener('mousemove',function(e){
+        var rect=heroOrbit.getBoundingClientRect();
+        var x=((e.clientX-rect.left)/rect.width-0.5)*2;
+        var y=((e.clientY-rect.top)/rect.height-0.5)*2;
+        var maxShift=9;
+        orbitPhoto.style.transform='translate(calc(-50% + '+(x*maxShift).toFixed(1)+'px), calc(-50% + '+(y*maxShift).toFixed(1)+'px))';
+      });
+      heroOrbit.addEventListener('mouseleave',function(){
+        orbitPhoto.style.transform='translate(-50%, -50%)';
+      });
+    }
   </script>
 </body>
 </html>
