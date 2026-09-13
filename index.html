@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mostafa Elsawahly | Data Analyst &amp; Business Intelligence</title>
@@ -12,8 +15,42 @@
   <meta property="og:description" content="Data-driven undergraduate specializing in Business Intelligence and Data Analytics. Proficient in Python, SQL, Power BI, and data visualization." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="photo.jpg" />
+  <meta property="og:image:width" content="1254" />
+  <meta property="og:image:height" content="1254" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mostafa Elsawahly | Data Analyst &amp; Business Intelligence" />
+  <meta name="twitter:description" content="Data-driven undergraduate specializing in Business Intelligence and Data Analytics. Proficient in Python, SQL, Power BI, and data visualization." />
+  <meta name="twitter:image" content="photo.jpg" />
   <meta name="theme-color" content="#050505" />
+  <link rel="apple-touch-icon" href="photo.jpg" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050505'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='48' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3EME%3C/text%3E%3Ccircle cx='82' cy='60' r='5' fill='%23fbbf24'/%3E%3C/svg%3E" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mostafa Elsawahly",
+    "jobTitle": "Junior Data Analyst",
+    "url": "https://github.com/mostafa-elsawahly",
+    "image": "photo.jpg",
+    "email": "mailto:mostafasamerwork@gmail.com",
+    "telephone": "+201032598976",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Alexandria",
+      "addressCountry": "EG"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/mostafa-elsawahly",
+      "https://github.com/mostafa-elsawahly"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Science Valley Academy"
+    },
+    "knowsAbout": ["Data Analytics", "Business Intelligence", "Power BI", "SQL", "Python", "DAX", "Data Visualization"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,7 +61,11 @@
     gtag('js',new Date());gtag('config','G-H1JTLGSC04');
   </script>
   <style>
-    :root{--bg:#050505;--bg2:#0b0b0b;--card:#101010;--border:#1a2540;--border-hover:rgba(251,191,36,.35);--primary:#fbbf24;--primary-dim:rgba(251,191,36,.12);--primary-glow:rgba(251,191,36,.08);--fg:#e8edf5;--fg-muted:#7a92b4;--fg-subtle:#3d5278;--radius:14px;--font-sans:'Syne',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--font-serif:'Cormorant Garamond',serif;--transition-fast:.2s ease;--shadow-card:0 4px 24px rgba(0,0,0,.2);--shadow-glow:0 12px 32px rgba(251,191,36,.1)}
+    :root{--bg:#050505;--bg2:#0b0b0b;--card:#101010;--border:#1a2540;--border-hover:rgba(251,191,36,.35);--primary:#fbbf24;--primary-dim:rgba(251,191,36,.12);--primary-glow:rgba(251,191,36,.08);--fg:#e8edf5;--fg-muted:#7a92b4;--fg-subtle:#3d5278;--radius:14px;--font-sans:'Syne',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--font-serif:'Cormorant Garamond',serif;--transition-fast:.2s ease;--shadow-card:0 4px 24px rgba(0,0,0,.2);--shadow-glow:0 12px 32px rgba(251,191,36,.1);--surface-veil:rgba(255,255,255,.04);--divider-soft:rgba(255,255,255,.07);--nav-bg:rgba(5,5,5,.92);--nav-bg-strong:rgba(5,5,5,.98);--grid-line:rgba(255,255,255,.02);--noise-opacity:.35}
+    :root[data-theme="light"]{--bg:#f7f5f0;--bg2:#ffffff;--card:#ffffff;--border:#e6e0d4;--border-hover:rgba(184,134,11,.35);--primary:#b8860b;--primary-dim:rgba(184,134,11,.1);--primary-glow:rgba(184,134,11,.06);--fg:#20201d;--fg-muted:#6b6459;--fg-subtle:#a39c8f;--shadow-card:0 4px 24px rgba(0,0,0,.06);--shadow-glow:0 12px 32px rgba(184,134,11,.12);--surface-veil:rgba(0,0,0,.035);--divider-soft:rgba(0,0,0,.08);--nav-bg:rgba(247,245,240,.92);--nav-bg-strong:rgba(247,245,240,.98);--grid-line:rgba(0,0,0,.025);--noise-opacity:.15}
+    :root[data-theme="light"] .hero-name .accent{background:linear-gradient(135deg,var(--primary) 0%,#8a6508 50%,var(--primary) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    :root[data-theme="light"] .btn-primary{color:#fff}
+    :root[data-theme="light"] .orbit-photo-placeholder{background:linear-gradient(135deg,var(--card),var(--bg2))}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;scroll-padding-top:80px}
     body{font-family:var(--font-sans);background:var(--bg);color:var(--fg);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -38,8 +79,32 @@
     /* ═══ SCROLL PROGRESS BAR ═══ */
     .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary),#fde68a,var(--primary));z-index:200;width:0%;transition:width 50ms linear;box-shadow:0 0 10px var(--primary)}
 
+    /* ═══ PRELOADER ═══ */
+    #preloader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .5s ease,visibility .5s ease}
+    #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .preloader-logo{font-family:var(--font-mono);font-weight:700;font-size:1.8rem;color:var(--fg);letter-spacing:.02em}
+    .preloader-logo em{font-style:normal;color:var(--primary)}
+    .preloader-bar{width:160px;height:2px;background:var(--border);border-radius:2px;overflow:hidden}
+    .preloader-bar-fill{height:100%;width:0;background:var(--primary);animation:preloaderFill 1s ease forwards}
+    @keyframes preloaderFill{to{width:100%}}
+
+    /* ═══ SPOTLIGHT ═══ */
+    .spotlight{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,20%),var(--primary-glow),transparent 45%)}
+
+    /* ═══ THEME TOGGLE ═══ */
+    .theme-toggle{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--fg-muted);cursor:pointer;transition:all var(--transition-fast);margin-right:10px;flex-shrink:0}
+    .theme-toggle:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-dim)}
+    .theme-toggle svg{width:18px;height:18px}
+    .theme-toggle .icon-sun{display:none}
+    :root[data-theme="light"] .theme-toggle .icon-sun{display:block}
+    :root[data-theme="light"] .theme-toggle .icon-moon{display:none}
+    .nav-right{display:flex;align-items:center}
+
+    /* ═══ TYPE CURSOR ═══ */
+    .type-cursor{display:inline-block;margin-left:2px;color:var(--primary);animation:blink .8s step-end infinite}
+
     /* ═══ NOISE TEXTURE ═══ */
-    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");opacity:.35}
+    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");opacity:var(--noise-opacity)}
 
     /* ═══ KEYFRAMES ═══ */
     @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
@@ -102,7 +167,7 @@
 
     /* ═══ NAVIGATION ═══ */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4rem);border-bottom:1px solid transparent;transition:all .3s ease;animation:fadeIn .6s ease both}
-    nav.scrolled{background:rgba(5,5,5,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--border);box-shadow:0 2px 24px rgba(0,0,0,.3)}
+    nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--border);box-shadow:0 2px 24px rgba(0,0,0,.3)}
     .nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-weight:700;font-size:1.1rem;cursor:pointer}
     .nav-logo-icon{background:var(--primary-dim);border:1px solid rgba(251,191,36,.2);border-radius:10px;padding:7px;color:var(--primary);display:flex;align-items:center;transition:all var(--transition-fast);animation:borderGlow 5s ease-in-out infinite}
     .nav-logo:hover .nav-logo-icon{background:rgba(251,191,36,.2);transform:rotate(5deg)}
@@ -118,7 +183,7 @@
     .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
     .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(5,5,5,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.5rem clamp(1.5rem,5vw,4rem);flex-direction:column;gap:.5rem;z-index:99}
+    .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--nav-bg-strong);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.5rem clamp(1.5rem,5vw,4rem);flex-direction:column;gap:.5rem;z-index:99}
     .mobile-menu.open{display:flex}
     .mobile-menu a{font-family:var(--font-mono);font-size:.9rem;color:var(--fg-muted);padding:.75rem 0;border-bottom:1px solid rgba(30,45,72,.5);cursor:pointer;transition:color var(--transition-fast),padding-left var(--transition-fast)}
     .mobile-menu a:hover{color:var(--primary);padding-left:8px}
@@ -127,7 +192,7 @@
     /* ═══ HERO ═══ */
     #about{min-height:100dvh;display:flex;align-items:center;padding-top:100px;position:relative;overflow:hidden}
     .hero-radial{position:absolute;top:-15%;right:-15%;width:60%;height:70%;background:radial-gradient(circle,rgba(251,191,36,.06) 0%,transparent 70%);pointer-events:none;animation:fadeIn 2s ease both}
-    .hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 60%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 60%,transparent 100%)}
+    .hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 60%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 60%,transparent 100%)}
     .hero-layout{display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center;position:relative;z-index:1}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:99px;background:var(--primary-dim);border:1px solid rgba(251,191,36,.25);font-family:var(--font-mono);font-size:.75rem;color:var(--primary);margin-bottom:1.5rem;animation:fadeUp .5s ease both}
     .hero-badge-dot{position:relative;width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px var(--primary),0 0 16px rgba(251,191,36,.3);animation:pulse 4s ease-in-out infinite}
@@ -137,6 +202,9 @@
     .hero-title{font-family:var(--font-mono);font-size:.95rem;color:var(--fg-muted);margin-top:1rem;animation:fadeUp .5s .2s ease both}
     .hero-location{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.8rem;color:var(--fg-muted);margin-top:.75rem;animation:fadeUp .5s .25s ease both}
     .hero-location svg{color:var(--primary);flex-shrink:0}
+    .hero-clock{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.78rem;color:var(--fg-subtle);margin-top:.4rem;animation:fadeUp .5s .28s ease both}
+    .hero-clock svg{color:var(--primary);flex-shrink:0}
+    .hero-clock .dot-live{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px #4ade80;animation:pulse 2s ease-in-out infinite;flex-shrink:0}
     .hero-desc{font-size:1rem;color:var(--fg-muted);max-width:540px;margin-top:1.5rem;line-height:1.75;animation:fadeUp .5s .3s ease both}
     .hero-buttons{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;animation:fadeUp .5s .4s ease both}
     .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.85rem;font-weight:700;padding:11px 22px;border-radius:10px;cursor:pointer;transition:all var(--transition-fast)}
@@ -146,7 +214,7 @@
     .btn-outline{background:transparent;color:var(--fg);border:1px solid var(--border)}
     .btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px);box-shadow:0 4px 16px rgba(251,191,36,.08)}
     .btn-outline:active{transform:translateY(0) scale(.97)}
-    .hero-socials{display:flex;align-items:center;gap:.75rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07);animation:fadeUp .5s .5s ease both}
+    .hero-socials{display:flex;align-items:center;gap:.75rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--divider-soft);animation:fadeUp .5s .5s ease both}
     .social-link{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--border);color:var(--fg-muted);transition:all var(--transition-fast)}
     .social-link:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-dim);transform:translateY(-3px) rotate(5deg)}
     .social-link svg{width:18px;height:18px}
@@ -237,8 +305,14 @@
     .skill-card:hover .skill-icon{background:var(--primary);color:#000;transform:scale(1.1) rotate(5deg);box-shadow:0 4px 16px rgba(251,191,36,.3)}
     .skill-card-title{font-family:var(--font-mono);font-size:.9rem;font-weight:700}
     .skill-tags{display:flex;flex-wrap:wrap;gap:7px}
-    .skill-tag{padding:5px 12px;border-radius:7px;background:rgba(255,255,255,.04);border:1px solid var(--border);font-size:.78rem;color:var(--fg-muted);transition:all .3s}
+    .skill-tag{padding:5px 12px;border-radius:7px;background:var(--surface-veil);border:1px solid var(--border);font-size:.78rem;color:var(--fg-muted);transition:all .3s}
     .skill-card:hover .skill-tag{border-color:rgba(251,191,36,.2);color:var(--fg)}
+    .skill-bars{display:flex;flex-direction:column;gap:13px}
+    .skill-bar-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--fg-muted);margin-bottom:5px;font-family:var(--font-mono)}
+    .skill-bar-label span:last-child{color:var(--primary);font-weight:700;font-size:.72rem}
+    .skill-bar-track{width:100%;height:6px;border-radius:99px;background:var(--surface-veil);border:1px solid var(--border);overflow:hidden}
+    .skill-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--primary),#fde68a);width:0;transition:width 1.3s cubic-bezier(.23,1,.32,1) .1s}
+    .skill-card.visible .skill-bar-fill{width:var(--w)}
     .skills-extra{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.25rem}
     .skills-extra-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .25s,transform .3s}
     .skills-extra-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
@@ -343,6 +417,15 @@
   </style>
 </head>
 <body>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-logo">ME<em>.</em></div>
+    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+  </div>
+
+  <!-- SPOTLIGHT -->
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
   <!-- SCROLL PROGRESS -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -363,7 +446,13 @@
         <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </div>
-      <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
     </nav>
   </header>
   <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
@@ -390,7 +479,11 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Alexandria, Egypt
           </div>
-          <p class="hero-desc">Data-driven third-year undergraduate in Banking &amp; Investment Sciences, specializing in Business Intelligence and Data Analytics. Proven track record of transforming complex sales and customer datasets into actionable business insights using Python, SQL, and Power BI.</p>
+          <div class="hero-clock" id="heroClock">
+            <span class="dot-live" aria-hidden="true"></span>
+            <span id="clockTime">--:--:-- --</span> local time
+          </div>
+          <p class="hero-desc" id="heroDesc">Data-driven third-year undergraduate in Banking &amp; Investment Sciences, specializing in Business Intelligence and Data Analytics. Proven track record of transforming complex sales and customer datasets into actionable business insights using Python, SQL, and Power BI.</p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary" onclick="event.preventDefault();navScrollTo('#projects')">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -413,7 +506,7 @@
           <div class="hero-orbit">
             <!-- Photo in center -->
             <div class="orbit-photo">
-              <img src="photo.jpg" alt="Mostafa Elsawahly">
+              <img src="photo.jpg" alt="Mostafa Elsawahly" loading="eager" fetchpriority="high" decoding="async">
             </div>
             <!-- Ring 1: Data Analytics icons -->
             <div class="orbit-ring orbit-ring-1">
@@ -553,12 +646,45 @@
         <div class="section-divider"></div>
       </div>
       <div class="skills-grid">
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="skill-card-title">Data Analytics</div></div><div class="skill-tags"><span class="skill-tag">Data Cleaning</span><span class="skill-tag">Data Transformation</span><span class="skill-tag">EDA</span><span class="skill-tag">KPI Analysis</span><span class="skill-tag">Data Modeling</span></div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-4"/></svg></div><div class="skill-card-title">Business Intelligence</div></div><div class="skill-tags"><span class="skill-tag">Dashboard Development</span><span class="skill-tag">Data Visualization</span><span class="skill-tag">Business Reporting</span><span class="skill-tag">Looker Studio</span></div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="skill-card-title">Data &amp; Querying</div></div><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Python</span><span class="skill-tag">Excel</span><span class="skill-tag">CSV Data Processing</span></div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="skill-card-title">Power BI</div></div><div class="skill-tags"><span class="skill-tag">DAX</span><span class="skill-tag">Power Query</span><span class="skill-tag">Data Modeling</span><span class="skill-tag">Star Schema</span></div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div><div class="skill-card-title">Cloud &amp; Technology</div></div><div class="skill-tags"><span class="skill-tag">Huawei Cloud</span><span class="skill-tag">Cloud Computing</span><span class="skill-tag">Cloud Infrastructure</span></div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="skill-card-title">AI &amp; Automation</div></div><div class="skill-tags"><span class="skill-tag">Generative AI</span><span class="skill-tag">ChatGPT</span><span class="skill-tag">Canva AI</span><span class="skill-tag">Zapier</span><span class="skill-tag">Notion</span><span class="skill-tag">Trello</span><span class="skill-tag">Google Workspace</span></div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="skill-card-title">Data Analytics</div></div><div class="skill-bars">
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Cleaning</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Transformation</span><span>82%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:82%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>EDA</span><span>78%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:78%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>KPI Analysis</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Modeling</span><span>75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:75%"></div></div></div>
+        </div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-4"/></svg></div><div class="skill-card-title">Business Intelligence</div></div><div class="skill-bars">
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Dashboard Development</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Visualization</span><span>88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Business Reporting</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Looker Studio</span><span>65%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:65%"></div></div></div>
+        </div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="skill-card-title">Data &amp; Querying</div></div><div class="skill-bars">
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>SQL</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Python</span><span>70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:70%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Excel</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>CSV Data Processing</span><span>82%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:82%"></div></div></div>
+        </div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="skill-card-title">Power BI</div></div><div class="skill-bars">
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>DAX</span><span>78%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:78%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Power Query</span><span>82%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:82%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Modeling</span><span>75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:75%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Star Schema</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
+        </div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div><div class="skill-card-title">Cloud &amp; Technology</div></div><div class="skill-bars">
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Huawei Cloud</span><span>60%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:60%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Cloud Computing</span><span>58%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:58%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Cloud Infrastructure</span><span>55%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:55%"></div></div></div>
+        </div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="skill-card-title">AI &amp; Automation</div></div><div class="skill-bars">
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Generative AI</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>ChatGPT</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Canva AI</span><span>75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:75%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Zapier</span><span>70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:70%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Notion</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Trello</span><span>78%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:78%"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Google Workspace</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
+        </div></div>
       </div>
       <div class="skills-extra reveal">
         <div class="skills-extra-card"><div class="skills-extra-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Soft Skills</div><ul class="skills-extra-list"><li>Technical Documentation</li><li>Presentation Skills</li><li>Communication</li></ul></div>
@@ -620,14 +746,14 @@
         <div class="section-divider"></div>
       </div>
       <div class="certs-grid">
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="Data-Fundamentals.jpg" alt="Data Fundamentals"></div><div class="cert-title">Data Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Aug 2026</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="powerbi-dashboard-certificate.jpg" alt="Power BI Dashboard"></div><div class="cert-title">Power BI Dashboard (Beginner Level)</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Creativa Hub Alexandria</div><div class="cert-date">Issued Jun 2026 · 24 Hours</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="datacamp-sql.jpg" alt="Intro to SQL"></div><div class="cert-title">Introduction to SQL</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DataCamp</div><div class="cert-date">Issued Jun 2026</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="huawei.jpg" alt="Huawei Cloud"></div><div class="cert-title">Huawei Cloud Developer – HCCDA</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Huawei</div><div class="cert-date">Issued Feb 2026 · Valid Until Feb 2029</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="ibm-ai.jpg" alt="AI Fundamentals"></div><div class="cert-title">Artificial Intelligence Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Jan 2026 · +10 Hours</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="digitera.jpg" alt="Digitera"></div><div class="cert-title">Digitera – Tech for Non-Techies</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>iCareer</div><div class="cert-date">Issued Dec 2025</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="google-data-analytics.jpg" alt="Google Data Analytics"></div><div class="cert-title">Google Data Analytics Professional</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera &amp; Google</div><div class="cert-date">Issued Dec 2025 · 6 Months</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="coursera-l1.jpg" alt="Data Analyst L1"></div><div class="cert-title">Data Analyst L1</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera</div><div class="cert-date">No Expiration Date</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="Data-Fundamentals.jpg" alt="Data Fundamentals" loading="lazy" decoding="async"></div><div class="cert-title">Data Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Aug 2026</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="powerbi-dashboard-certificate.jpg" alt="Power BI Dashboard" loading="lazy" decoding="async"></div><div class="cert-title">Power BI Dashboard (Beginner Level)</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Creativa Hub Alexandria</div><div class="cert-date">Issued Jun 2026 · 24 Hours</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="datacamp-sql.jpg" alt="Intro to SQL" loading="lazy" decoding="async"></div><div class="cert-title">Introduction to SQL</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DataCamp</div><div class="cert-date">Issued Jun 2026</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="huawei.jpg" alt="Huawei Cloud" loading="lazy" decoding="async"></div><div class="cert-title">Huawei Cloud Developer – HCCDA</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Huawei</div><div class="cert-date">Issued Feb 2026 · Valid Until Feb 2029</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="ibm-ai.jpg" alt="AI Fundamentals" loading="lazy" decoding="async"></div><div class="cert-title">Artificial Intelligence Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Jan 2026 · +10 Hours</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="digitera.jpg" alt="Digitera" loading="lazy" decoding="async"></div><div class="cert-title">Digitera – Tech for Non-Techies</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>iCareer</div><div class="cert-date">Issued Dec 2025</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="google-data-analytics.jpg" alt="Google Data Analytics" loading="lazy" decoding="async"></div><div class="cert-title">Google Data Analytics Professional</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera &amp; Google</div><div class="cert-date">Issued Dec 2025 · 6 Months</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="coursera-l1.jpg" alt="Data Analyst L1" loading="lazy" decoding="async"></div><div class="cert-title">Data Analyst L1</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera</div><div class="cert-date">No Expiration Date</div></div>
       </div>
     </div>
   </section>
@@ -714,6 +840,63 @@
     }
 
     window.addEventListener('resize',function(){if(window.innerWidth>900&&menuOpen)closeMenu()});
+
+    /* Live Alexandria clock */
+    var clockTimeEl=document.getElementById('clockTime');
+    function updateClock(){
+      if(!clockTimeEl)return;
+      try{
+        var now=new Date();
+        clockTimeEl.textContent=now.toLocaleTimeString('en-US',{timeZone:'Africa/Cairo',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
+      }catch(e){}
+    }
+    updateClock();
+    setInterval(updateClock,1000);
+
+    /* Preloader */
+    window.addEventListener('load',function(){
+      var pre=document.getElementById('preloader');
+      setTimeout(function(){if(pre)pre.classList.add('hidden')},500);
+    });
+
+    /* Theme toggle */
+    function setThemeColorMeta(isLight){
+      var m=document.querySelector('meta[name="theme-color"]');
+      if(m)m.setAttribute('content',isLight?'#f7f5f0':'#050505');
+    }
+    function toggleTheme(){
+      var html=document.documentElement;
+      var isLight=html.getAttribute('data-theme')==='light';
+      if(isLight){html.removeAttribute('data-theme');try{localStorage.setItem('theme','dark')}catch(e){}setThemeColorMeta(false);}
+      else{html.setAttribute('data-theme','light');try{localStorage.setItem('theme','light')}catch(e){}setThemeColorMeta(true);}
+    }
+    setThemeColorMeta(document.documentElement.getAttribute('data-theme')==='light');
+
+    /* Spotlight follows cursor (desktop only) */
+    var spotlight=document.getElementById('spotlight');
+    if(spotlight&&window.matchMedia('(hover: hover)').matches){
+      document.addEventListener('mousemove',function(e){
+        document.documentElement.style.setProperty('--mx',e.clientX+'px');
+        document.documentElement.style.setProperty('--my',e.clientY+'px');
+      });
+    }
+
+    /* Typing effect for hero description */
+    var heroDesc=document.getElementById('heroDesc');
+    if(heroDesc){
+      var fullDescText=heroDesc.textContent;
+      heroDesc.innerHTML='<span id="heroDescText"></span><span class="type-cursor">|</span>';
+      var heroDescSpan=document.getElementById('heroDescText');
+      var typeIdx=0;
+      function typeStep(){
+        if(typeIdx<=fullDescText.length){
+          heroDescSpan.textContent=fullDescText.slice(0,typeIdx);
+          typeIdx++;
+          setTimeout(typeStep,9);
+        }
+      }
+      setTimeout(typeStep,900);
+    }
 
     /* Copy email */
     function copyEmail(btn){
