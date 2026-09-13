@@ -90,14 +90,15 @@
     .quote-deco{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.5rem}
     .quote-line{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--primary));opacity:.5}
     .quote-line:last-child{background:linear-gradient(90deg,var(--primary),transparent)}
-    .quote-icon{width:48px;height:48px;border-radius:50%;background:var(--primary-dim);border:1px solid rgba(251,191,36,.2);display:flex;align-items:center;justify-content:center;color:var(--primary);animation:float 10s ease-in-out infinite}
+    .quote-icon{width:48px;height:48px;border-radius:50%;background:var(--primary-dim);border:1px solid rgba(251,191,36,.2);display:flex;align-items:center;justify-content:center;color:var(--primary);animation:float 10s ease-in-out infinite,glowPulse 5s ease-in-out infinite}
     .quote-icon svg{width:24px;height:24px}
-    .quote-text{font-family:var(--font-serif);font-size:clamp(1.15rem,2.5vw,1.45rem);color:var(--fg);line-height:1.8;font-weight:500;letter-spacing:.01em}
-    .quote-text .q-highlight{color:var(--primary);font-weight:600}
+    .quote-text{position:relative;font-family:var(--font-serif);font-size:clamp(1.15rem,2.5vw,1.45rem);color:var(--fg);line-height:1.8;font-weight:500;letter-spacing:.01em}
+    .quote-text::before{content:'"';position:absolute;top:-2.6rem;left:-.5rem;font-family:var(--font-serif);font-size:6rem;font-weight:700;color:var(--primary);opacity:.12;line-height:1;pointer-events:none}
+    .quote-text .q-highlight{background:linear-gradient(135deg,var(--primary) 0%,#fde68a 50%,var(--primary) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;animation:shimmer 8s linear infinite}
     .quote-pattern{position:absolute;pointer-events:none;opacity:.04;color:var(--primary)}
     .quote-pattern-l{left:2%;top:15%;font-size:3.5rem;animation:float2 18s ease-in-out infinite}
     .quote-pattern-r{right:2%;bottom:15%;font-size:3rem;animation:float3 16s ease-in-out infinite}
-    @media(max-width:600px){.quote-pattern{display:none}.quote-line{width:30px}}
+    @media(max-width:600px){.quote-pattern{display:none}.quote-line{width:30px}.quote-text::before{font-size:4rem;top:-1.8rem;left:-.2rem}}
 
     /* ═══ NAVIGATION ═══ */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4rem);border-bottom:1px solid transparent;transition:all .3s ease;animation:fadeIn .6s ease both}
@@ -396,8 +397,7 @@
           <div class="hero-orbit">
             <!-- Photo in center -->
             <div class="orbit-photo">
-              <!-- Replace src with your photo: <img src="photo.jpg" alt="Mostafa Elsawahly"> -->
-              <div class="orbit-photo-placeholder">ME</div>
+              <img src="photo.jpg" alt="Mostafa Elsawahly">
             </div>
             <!-- Ring 1: Data Analytics icons -->
             <div class="orbit-ring orbit-ring-1">
@@ -431,7 +431,7 @@
           <!-- Stats under orbit -->
           <div class="orbit-stats">
             <div class="orbit-stat"><div class="orbit-stat-num" data-count="4">0</div><div class="orbit-stat-label">Projects</div></div>
-            <div class="orbit-stat"><div class="orbit-stat-num" data-count="9">0</div><div class="orbit-stat-label">Certifications</div></div>
+            <div class="orbit-stat"><div class="orbit-stat-num" data-count="8">0</div><div class="orbit-stat-label">Certifications</div></div>
             <div class="orbit-stat"><div class="orbit-stat-num" data-count="9">0</div><div class="orbit-stat-label">Experiences</div></div>
           </div>
         </div>
@@ -602,7 +602,6 @@
         <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="datacamp-sql.jpg" alt="Intro to SQL"></div><div class="cert-title">Introduction to SQL</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DataCamp</div><div class="cert-date">Issued Jun 2026</div></div>
         <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="huawei.jpg" alt="Huawei Cloud"></div><div class="cert-title">Huawei Cloud Developer – HCCDA</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Huawei</div><div class="cert-date">Issued Feb 2026 · Valid Until Feb 2029</div></div>
         <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="ibm-ai.jpg" alt="AI Fundamentals"></div><div class="cert-title">Artificial Intelligence Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Jan 2026 · +10 Hours</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="ibm-agility.jpg" alt="Agility"></div><div class="cert-title">Delivering Quality Work with Agility</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Jan 2026</div></div>
         <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="digitera.jpg" alt="Digitera"></div><div class="cert-title">Digitera – Tech for Non-Techies</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>iCareer</div><div class="cert-date">Issued Dec 2025</div></div>
         <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="google-data-analytics.jpg" alt="Google Data Analytics"></div><div class="cert-title">Google Data Analytics Professional</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera &amp; Google</div><div class="cert-date">Issued Dec 2025 · 6 Months</div></div>
         <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="coursera-l1.jpg" alt="Data Analyst L1"></div><div class="cert-title">Data Analyst L1</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera</div><div class="cert-date">No Expiration Date</div></div>
