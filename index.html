@@ -83,7 +83,7 @@
     #preloader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s ease,visibility .5s ease}
     #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
     .preloader-stage{position:relative;width:240px;height:170px;display:flex;align-items:center;justify-content:center}
-    .preloader-ankh svg{width:58px;height:93px;color:var(--primary);filter:drop-shadow(0 0 14px rgba(251,191,36,.55));overflow:visible}
+    .preloader-ankh svg{width:56px;height:95px;color:var(--primary);filter:drop-shadow(0 0 14px rgba(251,191,36,.55));overflow:visible}
     .ankh-loop{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4);animation:ankhLoopIn .53s cubic-bezier(.34,1.56,.64,1) forwards}
     .ankh-arm-left{opacity:0;transform-box:fill-box;transform-origin:center;transform:translateX(-55px);animation:ankhArmLeftIn .47s ease-out .6s forwards}
     .ankh-arm-right{opacity:0;transform-box:fill-box;transform-origin:center;transform:translateX(55px);animation:ankhArmRightIn .47s ease-out .6s forwards}
@@ -411,11 +411,11 @@
     #back-top{position:fixed;bottom:2rem;right:2rem;z-index:50;width:46px;height:46px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--primary);opacity:0;pointer-events:none;transition:.3s}
     #back-top.visible{opacity:1;pointer-events:auto;animation:float 6s ease-in-out infinite}
     #back-top:hover{border-color:var(--primary);background:var(--primary-dim);animation:none;transform:translateY(-3px)}
-    .sticky-contact-btn{position:fixed;bottom:2rem;left:2rem;z-index:50;display:flex;align-items:center;gap:8px;padding:13px 20px;border-radius:99px;background:var(--primary);color:#000;font-family:var(--font-mono);font-weight:700;font-size:.82rem;box-shadow:0 8px 24px rgba(251,191,36,.3);opacity:0;pointer-events:none;transform:translateY(16px);transition:opacity .3s ease,transform .3s ease}
+    .sticky-contact-btn{position:fixed;bottom:6rem;right:2rem;z-index:50;display:flex;align-items:center;gap:8px;padding:13px 20px;border-radius:99px;background:var(--primary);color:#000;font-family:var(--font-mono);font-weight:700;font-size:.82rem;box-shadow:0 8px 24px rgba(251,191,36,.3);opacity:0;pointer-events:none;transform:translateY(16px);transition:opacity .3s ease,transform .3s ease}
     .sticky-contact-btn.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
     .sticky-contact-btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(251,191,36,.4)}
     .sticky-contact-btn svg{width:16px;height:16px;flex-shrink:0}
-    @media(max-width:600px){.sticky-contact-btn span{display:none}.sticky-contact-btn{padding:13px;bottom:1.25rem;left:1.25rem}}
+    @media(max-width:600px){.sticky-contact-btn span{display:none}.sticky-contact-btn{padding:13px;bottom:5.25rem;right:1.25rem}}
 
     /* ═══ RESPONSIVE ═══ */
     @media(max-width:900px){
@@ -453,11 +453,11 @@
   <div id="preloader">
     <div class="preloader-stage">
       <div class="preloader-ankh" id="preloaderAnkh" aria-hidden="true">
-        <svg viewBox="0 0 200 320" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path class="ankh-loop" fill-rule="evenodd" clip-rule="evenodd" d="M100,10 C145,10 180,45 180,88 C180,125 155,150 122,170 L100,196 L78,170 C45,150 20,125 20,88 C20,45 55,10 100,10 Z M100,38 C130,38 155,58 155,88 C155,112 138,128 118,140 L100,165 L82,140 C62,128 45,112 45,88 C45,58 70,38 100,38 Z"/>
-          <path class="ankh-arm-left" d="M0,183 L0,213 L78,203 L78,193 Z"/>
-          <path class="ankh-arm-right" d="M200,183 L200,213 L122,203 L122,193 Z"/>
-          <path class="ankh-stem" d="M78,193 L122,193 L130,320 L70,320 Z"/>
+        <svg viewBox="0 0 200 340" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path class="ankh-loop" fill-rule="evenodd" clip-rule="evenodd" d="M100,8 C138,8 168,35 168,78 C168,118 145,148 115,172 C107,179 101,187 100,208 C99,187 93,179 85,172 C55,148 32,118 32,78 C32,35 62,8 100,8 Z M100,34 C123,34 143,52 143,80 C143,106 126,126 109,143 C104,148 101,153 100,166 C99,153 96,148 91,143 C74,126 57,106 57,80 C57,52 77,34 100,34 Z"/>
+          <path class="ankh-arm-left" d="M0,196 L0,228 L74,214 L74,201 Z"/>
+          <path class="ankh-arm-right" d="M200,196 L200,228 L126,214 L126,201 Z"/>
+          <path class="ankh-stem" d="M74,201 L126,201 L134,335 L66,335 Z"/>
         </svg>
       </div>
     </div>
