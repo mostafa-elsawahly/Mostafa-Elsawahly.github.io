@@ -909,13 +909,21 @@
     document.addEventListener('click',function(e){if(menuOpen&&!mobileMenu.contains(e.target)&&!hamburger.contains(e.target))closeMenu()});
 
     /* Skill bar percentage counters (synced with bar-fill stagger) */
+    var skillCardTimers=new WeakMap();
+    function resetSkillCard(card){
+      var existing=skillCardTimers.get(card);
+      if(existing)existing.forEach(function(id){clearTimeout(id)});
+      card.querySelectorAll('.skill-bar-percent').forEach(function(el){el.textContent='0%'});
+    }
     function animateSkillCard(card){
+      resetSkillCard(card);
       var percentEls=card.querySelectorAll('.skill-bar-percent');
       var delays=[200,550,900,1250,1600,1950,2300];
+      var timers=[];
       percentEls.forEach(function(el,idx){
         var target=parseInt(el.getAttribute('data-target'),10)||0;
         var delay=delays[idx]!==undefined?delays[idx]:1180;
-        setTimeout(function(){
+        var tId=setTimeout(function(){
           var start=null,duration=2000;
           function step(ts){
             if(!start)start=ts;
@@ -925,13 +933,23 @@
           }
           requestAnimationFrame(step);
         },delay);
+        timers.push(tId);
       });
+      skillCardTimers.set(card,timers);
     }
 
-    /* Scroll Reveal (enhanced with multiple classes) */
+    /* Scroll Reveal (bidirectional: elements re-animate in and fade out as you scroll past them) */
     var revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
     if('IntersectionObserver' in window){
-      var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');if(e.target.classList.contains('skill-card'))animateSkillCard(e.target);ro.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+      var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          if(e.target.classList.contains('skill-card'))animateSkillCard(e.target);
+        }else{
+          e.target.classList.remove('visible');
+          if(e.target.classList.contains('skill-card'))resetSkillCard(e.target);
+        }
+      })},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
       revealEls.forEach(function(e){ro.observe(e)});
     }else{revealEls.forEach(function(e){e.classList.add('visible');if(e.classList.contains('skill-card'))animateSkillCard(e)})}
 
@@ -943,10 +961,15 @@
         requestAnimationFrame(step)
       })
     }
-    /* Trigger counters when orbit stats visible */
+    function resetCounters(){
+      document.querySelectorAll('[data-count]').forEach(function(el){el.textContent='0'})
+    }
+    /* Trigger counters when orbit stats visible, reset when scrolled away */
     var statsEl=document.querySelector('.orbit-stats');
     if(statsEl&&'IntersectionObserver' in window){
-      var co=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animateCounters();co.unobserve(e.target)}})},{threshold:.5});
+      var co=new IntersectionObserver(function(entries){entries.forEach(function(e){
+        if(e.isIntersecting){animateCounters()}else{resetCounters()}
+      })},{threshold:.5});
       co.observe(statsEl)
     }
 
