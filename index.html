@@ -922,10 +922,18 @@
 
     /* Mobile menu */
     var hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobile-menu'),menuOpen=false;
-    function toggleMenu(){menuOpen=!menuOpen;hamburger.classList.toggle('open',menuOpen);mobileMenu.classList.toggle('open',menuOpen);hamburger.setAttribute('aria-expanded',menuOpen.toString());document.body.style.overflow=menuOpen?'hidden':''}
+    function toggleMenu(){menuOpen=!menuOpen;hamburger.classList.toggle('open',menuOpen);mobileMenu.classList.toggle('open',menuOpen);hamburger.setAttribute('aria-expanded',menuOpen.toString());document.body.style.overflow=menuOpen?'hidden':'';if(menuOpen){var first=mobileMenu.querySelector('a');if(first)first.focus()}}
     function closeMenu(){menuOpen=false;hamburger.classList.remove('open');mobileMenu.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menuOpen)closeMenu()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menuOpen){closeMenu();hamburger.focus()}});
     document.addEventListener('click',function(e){if(menuOpen&&!mobileMenu.contains(e.target)&&!hamburger.contains(e.target))closeMenu()});
+    /* Trap Tab focus inside the mobile menu while it's open */
+    document.addEventListener('keydown',function(e){
+      if(e.key!=='Tab'||!menuOpen)return;
+      var focusable=[hamburger].concat(Array.prototype.slice.call(mobileMenu.querySelectorAll('a')));
+      var first=focusable[0],last=focusable[focusable.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    });
 
     /* Skill bar percentage counters (synced with bar-fill stagger) */
     var skillCardTimers=new WeakMap();
