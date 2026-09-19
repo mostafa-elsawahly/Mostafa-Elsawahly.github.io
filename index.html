@@ -6,21 +6,21 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mostafa Elsawahly | Data Analyst &amp; Business Intelligence</title>
-  <meta name="description" content="Mostafa Elsawahly — Data-driven undergraduate in Banking & Investment Sciences, specializing in Business Intelligence and Data Analytics. Proficient in Python, SQL, Power BI, DAX, and data visualization. Based in Alexandria, Egypt." />
+  <title>Mostafa Elsawahly | Junior Data Analyst &amp; Business Intelligence</title>
+  <meta name="description" content="Mostafa Elsawahly is a Banking & Investment Sciences undergraduate specializing in Data Analytics and Business Intelligence, with projects in SQL, Python, Power BI, data visualization, and business analytics." />
   <meta name="keywords" content="Data Analyst, Portfolio, Mostafa Elsawahly, SQL, Power BI, DAX, Excel, Data Visualization, Banking, Investment Sciences, Python, Data Modeling, Looker Studio, Star Schema" />
   <meta name="author" content="Mostafa Elsawahly" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Mostafa Elsawahly | Data Analyst &amp; Business Intelligence" />
-  <meta property="og:description" content="Data-driven undergraduate specializing in Business Intelligence and Data Analytics. Proficient in Python, SQL, Power BI, and data visualization." />
+  <meta property="og:title" content="Mostafa Elsawahly | Junior Data Analyst &amp; Business Intelligence" />
+  <meta property="og:description" content="Banking & Investment Sciences undergraduate specializing in Data Analytics and Business Intelligence. Projects in SQL, Python, Power BI, and data visualization." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="photo.jpg" />
   <meta property="og:image:width" content="1254" />
   <meta property="og:image:height" content="1254" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mostafa Elsawahly | Data Analyst &amp; Business Intelligence" />
-  <meta name="twitter:description" content="Data-driven undergraduate specializing in Business Intelligence and Data Analytics. Proficient in Python, SQL, Power BI, and data visualization." />
+  <meta name="twitter:title" content="Mostafa Elsawahly | Junior Data Analyst &amp; Business Intelligence" />
+  <meta name="twitter:description" content="Banking & Investment Sciences undergraduate specializing in Data Analytics and Business Intelligence. Projects in SQL, Python, Power BI, and data visualization." />
   <meta name="twitter:image" content="photo.jpg" />
   <meta name="theme-color" content="#050505" />
   <link rel="apple-touch-icon" href="photo.jpg" />
@@ -209,6 +209,10 @@
     .hero-name{font-size:clamp(2.8rem,6.5vw,5.5rem);font-family:var(--font-serif);font-weight:600;line-height:.92;animation:fadeUp .6s .1s ease both}
     .hero-name .accent{background:linear-gradient(135deg,var(--primary) 0%,#fde68a 50%,var(--primary) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 10s linear infinite}
     .hero-title{font-family:var(--font-mono);font-size:.95rem;color:var(--fg-muted);margin-top:1rem;animation:fadeUp .5s .2s ease both}
+    .hero-usp-strip{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:.9rem;animation:fadeUp .5s .22s ease both}
+    .hero-usp-strip span:not(.usp-plus){font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:var(--primary);background:var(--primary-dim);border:1px solid rgba(251,191,36,.25);padding:5px 12px;border-radius:99px;letter-spacing:.02em}
+    .hero-usp-strip .usp-plus{color:var(--fg-subtle);font-weight:700;font-size:.8rem}
+    @media(max-width:900px){.hero-usp-strip{justify-content:center}}
     .hero-location{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.8rem;color:var(--fg-muted);margin-top:.75rem;animation:fadeUp .5s .25s ease both}
     .hero-location svg{color:var(--primary);flex-shrink:0}
     .hero-clock{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.78rem;color:var(--fg-subtle);margin-top:.4rem;animation:fadeUp .5s .28s ease both}
@@ -276,6 +280,45 @@
 
     /* ═══ EDUCATION CARD ═══ */
     .edu-card{background:linear-gradient(145deg,var(--card),var(--bg2));border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:2rem;margin-bottom:3.5rem;transition:all .3s;position:relative;animation:glowPulse 7s ease-in-out infinite}
+
+    /* ═══ ABOUT ME ═══ */
+    .about-bio{max-width:760px;font-size:1rem;color:var(--fg-muted);line-height:1.85}
+    .about-bio p{margin-bottom:1.1rem}
+    .about-bio p:last-child{margin-bottom:0}
+    .usp-block{margin-top:3rem}
+    .usp-heading{font-size:1.3rem;font-weight:700;color:var(--fg);margin-bottom:.6rem}
+    .usp-sub{color:var(--fg-muted);font-size:.95rem;max-width:640px;margin-bottom:1.75rem;line-height:1.75}
+    .usp-pillars{display:flex;align-items:stretch;gap:1rem;flex-wrap:wrap}
+    .usp-pillar{flex:1;min-width:180px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:all .3s}
+    .usp-pillar:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-glow)}
+    .usp-pillar-icon{width:44px;height:44px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);margin:0 auto 1rem}
+    .usp-pillar-icon svg{width:22px;height:22px}
+    .usp-pillar-title{font-weight:700;color:var(--fg);font-size:.95rem;margin-bottom:.4rem}
+    .usp-pillar-desc{font-size:.8rem;color:var(--fg-muted);line-height:1.6}
+    .usp-plus-icon{display:flex;align-items:center;justify-content:center;color:var(--fg-subtle);font-size:1.4rem;font-weight:700;flex-shrink:0}
+    @media(max-width:700px){.usp-pillars{flex-direction:column}.usp-plus-icon{transform:rotate(90deg);margin:-.5rem auto}}
+
+    /* ═══ SERVICES ═══ */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .service-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:all .3s;display:flex;flex-direction:column}
+    .service-card:hover{border-color:var(--border-hover);transform:translateY(-6px);box-shadow:var(--shadow-glow)}
+    .service-icon{width:42px;height:42px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);margin-bottom:1.1rem;transition:all .3s}
+    .service-icon svg{width:20px;height:20px}
+    .service-card:hover .service-icon{background:var(--primary);color:#000;transform:scale(1.08)}
+    .service-title{font-size:1.05rem;font-weight:700;color:var(--fg);margin-bottom:.6rem}
+    .service-desc{font-size:.85rem;color:var(--fg-muted);line-height:1.65;margin-bottom:1.1rem;flex-grow:1}
+    .service-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.1rem}
+    .service-tool-tag{font-family:var(--font-mono);font-size:.7rem;padding:4px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--fg-muted)}
+    .service-cta{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--primary);padding-top:1rem;border-top:1px solid var(--border);cursor:pointer}
+    .service-cta svg{width:14px;height:14px;transition:transform .3s cubic-bezier(.23,1,.32,1)}
+    .service-card:hover .service-cta svg{transform:translateX(4px)}
+
+    /* ═══ FREELANCE CTA ═══ */
+    .freelance-cta{background:linear-gradient(135deg,rgba(251,191,36,.06) 0%,transparent 60%);border:1px solid var(--border);border-radius:var(--radius);padding:3rem clamp(1.5rem,5vw,3rem);text-align:center;margin-top:3rem}
+    .freelance-cta h3{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--fg);margin-bottom:1rem}
+    .freelance-cta p{color:var(--fg-muted);max-width:600px;margin:0 auto 1.75rem;line-height:1.75}
+    .freelance-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:2rem}
+    .freelance-list span{font-family:var(--font-mono);font-size:.78rem;padding:6px 14px;border-radius:99px;background:var(--card);border:1px solid var(--border);color:var(--fg-muted)}
     .edu-card:hover{border-color:var(--primary);box-shadow:var(--shadow-glow);transform:translateY(-4px)}
     .edu-card h3{font-size:1.4rem;font-weight:800;color:var(--fg);margin-bottom:8px}
     .edu-card .degree{font-family:var(--font-mono);color:var(--primary);font-size:1rem;margin-bottom:6px}
@@ -319,19 +362,6 @@
     .skill-tags{display:flex;flex-wrap:wrap;gap:7px}
     .skill-tag{padding:5px 12px;border-radius:7px;background:var(--surface-veil);border:1px solid var(--border);font-size:.78rem;color:var(--fg-muted);transition:all .3s}
     .skill-card:hover .skill-tag{border-color:rgba(251,191,36,.2);color:var(--fg)}
-    .skill-bars{display:flex;flex-direction:column;gap:13px}
-    .skill-bar-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--fg-muted);margin-bottom:5px;font-family:var(--font-mono)}
-    .skill-bar-label span:last-child{color:var(--primary);font-weight:700;font-size:.72rem}
-    .skill-bar-track{width:100%;height:6px;border-radius:99px;background:var(--surface-veil);border:1px solid var(--border);overflow:hidden}
-    .skill-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--primary),#fde68a);width:0;transition:width 2s cubic-bezier(.23,1,.32,1)}
-    .skill-card.visible .skill-bar-fill{width:var(--w)}
-    .skill-bar-item:nth-child(1) .skill-bar-fill{transition-delay:.2s}
-    .skill-bar-item:nth-child(2) .skill-bar-fill{transition-delay:.55s}
-    .skill-bar-item:nth-child(3) .skill-bar-fill{transition-delay:.9s}
-    .skill-bar-item:nth-child(4) .skill-bar-fill{transition-delay:1.25s}
-    .skill-bar-item:nth-child(5) .skill-bar-fill{transition-delay:1.6s}
-    .skill-bar-item:nth-child(6) .skill-bar-fill{transition-delay:1.95s}
-    .skill-bar-item:nth-child(7) .skill-bar-fill{transition-delay:2.3s}
     .skills-extra{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.25rem}
     .skills-extra-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .25s,transform .3s}
     .skills-extra-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
@@ -358,6 +388,7 @@
     .project-tags{display:flex;gap:8px;flex-wrap:wrap}
     .project-tag{font-family:var(--font-mono);font-size:.72rem;padding:4px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--fg-muted);transition:all .3s}
     .project-card:hover .project-tag{border-color:rgba(251,191,36,.2)}
+    .featured-badge{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;color:var(--primary);background:var(--primary-dim);border:1px solid rgba(251,191,36,.25);padding:3px 10px;border-radius:99px;margin-bottom:10px;letter-spacing:.03em}
     .project-cta{display:flex;align-items:center;gap:6px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--primary)}
     .project-cta svg{width:14px;height:14px;transition:transform .3s cubic-bezier(.23,1,.32,1)}
     .project-card:hover .project-cta svg{transform:translateX(4px)}
@@ -458,7 +489,7 @@
   </style>
 </head>
 <body>
-  <a href="#about" class="skip-link">Skip to main content</a>
+  <a href="#home" class="skip-link">Skip to main content</a>
   <!-- PRELOADER -->
   <div id="preloader">
     <div class="preloader-stage">
@@ -483,15 +514,17 @@
   <!-- NAV -->
   <header>
     <nav id="navbar" role="navigation" aria-label="Main navigation">
-      <div class="nav-logo" onclick="navScrollTo('#about')" role="button" tabindex="0" aria-label="Go to top">
+      <div class="nav-logo" onclick="navScrollTo('#home')" role="button" tabindex="0" aria-label="Go to top">
         <div class="nav-logo-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
         <span>ME<em>.</em></span>
       </div>
       <div class="nav-links">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#experience">Background</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
@@ -507,8 +540,10 @@
     </nav>
   </header>
   <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#home" onclick="closeMenu()">Home</a>
     <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#experience" onclick="closeMenu()">Background</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#experience" onclick="closeMenu()">Experience</a>
     <a href="#skills" onclick="closeMenu()">Skills</a>
     <a href="#projects" onclick="closeMenu()">Projects</a>
     <a href="#certifications" onclick="closeMenu()">Certifications</a>
@@ -517,7 +552,7 @@
 
   <main>
   <!-- ═══ HERO ═══ -->
-  <section id="about" aria-label="About Mostafa Elsawahly">
+  <section id="home" aria-label="About Mostafa Elsawahly">
     <div class="hero-radial" aria-hidden="true"></div>
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="section-inner">
@@ -526,6 +561,13 @@
           <div class="hero-badge"><div class="hero-badge-dot" aria-hidden="true"></div>Available for new opportunities</div>
           <h1 class="hero-name">Mostafa <br><span class="accent">Elsawahly</span></h1>
           <p class="hero-title">Junior Data Analyst &nbsp;|&nbsp; Banking &amp; Investment Sciences</p>
+          <div class="hero-usp-strip" aria-label="Core positioning">
+            <span>Banking &amp; Investment</span>
+            <span class="usp-plus">+</span>
+            <span>Data Analytics</span>
+            <span class="usp-plus">+</span>
+            <span>Business Intelligence</span>
+          </div>
           <div class="hero-location">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Alexandria, Egypt
@@ -534,7 +576,7 @@
             <span class="dot-live" aria-hidden="true"></span>
             <span id="clockTime">--:--:-- --</span> local time
           </div>
-          <p class="hero-desc" id="heroDesc">Data-driven third-year undergraduate in Banking &amp; Investment Sciences, specializing in Business Intelligence and Data Analytics. Proven track record of transforming complex sales and customer datasets into actionable business insights using Python, SQL, and Power BI.</p>
+          <p class="hero-desc" id="heroDesc">Third-year Banking &amp; Investment Sciences undergraduate who combines financial and business knowledge with hands-on Data Analytics and Business Intelligence skills — turning complex datasets into clear, actionable insights using Python, SQL, and Power BI.</p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary" onclick="event.preventDefault();navScrollTo('#projects')">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -597,7 +639,7 @@
         </div>
       </div>
     </div>
-    <button class="scroll-cue" onclick="navScrollTo('#experience')" aria-label="Scroll down">
+    <button class="scroll-cue" onclick="navScrollTo('#about')" aria-label="Scroll down">
       <span>Scroll</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
@@ -631,6 +673,93 @@
     </div>
   </div>
 
+  <!-- ═══ ABOUT ME ═══ -->
+  <section id="about" aria-label="About Mostafa Elsawahly">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h2 class="section-heading"><span class="section-num">01.</span> About Me</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-bio reveal">
+        <p>I'm a third-year Banking &amp; Investment Sciences undergraduate at Science Valley Academy, expected to graduate in 2027. Over the past couple of years my focus has shifted toward Data Analytics and Business Intelligence — most of my time now goes into working with business and financial data: cleaning it, modeling it, and turning it into dashboards and reports that people can actually use to make decisions.</p>
+        <p>Day to day, that means building interactive dashboards in Power BI, writing SQL queries against real datasets, and using Python for exploratory analysis and data cleaning. My banking and finance background shapes how I look at the data — I'm not just hunting for patterns, I'm thinking about what they mean for a business.</p>
+        <p>I'm still early in my career, and I'm looking for opportunities — internships, junior roles, or freelance work — where I can keep building on both sides of that combination: the financial literacy and the technical analytics skill set.</p>
+      </div>
+      <div class="usp-block reveal">
+        <h3 class="usp-heading">Why Me</h3>
+        <p class="usp-sub">My advantage isn't just knowing tools — it's combining business and financial understanding with technical analytics skills, so the numbers connect back to a real decision.</p>
+        <div class="usp-pillars">
+          <div class="usp-pillar">
+            <div class="usp-pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></div>
+            <div class="usp-pillar-title">Banking &amp; Investment</div>
+            <div class="usp-pillar-desc">A financial background that shapes how I read business data</div>
+          </div>
+          <div class="usp-plus-icon" aria-hidden="true">+</div>
+          <div class="usp-pillar">
+            <div class="usp-pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="usp-pillar-title">Data Analytics</div>
+            <div class="usp-pillar-desc">SQL and Python skills to clean, explore, and analyze real datasets</div>
+          </div>
+          <div class="usp-plus-icon" aria-hidden="true">+</div>
+          <div class="usp-pillar">
+            <div class="usp-pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-4"/></svg></div>
+            <div class="usp-pillar-title">Business Intelligence</div>
+            <div class="usp-pillar-desc">Power BI dashboards that turn analysis into something usable</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section id="services" aria-label="Services">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h2 class="section-heading"><span class="section-num">02.</span> Services</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal-scale">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="service-title">Data Analysis</div>
+          <div class="service-desc">Cleaning messy datasets, exploratory analysis, and KPI tracking to surface business insights from sales and customer data.</div>
+          <div class="service-tools"><span class="service-tool-tag">Python</span><span class="service-tool-tag">Excel</span><span class="service-tool-tag">SQL</span></div>
+          <div class="service-cta" onclick="navScrollTo('#projects')">View Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="service-card reveal-scale">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="service-title">Power BI &amp; Business Intelligence</div>
+          <div class="service-desc">Interactive Power BI dashboards with DAX measures, Power Query transformations, and data modeling for ongoing business reporting.</div>
+          <div class="service-tools"><span class="service-tool-tag">Power BI</span><span class="service-tool-tag">DAX</span><span class="service-tool-tag">Power Query</span></div>
+          <div class="service-cta" onclick="navScrollTo('#projects')">View Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="service-card reveal-scale">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+          <div class="service-title">SQL &amp; Data Warehousing</div>
+          <div class="service-desc">Complex SQL queries, CTEs, window functions, views, and stored procedures, plus Star Schema data warehouse design.</div>
+          <div class="service-tools"><span class="service-tool-tag">SQL</span><span class="service-tool-tag">Star Schema</span></div>
+          <div class="service-cta" onclick="navScrollTo('#projects')">View Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="service-card reveal-scale">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="service-title">Python Data Analysis</div>
+          <div class="service-desc">End-to-end Python pipelines: data cleaning, feature engineering, customer segmentation, and visualization for automated reporting.</div>
+          <div class="service-tools"><span class="service-tool-tag">Python</span><span class="service-tool-tag">Pandas</span></div>
+          <div class="service-cta" onclick="navScrollTo('#projects')">View Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="service-card reveal-scale">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <div class="service-title">Dashboard &amp; Reporting</div>
+          <div class="service-desc">Executive, sales, and customer analytics dashboards built to track performance and support recurring business reporting.</div>
+          <div class="service-tools"><span class="service-tool-tag">Power BI</span><span class="service-tool-tag">Looker Studio</span></div>
+          <div class="service-cta" onclick="navScrollTo('#projects')">View Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ EXPERIENCE ═══ -->
   <section id="experience" aria-label="Experience and Education">
     <!-- Floating icons -->
@@ -639,7 +768,7 @@
     <div class="section-inner">
       <div class="reveal">
         <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-        <h2 class="section-heading"><span class="section-num">01.</span> Background</h2>
+        <h2 class="section-heading"><span class="section-num">03.</span> Experience</h2>
         <div class="section-divider"></div>
       </div>
 
@@ -666,13 +795,13 @@
 
       <div class="timeline" id="timelineEl">
         <div class="timeline-progress" id="timelineProgress"></div>
-        <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>Trainee Professional Data Analyst</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Digital Egypt Pioneers Initiative (DEPI)</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jul 2026 – Present | Alexandria, Hybrid</div><ul class="tl-bullets"><li>Developing practical skills in data analysis, data visualization, and business intelligence.</li><li>Building a stronger foundation in data-driven decision-making and professional data analysis.</li></ul></div></div>
+        <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>Trainee Professional Data Analyst</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Digital Egypt Pioneers Initiative (DEPI)</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jul 2026 – Present | Alexandria, Hybrid</div><ul class="tl-bullets"><li>Working hands-on with data analysis, data visualization, and business intelligence tools as part of a structured training track.</li><li>Applying data-driven decision-making methods to practical analysis exercises.</li></ul></div></div>
 
-        <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>DataCamp 25/26 Internship Program</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>GDSC – EJUST</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jun 2026 – Present | Remote</div><ul class="tl-bullets"><li>Participating in the DataCamp 25/26 program to strengthen technical and data-related skills.</li><li>Developing practical knowledge through structured learning and hands-on activities.</li></ul></div></div>
+        <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>DataCamp 25/26 Internship Program</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>GDSC – EJUST</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jun 2026 – Present | Remote</div><ul class="tl-bullets"><li>Completing the DataCamp 25/26 program's structured curriculum to strengthen technical and data-related skills.</li><li>Applying concepts through hands-on exercises and guided projects.</li></ul></div></div>
 
-        <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>Business Development &amp; Sales Intern</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Nile University</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jun 2026 – Present | Remote</div><ul class="tl-bullets"><li>Supporting business development and sales activities.</li><li>Developing practical experience in communication, business operations, and customer-focused processes.</li></ul></div></div>
+        <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>Business Development &amp; Sales Intern</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Nile University</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jun 2026 – Present | Remote</div><ul class="tl-bullets"><li>Supporting business development and sales activities, including outreach and lead follow-up.</li><li>Gaining hands-on exposure to communication, business operations, and customer-focused processes.</li></ul></div></div>
 
-        <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>Sales Analyst</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Re-Lease</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>May 2026 – Present | Alexandria, Hybrid</div><ul class="tl-bullets"><li>Supporting sales analysis and business-related activities.</li><li>Applying analytical thinking to understand sales performance and support business decisions.</li></ul></div></div>
+        <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>Sales Analyst</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Re-Lease</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>May 2026 – Present | Alexandria, Hybrid</div><ul class="tl-bullets"><li>Analyzing sales data to track performance trends and support business decisions.</li><li>Applying analytical thinking to identify patterns relevant to sales strategy.</li></ul></div></div>
 
         <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role"><div class="tl-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>Customer Experience Calls Intern</div><div class="tl-company"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>iCareer</div><div class="tl-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mar 2026 | Remote</div><ul class="tl-bullets"><li>Managed inbound/outbound calls and analyzed customer concerns for data-driven solutions.</li></ul></div></div>
 
@@ -694,49 +823,16 @@
     <div class="section-inner">
       <div class="reveal">
         <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <h2 class="section-heading"><span class="section-num">02.</span> Technical Arsenal</h2>
+        <h2 class="section-heading"><span class="section-num">04.</span> Technical Arsenal</h2>
         <div class="section-divider"></div>
       </div>
       <div class="skills-grid">
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="skill-card-title">Data Analytics</div></div><div class="skill-bars">
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Cleaning</span><span class="skill-bar-percent" data-target="85">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Transformation</span><span class="skill-bar-percent" data-target="82">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:82%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>EDA</span><span class="skill-bar-percent" data-target="78">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:78%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>KPI Analysis</span><span class="skill-bar-percent" data-target="80">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Modeling</span><span class="skill-bar-percent" data-target="75">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:75%"></div></div></div>
-        </div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-4"/></svg></div><div class="skill-card-title">Business Intelligence</div></div><div class="skill-bars">
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Dashboard Development</span><span class="skill-bar-percent" data-target="85">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Visualization</span><span class="skill-bar-percent" data-target="88">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Business Reporting</span><span class="skill-bar-percent" data-target="80">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Looker Studio</span><span class="skill-bar-percent" data-target="65">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:65%"></div></div></div>
-        </div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="skill-card-title">Data &amp; Querying</div></div><div class="skill-bars">
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>SQL</span><span class="skill-bar-percent" data-target="80">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Python</span><span class="skill-bar-percent" data-target="70">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:70%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Excel</span><span class="skill-bar-percent" data-target="90">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>CSV Data Processing</span><span class="skill-bar-percent" data-target="82">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:82%"></div></div></div>
-        </div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="skill-card-title">Power BI</div></div><div class="skill-bars">
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>DAX</span><span class="skill-bar-percent" data-target="78">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:78%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Power Query</span><span class="skill-bar-percent" data-target="82">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:82%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Data Modeling</span><span class="skill-bar-percent" data-target="75">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:75%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Star Schema</span><span class="skill-bar-percent" data-target="80">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
-        </div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div><div class="skill-card-title">Cloud &amp; Technology</div></div><div class="skill-bars">
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Huawei Cloud</span><span class="skill-bar-percent" data-target="60">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:60%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Cloud Computing</span><span class="skill-bar-percent" data-target="58">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:58%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Cloud Infrastructure</span><span class="skill-bar-percent" data-target="55">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:55%"></div></div></div>
-        </div></div>
-        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="skill-card-title">AI &amp; Automation</div></div><div class="skill-bars">
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Generative AI</span><span class="skill-bar-percent" data-target="85">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>ChatGPT</span><span class="skill-bar-percent" data-target="90">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Canva AI</span><span class="skill-bar-percent" data-target="75">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:75%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Zapier</span><span class="skill-bar-percent" data-target="70">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:70%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Notion</span><span class="skill-bar-percent" data-target="80">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Trello</span><span class="skill-bar-percent" data-target="78">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:78%"></div></div></div>
-          <div class="skill-bar-item"><div class="skill-bar-label"><span>Google Workspace</span><span class="skill-bar-percent" data-target="85">0%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
-        </div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="skill-card-title">Data Analytics</div></div><div class="skill-tags"><span class="skill-tag">Data Cleaning</span><span class="skill-tag">Data Transformation</span><span class="skill-tag">EDA</span><span class="skill-tag">KPI Analysis</span><span class="skill-tag">Data Modeling</span></div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-4"/></svg></div><div class="skill-card-title">Business Intelligence</div></div><div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">Dashboard Development</span><span class="skill-tag">Data Visualization</span><span class="skill-tag">Business Reporting</span><span class="skill-tag">Looker Studio</span></div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="skill-card-title">Data &amp; Querying</div></div><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Python</span><span class="skill-tag">Excel</span><span class="skill-tag">CSV Data Processing</span></div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="skill-card-title">Power BI Toolkit</div></div><div class="skill-tags"><span class="skill-tag">DAX</span><span class="skill-tag">Power Query</span><span class="skill-tag">Data Modeling</span><span class="skill-tag">Star Schema</span></div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div><div class="skill-card-title">Cloud &amp; Technology</div></div><div class="skill-tags"><span class="skill-tag">Huawei Cloud</span><span class="skill-tag">Cloud Computing</span><span class="skill-tag">Cloud Infrastructure</span></div></div>
+        <div class="skill-card reveal-scale"><div class="skill-card-header"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="skill-card-title">AI &amp; Automation</div></div><div class="skill-tags"><span class="skill-tag">Generative AI</span><span class="skill-tag">ChatGPT</span><span class="skill-tag">Canva AI</span><span class="skill-tag">Zapier</span><span class="skill-tag">Notion</span><span class="skill-tag">Trello</span><span class="skill-tag">Google Workspace</span></div></div>
       </div>
       <div class="skills-extra reveal">
         <div class="skills-extra-card"><div class="skills-extra-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Soft Skills</div><ul class="skills-extra-list"><li>Technical Documentation</li><li>Presentation Skills</li><li>Communication</li></ul></div>
@@ -752,11 +848,12 @@
     <div class="section-inner">
       <div class="reveal">
         <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
-        <h2 class="section-heading"><span class="section-num">03.</span> Projects</h2>
+        <h2 class="section-heading"><span class="section-num">05.</span> Projects</h2>
         <div class="section-divider"></div>
       </div>
       <div class="projects-grid">
         <a href="https://github.com/mostafa-elsawahly/Depi-Mini-Project-2-Advanced-SQL-Data-Warehouse-Business-Analytics" target="_blank" rel="noopener" class="project-card reveal-scale">
+          <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><h3 class="project-title">Advanced SQL Data Warehouse &amp; Business Analytics</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Sep 2026</div>
           <p class="project-desc">Built a Star Schema data warehouse (Bronze/Silver/Gold layers) from raw retail data, with a fact table and 4 dimension tables. Wrote 15+ optimized queries using CTEs, window functions, views, and stored procedures, plus non-clustered indexing to speed up joins and YoY aggregations.</p>
@@ -764,6 +861,7 @@
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/DEPI-Mini-Project-001-Advanced-Python-Data-Exploration" target="_blank" rel="noopener" class="project-card reveal-scale">
+          <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3 class="project-title">Superstore Retail Analytics &amp; Automated Reporting</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Aug 2026</div>
           <p class="project-desc">End-to-end Python pipeline analyzing retail sales, profitability, and customer behavior. Covered data cleaning, feature engineering, seasonality and geospatial analysis, RFM customer segmentation, and Parquet-based export for downstream reporting.</p>
@@ -771,6 +869,7 @@
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/salla-call-center-performance" target="_blank" rel="noopener" class="project-card reveal-scale">
+          <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><h3 class="project-title">Salla Call Center Performance</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jun 2026</div>
           <p class="project-desc">Developed an interactive Power BI dashboard to analyze call center performance. Built KPI measures to track 2M calls handled, 90% efficiency, 91% service level. Applied data modeling and DAX.</p>
@@ -778,6 +877,7 @@
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/Dynamic-Dashboard/blob/main/Dynamic%20Dashboard.html" target="_blank" rel="noopener" class="project-card reveal-scale">
+          <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3 class="project-title">Dynamic Data Dashboard</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>May 2026</div>
           <p class="project-desc">Dynamic dashboard transforming raw CSV/Excel into insights. Automated parsing, data-type detection, KPI visualizations, trend analysis, and AI-generated insights for bottlenecks.</p>
@@ -785,6 +885,7 @@
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/-Electronics-Retail-Executive-Dashboard" target="_blank" rel="noopener" class="project-card reveal-scale">
+          <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><h3 class="project-title">Electronics Retail Executive Dashboard</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mar – Apr 2026</div>
           <p class="project-desc">End-to-end Power BI dashboard for electronics sales. Built Star Schema, DAX measures for AOV, ARPC, return rates. Identified 17% return rate and high-value customer segments.</p>
@@ -808,7 +909,7 @@
     <div class="section-inner">
       <div class="reveal">
         <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-        <h2 class="section-heading"><span class="section-num">04.</span> Licenses &amp; Certifications</h2>
+        <h2 class="section-heading"><span class="section-num">06.</span> Licenses &amp; Certifications</h2>
         <div class="section-divider"></div>
       </div>
       <div class="certs-grid">
@@ -824,15 +925,36 @@
     </div>
   </section>
 
+  <!-- ═══ FREELANCE CTA ═══ -->
+  <section aria-label="Work with me" style="padding-bottom:0">
+    <div class="section-inner">
+      <div class="freelance-cta reveal-scale">
+        <h3>Need to turn your business data into something useful?</h3>
+        <p>Whether it's a recurring report, a Power BI dashboard, or a first look at what your data is actually telling you, I can help with:</p>
+        <div class="freelance-list">
+          <span>Data Cleaning</span>
+          <span>Data Analysis</span>
+          <span>Power BI Dashboards</span>
+          <span>KPI Reporting</span>
+          <span>SQL Analysis</span>
+          <span>Business Reporting</span>
+        </div>
+        <a href="#contact" class="btn btn-primary" onclick="event.preventDefault();navScrollTo('#contact')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Let's Work Together</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ CONTACT ═══ -->
   <section id="contact" aria-label="Contact information">
     <div class="float-icon fi-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
     <div class="float-icon fi-2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
     <div class="contact-inner reveal">
       <div class="section-icon" style="margin:0 auto 1rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-      <div class="contact-kicker">05. What's Next?</div>
+      <div class="contact-kicker">07. What's Next?</div>
       <h2 class="contact-heading">Get In Touch</h2>
-      <p class="contact-desc">I'm currently looking for new opportunities to apply my data analytics and financial skills. Whether you have a question, a project, or just want to say hi — I'll try my best to get back to you!</p>
+      <p class="contact-desc">I'm currently looking for new opportunities to apply my data analytics and financial skills. Whether you have a question, a project, or just want to say hi — I'll try my best to get back to you! Let's turn data into actionable insights.</p>
       <div class="contact-email-row">
         <a href="mailto:mostafasamerwork@gmail.com" class="contact-email-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>mostafasamerwork@gmail.com</a>
         <button type="button" class="copy-email-btn" onclick="copyEmail(this)" aria-label="Copy email address">
@@ -873,7 +995,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Built with precision. &nbsp;©&nbsp;<span id="year"></span>&nbsp;<a href="#about">Mostafa Elsawahly</a></p>
+        <p>Built with precision. &nbsp;©&nbsp;<span id="year"></span>&nbsp;<a href="#home">Mostafa Elsawahly</a></p>
       </div>
     </div>
   </footer>
@@ -935,50 +1057,14 @@
       else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
     });
 
-    /* Skill bar percentage counters (synced with bar-fill stagger) */
-    var skillCardTimers=new WeakMap();
-    function resetSkillCard(card){
-      var existing=skillCardTimers.get(card);
-      if(existing)existing.forEach(function(id){clearTimeout(id)});
-      card.querySelectorAll('.skill-bar-percent').forEach(function(el){el.textContent='0%'});
-    }
-    function animateSkillCard(card){
-      resetSkillCard(card);
-      var percentEls=card.querySelectorAll('.skill-bar-percent');
-      var delays=[200,550,900,1250,1600,1950,2300];
-      var timers=[];
-      percentEls.forEach(function(el,idx){
-        var target=parseInt(el.getAttribute('data-target'),10)||0;
-        var delay=delays[idx]!==undefined?delays[idx]:1180;
-        var tId=setTimeout(function(){
-          var start=null,duration=2000;
-          function step(ts){
-            if(!start)start=ts;
-            var p=Math.min((ts-start)/duration,1);
-            el.textContent=Math.floor(p*target)+'%';
-            if(p<1)requestAnimationFrame(step);else el.textContent=target+'%';
-          }
-          requestAnimationFrame(step);
-        },delay);
-        timers.push(tId);
-      });
-      skillCardTimers.set(card,timers);
-    }
-
     /* Scroll Reveal (bidirectional: elements re-animate in and fade out as you scroll past them) */
     var revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
     if('IntersectionObserver' in window){
       var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){
-        if(e.isIntersecting){
-          e.target.classList.add('visible');
-          if(e.target.classList.contains('skill-card'))animateSkillCard(e.target);
-        }else{
-          e.target.classList.remove('visible');
-          if(e.target.classList.contains('skill-card'))resetSkillCard(e.target);
-        }
+        if(e.isIntersecting){e.target.classList.add('visible')}else{e.target.classList.remove('visible')}
       })},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
       revealEls.forEach(function(e){ro.observe(e)});
-    }else{revealEls.forEach(function(e){e.classList.add('visible');if(e.classList.contains('skill-card'))animateSkillCard(e)})}
+    }else{revealEls.forEach(function(e){e.classList.add('visible')})}
 
     /* Counter animation */
     function animateCounters(){
