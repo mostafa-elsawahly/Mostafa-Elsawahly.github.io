@@ -74,8 +74,18 @@
     img{max-width:100%;height:auto;display:block;border-radius:8px}
     button{font-family:inherit;cursor:pointer}
     :focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:4px}
-    .skip-link{position:fixed;top:-60px;left:12px;z-index:10000;background:var(--primary);color:#000;font-family:var(--font-mono);font-weight:700;font-size:.85rem;padding:10px 18px;border-radius:8px;transition:top .25s ease}
+    .skip-link{position:fixed;top:-60px;left:12px;z-index:10002;background:var(--primary);color:#000;font-family:var(--font-mono);font-weight:700;font-size:.85rem;padding:10px 18px;border-radius:8px;transition:top .25s ease}
     .skip-link:focus{top:12px}
+
+    /* ═══ CUSTOM CURSOR ═══ */
+    @media(pointer:fine){
+      body{cursor:none}
+      a,button,input,textarea,select{cursor:none!important}
+    }
+    #custom-cursor-dot{pointer-events:none;position:fixed;top:0;left:0;width:8px;height:8px;background:var(--primary);border-radius:50%;z-index:10001;transform:translate(-50%,-50%);box-shadow:0 0 12px var(--primary),0 0 20px rgba(251,191,36,.5);transition:width .15s ease,height .15s ease,background-color .15s ease;opacity:0}
+    #custom-cursor-ring{pointer-events:none;position:fixed;top:0;left:0;width:38px;height:38px;border:1.5px solid rgba(251,191,36,.5);border-radius:50%;z-index:10000;transform:translate(-50%,-50%);transition:width .25s ease-out,height .25s ease-out,border-color .25s ease-out,background-color .25s ease-out,opacity .2s ease;opacity:0}
+    #custom-cursor-dot.active,#custom-cursor-ring.active{opacity:1}
+    @media(pointer:coarse){#custom-cursor-dot,#custom-cursor-ring{display:none}}
     ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
 
     /* ═══ SCROLL PROGRESS BAR ═══ */
@@ -450,6 +460,7 @@
     #back-top:hover{border-color:var(--primary);background:var(--primary-dim);animation:none;transform:translateY(-3px)}
     .sticky-contact-btn{position:fixed;bottom:6rem;right:2rem;z-index:50;display:flex;align-items:center;gap:8px;padding:13px 20px;border-radius:99px;background:var(--primary);color:#000;font-family:var(--font-mono);font-weight:700;font-size:.82rem;box-shadow:0 8px 24px rgba(251,191,36,.3);opacity:0;pointer-events:none;transform:translateY(16px);transition:opacity .3s ease,transform .3s ease}
     .sticky-contact-btn.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .sticky-contact-btn.is-scrolling{opacity:.35!important;transform:translateY(0) scale(.92)!important}
     .sticky-contact-btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(251,191,36,.4)}
     .sticky-contact-btn svg{width:16px;height:16px;flex-shrink:0}
     @media(max-width:600px){.sticky-contact-btn span{display:none}.sticky-contact-btn{padding:13px;bottom:5.25rem;right:1.25rem}}
@@ -490,6 +501,8 @@
 </head>
 <body>
   <a href="#home" class="skip-link">Skip to main content</a>
+  <div id="custom-cursor-dot" aria-hidden="true"></div>
+  <div id="custom-cursor-ring" aria-hidden="true"></div>
   <!-- PRELOADER -->
   <div id="preloader">
     <div class="preloader-stage">
@@ -1040,6 +1053,17 @@
     }
     window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
+    /* Fade the sticky contact button while actively scrolling, so it doesn't sit on top of content mid-read */
+    (function(){
+      var scrollTimer=null;
+      window.addEventListener('scroll',function(){
+        if(!stickyContact)return;
+        stickyContact.classList.add('is-scrolling');
+        clearTimeout(scrollTimer);
+        scrollTimer=setTimeout(function(){stickyContact.classList.remove('is-scrolling')},350);
+      },{passive:true});
+    })();
+
     function navScrollTo(s){var e=document.querySelector(s);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})}
     document.querySelectorAll('.nav-links a[href^="#"], .footer-links a[href^="#"]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
     document.querySelectorAll('[role="button"][tabindex="0"]').forEach(function(e){e.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();e.click()}})});
@@ -1178,6 +1202,37 @@
         }).catch(function(){});
       }
     }
+
+    /* Custom glowing cursor (dot + trailing ring), desktop only */
+    (function(){
+      var dot=document.getElementById('custom-cursor-dot'),ring=document.getElementById('custom-cursor-ring');
+      if(!dot||!ring||!window.matchMedia('(pointer: fine)').matches)return;
+      var mouseX=window.innerWidth/2,mouseY=window.innerHeight/2,ringX=mouseX,ringY=mouseY,started=false;
+      window.addEventListener('mousemove',function(e){
+        mouseX=e.clientX;mouseY=e.clientY;
+        dot.style.left=mouseX+'px';dot.style.top=mouseY+'px';
+        if(!started){started=true;dot.classList.add('active');ring.classList.add('active')}
+      });
+      var interactiveSelector='a, button, input, textarea, select, [role="button"], .project-card, .service-card, .skill-card, .cert-card, .tl-card';
+      document.addEventListener('mouseover',function(e){
+        if(e.target.closest(interactiveSelector)){
+          ring.style.width='64px';ring.style.height='64px';
+          ring.style.borderColor='var(--primary)';ring.style.backgroundColor='var(--primary-dim)';
+        }
+      });
+      document.addEventListener('mouseout',function(e){
+        if(e.target.closest(interactiveSelector)){
+          ring.style.width='38px';ring.style.height='38px';
+          ring.style.borderColor='rgba(251,191,36,.5)';ring.style.backgroundColor='transparent';
+        }
+      });
+      function renderCursor(){
+        ringX+=(mouseX-ringX)*.18;ringY+=(mouseY-ringY)*.18;
+        ring.style.left=ringX+'px';ring.style.top=ringY+'px';
+        requestAnimationFrame(renderCursor);
+      }
+      requestAnimationFrame(renderCursor);
+    })();
 
     /* Photo tilt on mouse move */
     var heroOrbit=document.querySelector('.hero-orbit'),orbitPhoto=document.querySelector('.orbit-photo');
