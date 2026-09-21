@@ -80,7 +80,7 @@
     /* ═══ CUSTOM CURSOR ═══ */
     @media(pointer:fine){
       body{cursor:none}
-      a,button,input,textarea,select{cursor:none!important}
+      a,button{cursor:none!important}
     }
     #custom-cursor-dot{pointer-events:none;position:fixed;top:0;left:0;width:8px;height:8px;background:var(--primary);border-radius:50%;z-index:10001;transform:translate(-50%,-50%);box-shadow:0 0 12px var(--primary),0 0 20px rgba(251,191,36,.5);transition:width .15s ease,height .15s ease,background-color .15s ease;opacity:0}
     #custom-cursor-ring{pointer-events:none;position:fixed;top:0;left:0;width:38px;height:38px;border:1.5px solid rgba(251,191,36,.5);border-radius:50%;z-index:10000;transform:translate(-50%,-50%);transition:width .25s ease-out,height .25s ease-out,border-color .25s ease-out,background-color .25s ease-out,opacity .2s ease;opacity:0}
@@ -296,12 +296,27 @@
     .about-bio p{margin-bottom:1.1rem}
     .about-bio p:last-child{margin-bottom:0}
     .usp-block{margin-top:3rem}
+    .github-stats-widget{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.75rem;margin-top:2.5rem;transition:all .3s;max-width:640px}
+    .github-stats-widget:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow-glow)}
+    .github-stats-icon{width:42px;height:42px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0}
+    .github-stats-icon svg{width:20px;height:20px}
+    .github-stats-items{display:flex;gap:1.75rem;flex-grow:1}
+    .github-stats-item{display:flex;flex-direction:column}
+    .github-stats-num{font-family:var(--font-mono);font-weight:800;font-size:1.15rem;color:var(--primary)}
+    .github-stats-label{font-family:var(--font-mono);font-size:.68rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:.05em}
+    .github-stats-cta{display:flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--primary);flex-shrink:0}
+    .github-stats-cta svg{width:13px;height:13px;transition:transform .3s ease}
+    .github-stats-widget:hover .github-stats-cta svg{transform:translateX(4px)}
+    @media(max-width:600px){.github-stats-widget{padding:1.1rem 1.25rem}.github-stats-items{gap:1.1rem}.github-stats-cta span{display:none}}
     .usp-heading{font-size:1.3rem;font-weight:700;color:var(--fg);margin-bottom:.6rem}
     .usp-sub{color:var(--fg-muted);font-size:.95rem;max-width:640px;margin-bottom:1.75rem;line-height:1.75}
     .usp-pillars{display:flex;align-items:stretch;gap:1rem;flex-wrap:wrap}
     .usp-pillar{flex:1;min-width:180px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:all .3s}
     .usp-pillar:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-glow)}
-    .usp-pillar-icon{width:44px;height:44px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);margin:0 auto 1rem}
+    .usp-pillar-icon{width:44px;height:44px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);margin:0 auto 1rem;animation:float 5s ease-in-out infinite}
+    .usp-pillar:nth-child(3) .usp-pillar-icon{animation-delay:.4s}
+    .usp-pillar:nth-child(5) .usp-pillar-icon{animation-delay:.8s}
+    .usp-pillar:hover .usp-pillar-icon{animation-play-state:paused;transform:scale(1.1) rotate(5deg);transition:transform .3s ease}
     .usp-pillar-icon svg{width:22px;height:22px}
     .usp-pillar-title{font-weight:700;color:var(--fg);font-size:.95rem;margin-bottom:.4rem}
     .usp-pillar-desc{font-size:.8rem;color:var(--fg-muted);line-height:1.6}
@@ -314,7 +329,7 @@
     .service-card:hover{border-color:var(--border-hover);transform:translateY(-6px);box-shadow:var(--shadow-glow)}
     .service-icon{width:42px;height:42px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);margin-bottom:1.1rem;transition:all .3s}
     .service-icon svg{width:20px;height:20px}
-    .service-card:hover .service-icon{background:var(--primary);color:#000;transform:scale(1.08)}
+    .service-card:hover .service-icon{background:var(--primary);color:#000;transform:scale(1.1) rotate(8deg)}
     .service-title{font-size:1.05rem;font-weight:700;color:var(--fg);margin-bottom:.6rem}
     .service-desc{font-size:.85rem;color:var(--fg-muted);line-height:1.65;margin-bottom:1.1rem;flex-grow:1}
     .service-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.1rem}
@@ -688,6 +703,8 @@
 
   <!-- ═══ ABOUT ME ═══ -->
   <section id="about" aria-label="About Mostafa Elsawahly">
+    <div class="float-icon fi-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+    <div class="float-icon fi-2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
     <div class="section-inner">
       <div class="reveal">
         <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
@@ -699,6 +716,15 @@
         <p>Day to day, that means building interactive dashboards in Power BI, writing SQL queries against real datasets, and using Python for exploratory analysis and data cleaning. My banking and finance background shapes how I look at the data — I'm not just hunting for patterns, I'm thinking about what they mean for a business.</p>
         <p>I'm still early in my career, and I'm looking for opportunities — internships, junior roles, or freelance work — where I can keep building on both sides of that combination: the financial literacy and the technical analytics skill set.</p>
       </div>
+      <a href="https://github.com/mostafa-elsawahly" target="_blank" rel="noopener" class="github-stats-widget reveal" id="githubStatsWidget" aria-label="View GitHub profile">
+        <div class="github-stats-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+        <div class="github-stats-items">
+          <div class="github-stats-item"><span class="github-stats-num" id="ghRepos">–</span><span class="github-stats-label">Repos</span></div>
+          <div class="github-stats-item"><span class="github-stats-num" id="ghStars">–</span><span class="github-stats-label">Stars</span></div>
+          <div class="github-stats-item"><span class="github-stats-num" id="ghFollowers">–</span><span class="github-stats-label">Followers</span></div>
+        </div>
+        <div class="github-stats-cta"><span>View GitHub</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
       <div class="usp-block reveal">
         <h3 class="usp-heading">Why Me</h3>
         <p class="usp-sub">My advantage isn't just knowing tools — it's combining business and financial understanding with technical analytics skills, so the numbers connect back to a real decision.</p>
@@ -727,6 +753,8 @@
 
   <!-- ═══ SERVICES ═══ -->
   <section id="services" aria-label="Services">
+    <div class="float-icon fi-3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+    <div class="float-icon fi-4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
     <div class="section-inner">
       <div class="reveal">
         <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
@@ -1113,6 +1141,28 @@
     }
 
     window.addEventListener('resize',function(){if(window.innerWidth>900&&menuOpen)closeMenu()});
+
+    /* Live GitHub stats (repos, total stars, followers) */
+    (function(){
+      var reposEl=document.getElementById('ghRepos'),starsEl=document.getElementById('ghStars'),followersEl=document.getElementById('ghFollowers');
+      if(!reposEl)return;
+      var username='mostafa-elsawahly';
+      fetch('https://api.github.com/users/'+username)
+        .then(function(r){if(!r.ok)throw new Error('user fetch failed');return r.json()})
+        .then(function(data){
+          if(reposEl)reposEl.textContent=data.public_repos!=null?data.public_repos:'–';
+          if(followersEl)followersEl.textContent=data.followers!=null?data.followers:'–';
+        })
+        .catch(function(){if(reposEl)reposEl.textContent='–';if(followersEl)followersEl.textContent='–'});
+      fetch('https://api.github.com/users/'+username+'/repos?per_page=100')
+        .then(function(r){if(!r.ok)throw new Error('repos fetch failed');return r.json()})
+        .then(function(repos){
+          if(!Array.isArray(repos))throw new Error('unexpected response');
+          var totalStars=repos.reduce(function(sum,repo){return sum+(repo.stargazers_count||0)},0);
+          if(starsEl)starsEl.textContent=totalStars;
+        })
+        .catch(function(){if(starsEl)starsEl.textContent='–'});
+    })();
 
     /* Live Alexandria clock */
     var clockTimeEl=document.getElementById('clockTime');
