@@ -299,6 +299,17 @@
     .github-stats-widget{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.75rem;margin-top:2.5rem;transition:all .3s;max-width:640px}
     .github-stats-widget:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow-glow)}
     .linkedin-badge-wrap{margin-top:1.5rem}
+    .linkedin-card{display:flex;align-items:center;gap:1.1rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.75rem;margin-top:1.5rem;transition:all .3s;max-width:640px}
+    .linkedin-card:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow-glow)}
+    .linkedin-card-icon{width:42px;height:42px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0}
+    .linkedin-card-icon svg{width:20px;height:20px}
+    .linkedin-card-body{flex-grow:1;min-width:0}
+    .linkedin-card-name{font-weight:700;color:var(--fg);font-size:.95rem;margin-bottom:3px}
+    .linkedin-card-headline{font-size:.78rem;color:var(--fg-muted);line-height:1.5}
+    .linkedin-card-cta{display:flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--primary);flex-shrink:0}
+    .linkedin-card-cta svg{width:13px;height:13px;transition:transform .3s ease}
+    .linkedin-card:hover .linkedin-card-cta svg{transform:translateX(4px)}
+    @media(max-width:600px){.linkedin-card{flex-wrap:wrap;padding:1.1rem 1.25rem}.linkedin-card-cta span{display:none}}
     .github-stats-icon{width:42px;height:42px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0}
     .github-stats-icon svg{width:20px;height:20px}
     .github-stats-items{display:flex;gap:1.75rem;flex-grow:1}
@@ -726,12 +737,14 @@
         </div>
         <div class="github-stats-cta"><span>View GitHub</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </a>
-      <div class="linkedin-badge-wrap reveal">
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mostafa-elsawahly" data-version="v1">
-          <a class="badge-base__link LI-simple-link" href="https://eg.linkedin.com/in/mostafa-elsawahly?trk=profile-badge">Mostafa Elsawahly</a>
+      <a href="https://www.linkedin.com/in/mostafa-elsawahly" target="_blank" rel="noopener" class="linkedin-card reveal" aria-label="View LinkedIn profile">
+        <div class="linkedin-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div class="linkedin-card-body">
+          <div class="linkedin-card-name">Mostafa S. Elsawahly</div>
+          <div class="linkedin-card-headline">Banking &amp; Investment Sciences | Junior Data Analyst | Power BI | SQL | Excel | Python | DEPI Trainee</div>
         </div>
-      </div>
+        <div class="linkedin-card-cta"><span>View Profile</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
       <div class="usp-block reveal">
         <h3 class="usp-heading">Why Me</h3>
         <p class="usp-sub">My advantage isn't just knowing tools — it's combining business and financial understanding with technical analytics skills, so the numbers connect back to a real decision.</p>
