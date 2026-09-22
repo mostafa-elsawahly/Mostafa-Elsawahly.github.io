@@ -298,6 +298,7 @@
     .usp-block{margin-top:3rem}
     .github-stats-widget{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.75rem;margin-top:2.5rem;transition:all .3s;max-width:640px}
     .github-stats-widget:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow-glow)}
+    .linkedin-badge-wrap{margin-top:1.5rem}
     .github-stats-icon{width:42px;height:42px;border-radius:12px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0}
     .github-stats-icon svg{width:20px;height:20px}
     .github-stats-items{display:flex;gap:1.75rem;flex-grow:1}
@@ -413,7 +414,8 @@
     .project-tags{display:flex;gap:8px;flex-wrap:wrap}
     .project-tag{font-family:var(--font-mono);font-size:.72rem;padding:4px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--fg-muted);transition:all .3s}
     .project-card:hover .project-tag{border-color:rgba(251,191,36,.2)}
-    .featured-badge{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;color:var(--primary);background:var(--primary-dim);border:1px solid rgba(251,191,36,.25);padding:3px 10px;border-radius:99px;margin-bottom:10px;letter-spacing:.03em}
+    .featured-badge{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;color:var(--primary);background:var(--primary-dim);border:1px solid rgba(251,191,36,.25);padding:3px 10px;border-radius:99px;margin-bottom:10px;letter-spacing:.03em;animation:badgePulse 3s ease-in-out infinite}
+    @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(251,191,36,.35)}50%{box-shadow:0 0 0 5px rgba(251,191,36,0)}}
     .project-cta{display:flex;align-items:center;gap:6px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--primary)}
     .project-cta svg{width:14px;height:14px;transition:transform .3s cubic-bezier(.23,1,.32,1)}
     .project-card:hover .project-cta svg{transform:translateX(4px)}
@@ -721,10 +723,15 @@
         <div class="github-stats-items">
           <div class="github-stats-item"><span class="github-stats-num" id="ghRepos">–</span><span class="github-stats-label">Repos</span></div>
           <div class="github-stats-item"><span class="github-stats-num" id="ghStars">–</span><span class="github-stats-label">Stars</span></div>
-          <div class="github-stats-item"><span class="github-stats-num" id="ghFollowers">–</span><span class="github-stats-label">Followers</span></div>
         </div>
         <div class="github-stats-cta"><span>View GitHub</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </a>
+      <div class="linkedin-badge-wrap reveal">
+        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mostafa-elsawahly" data-version="v1">
+          <a class="badge-base__link LI-simple-link" href="https://eg.linkedin.com/in/mostafa-elsawahly?trk=profile-badge">Mostafa Elsawahly</a>
+        </div>
+      </div>
       <div class="usp-block reveal">
         <h3 class="usp-heading">Why Me</h3>
         <p class="usp-sub">My advantage isn't just knowing tools — it's combining business and financial understanding with technical analytics skills, so the numbers connect back to a real decision.</p>
@@ -968,6 +975,8 @@
 
   <!-- ═══ FREELANCE CTA ═══ -->
   <section aria-label="Work with me" style="padding-bottom:0">
+    <div class="float-icon fi-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+    <div class="float-icon fi-2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polyline points="20 6 9 17 4 12"/></svg></div>
     <div class="section-inner">
       <div class="freelance-cta reveal-scale">
         <h3>Need to turn your business data into something useful?</h3>
@@ -1144,22 +1153,32 @@
 
     /* Live GitHub stats (repos, total stars, followers) */
     (function(){
-      var reposEl=document.getElementById('ghRepos'),starsEl=document.getElementById('ghStars'),followersEl=document.getElementById('ghFollowers');
+      var reposEl=document.getElementById('ghRepos'),starsEl=document.getElementById('ghStars');
       if(!reposEl)return;
       var username='mostafa-elsawahly';
+      function countUpTo(el,target){
+        if(!el||typeof target!=='number')return;
+        var start=null,duration=1200,from=0;
+        function step(ts){
+          if(!start)start=ts;
+          var p=Math.min((ts-start)/duration,1);
+          el.textContent=Math.floor(p*target);
+          if(p<1)requestAnimationFrame(step);else el.textContent=target;
+        }
+        requestAnimationFrame(step);
+      }
       fetch('https://api.github.com/users/'+username)
         .then(function(r){if(!r.ok)throw new Error('user fetch failed');return r.json()})
         .then(function(data){
-          if(reposEl)reposEl.textContent=data.public_repos!=null?data.public_repos:'–';
-          if(followersEl)followersEl.textContent=data.followers!=null?data.followers:'–';
+          if(reposEl)countUpTo(reposEl,data.public_repos!=null?data.public_repos:0);
         })
-        .catch(function(){if(reposEl)reposEl.textContent='–';if(followersEl)followersEl.textContent='–'});
+        .catch(function(){if(reposEl)reposEl.textContent='–'});
       fetch('https://api.github.com/users/'+username+'/repos?per_page=100')
         .then(function(r){if(!r.ok)throw new Error('repos fetch failed');return r.json()})
         .then(function(repos){
           if(!Array.isArray(repos))throw new Error('unexpected response');
           var totalStars=repos.reduce(function(sum,repo){return sum+(repo.stargazers_count||0)},0);
-          if(starsEl)starsEl.textContent=totalStars;
+          countUpTo(starsEl,totalStars);
         })
         .catch(function(){if(starsEl)starsEl.textContent='–'});
     })();
