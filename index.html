@@ -431,6 +431,17 @@
     .project-cta svg{width:14px;height:14px;transition:transform .3s cubic-bezier(.23,1,.32,1)}
     .project-card:hover .project-cta svg{transform:translateX(4px)}
 
+    /* ═══ PYRAMID CURSOR ═══ */
+    #custom-cursor-dot{width:22px;height:20px;background:none;border-radius:0;box-shadow:none;filter:drop-shadow(0 0 6px var(--primary))}
+    #custom-cursor-dot svg,#custom-cursor-ring svg{display:block;width:100%;height:100%;overflow:visible}
+    #custom-cursor-dot polygon{stroke:var(--primary);stroke-width:1;stroke-linejoin:round}
+    #custom-cursor-dot .pc-l{fill:#fde68a}
+    #custom-cursor-dot .pc-r{fill:var(--primary)}
+    #custom-cursor-ring{width:40px;height:36px;border:none;border-radius:0;background:none;transition:width .25s ease-out,height .25s ease-out,opacity .2s ease}
+    #custom-cursor-ring polygon{fill:transparent;stroke:var(--primary);stroke-opacity:.55;stroke-width:1.5;stroke-linejoin:round;transition:fill .25s,stroke-opacity .25s}
+    #custom-cursor-ring.hover{width:64px;height:58px}
+    #custom-cursor-ring.hover polygon{fill:var(--primary-dim);stroke-opacity:1}
+
     /* ═══ PYRAMID MINI-GAME ═══ */
     .pyr-banner{--bh:46px;text-align:center}
     .pyr-sun{position:absolute;left:50%;bottom:-260px;width:620px;height:620px;margin-left:-310px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.3),transparent 62%);opacity:0;transform:translateY(60%);transition:opacity 1.4s ease,transform 1.8s cubic-bezier(.23,1,.32,1);pointer-events:none}
@@ -587,8 +598,8 @@
 </head>
 <body>
   <a href="#home" class="skip-link">Skip to main content</a>
-  <div id="custom-cursor-dot" aria-hidden="true"></div>
-  <div id="custom-cursor-ring" aria-hidden="true"></div>
+  <div id="custom-cursor-dot" aria-hidden="true"><svg viewBox="0 0 24 22"><polygon class="pc-l" points="12,1 12,21 2,21"/><polygon class="pc-r" points="12,1 22,21 12,21"/></svg></div>
+  <div id="custom-cursor-ring" aria-hidden="true"><svg viewBox="0 0 24 22"><polygon points="12,1 23,21 1,21"/></svg></div>
   <!-- PRELOADER -->
   <div id="preloader">
     <div class="preloader-stage">
@@ -1381,14 +1392,12 @@
       var interactiveSelector='a, button, input, textarea, select, [role="button"], .project-card, .service-card, .skill-card, .cert-card, .tl-card';
       document.addEventListener('mouseover',function(e){
         if(e.target.closest(interactiveSelector)){
-          ring.style.width='64px';ring.style.height='64px';
-          ring.style.borderColor='var(--primary)';ring.style.backgroundColor='var(--primary-dim)';
+          ring.classList.add('hover');
         }
       });
       document.addEventListener('mouseout',function(e){
         if(e.target.closest(interactiveSelector)){
-          ring.style.width='38px';ring.style.height='38px';
-          ring.style.borderColor='rgba(251,191,36,.5)';ring.style.backgroundColor='transparent';
+          ring.classList.remove('hover');
         }
       });
       function renderCursor(){
