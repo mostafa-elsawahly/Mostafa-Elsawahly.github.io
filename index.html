@@ -15,15 +15,15 @@
   <meta property="og:description" content="Banking & Investment Sciences undergraduate specializing in Data Analytics and Business Intelligence. Projects in SQL, Python, Power BI, and data visualization." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:image" content="photo.jpg" />
+  <meta property="og:image" content="pic/photo.jpg" />
   <meta property="og:image:width" content="1254" />
   <meta property="og:image:height" content="1254" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mostafa Elsawahly | Junior Data Analyst &amp; Business Intelligence" />
   <meta name="twitter:description" content="Banking & Investment Sciences undergraduate specializing in Data Analytics and Business Intelligence. Projects in SQL, Python, Power BI, and data visualization." />
-  <meta name="twitter:image" content="photo.jpg" />
+  <meta name="twitter:image" content="pic/photo.jpg" />
   <meta name="theme-color" content="#050505" />
-  <link rel="apple-touch-icon" href="photo.jpg" />
+  <link rel="apple-touch-icon" href="pic/photo.jpg" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050505'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='48' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3EME%3C/text%3E%3Ccircle cx='82' cy='60' r='5' fill='%23fbbf24'/%3E%3C/svg%3E" />
   <script type="application/ld+json">
   {
@@ -32,7 +32,7 @@
     "name": "Mostafa Elsawahly",
     "jobTitle": "Junior Data Analyst",
     "url": "https://github.com/mostafa-elsawahly",
-    "image": "photo.jpg",
+    "image": "pic/photo.jpg",
     "email": "mailto:mostafasamerwork@gmail.com",
     "telephone": "+201032598976",
     "address": {
@@ -475,6 +475,12 @@
     .pyr-quote .w{display:inline-block;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
     .pyr-quote.show .w{opacity:1;transform:none}
     .pyr-again{margin-top:1.4rem}
+    .pyr-ants{position:absolute;inset:0;pointer-events:none;z-index:3}
+    .pyr-ant{position:absolute;left:0;top:0;width:26px;height:16px;will-change:transform}
+    .pyr-ant svg{display:block}
+    .pyr-ant-stone{position:absolute;left:7px;top:-7px;width:13px;height:8px;border-radius:2px;background:linear-gradient(145deg,#e3c27a,#8f6b2a);box-shadow:0 1px 0 rgba(0,0,0,.35)}
+    .pyr-skip:disabled{opacity:.5;cursor:default;text-decoration:none}
+    .pyr-hud .btn:disabled{opacity:.45;transform:none;box-shadow:none}
     @media(max-width:600px){.pyr-banner{--bh:36px}.pyr-label{font-size:.62rem}.pyr-wrap{gap:8px}}
 
     /* ═══ PROJECT GALLERY ═══ */
@@ -711,7 +717,7 @@
           <div class="hero-orbit">
             <!-- Photo in center -->
             <div class="orbit-photo">
-              <img src="photo.jpg" alt="Mostafa Elsawahly" loading="eager" fetchpriority="high" decoding="async">
+              <img src="pic/photo.jpg" onerror="this.onerror=null;this.src='photo.jpg'" alt="Mostafa Elsawahly" loading="eager" fetchpriority="high" decoding="async">
             </div>
             <!-- Ring 1: Data Analytics icons -->
             <div class="orbit-ring orbit-ring-1">
@@ -764,14 +770,14 @@
       <div class="pyr-kicker">Mini-game · Build the Great Pyramid</div>
       <div class="pyr-wrap">
         <div class="pyr-labels" id="pyrLabels" aria-hidden="true"></div>
-        <div class="pyr-stage" id="pyrStage" aria-hidden="true"><div class="pyr-body" id="pyrBody"></div></div>
+        <div class="pyr-stage" id="pyrStage" aria-hidden="true"><div class="pyr-body" id="pyrBody"></div><div class="pyr-ants" id="pyrAnts"></div></div>
       </div>
       <div class="pyr-hud">
         <span aria-live="polite">Data points laid <b id="pyrCount">0</b> / 15</span>
         <button type="button" class="btn btn-primary" id="pyrLay">Lay a stone</button>
-        <button type="button" class="pyr-skip" id="pyrSkip">Skip</button>
+        <button type="button" class="pyr-skip" id="pyrSkip">Skip · call the ants</button>
       </div>
-      <p class="pyr-hint">Tap the pyramid or press the button to lay stones. Each layer turns raw data into a decision.</p>
+      <p class="pyr-hint" id="pyrHint">Tap the pyramid or press the button to lay stones. Each layer turns raw data into a decision.</p>
       <div class="pyr-reveal" aria-live="polite">
         <div class="pyr-line">Data → Information → Knowledge → Insight → Decision</div>
         <p class="quote-text pyr-quote" id="pyrQuote"></p>
@@ -981,15 +987,17 @@
       </div>
       <div class="projects-grid">
         <a href="https://github.com/mostafa-elsawahly/Depi-Mini-Project-2-Advanced-SQL-Data-Warehouse-Business-Analytics" target="_blank" rel="noopener" class="project-card reveal-scale">
+          <div class="project-thumb" data-gallery="sql" data-start="10"><img src="pic/project%20pic/Depi-Mini-Project-2-Advanced-SQL-Data-Warehouse-Business-Analytics/Screenshot%202026-10-29%20182035.png" alt="Advanced SQL data warehouse - project structure and query results" style="object-position:6% top" loading="lazy" decoding="async"></div>
           <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><h3 class="project-title">Advanced SQL Data Warehouse &amp; Business Analytics</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Sep 2026</div>
           <p class="project-desc">Built a Star Schema data warehouse (Bronze/Silver/Gold layers) from raw retail data, with a fact table and 4 dimension tables. Wrote 15+ optimized queries using CTEs, window functions, views, and stored procedures, plus non-clustered indexing to speed up joins and YoY aggregations.</p>
           <div class="project-tags"><span class="project-tag">SQL</span><span class="project-tag">Data Warehousing</span><span class="project-tag">Star Schema</span></div>
+          <span class="gallery-btn" role="button" tabindex="0" data-gallery="sql">📷 View Gallery (11)</span>
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/DEPI-Mini-Project-001-Advanced-Python-Data-Exploration" target="_blank" rel="noopener" class="project-card reveal-scale">
-          <div class="project-thumb" data-gallery="retail" data-start="11"><img src="project%20pic/Retail%20Analytics%20%26%20Automated%20Reporting/Screenshot%202026-10-29%20134313.png" alt="Superstore retail analytics - total profit by state map" style="object-position:18% top" loading="lazy" decoding="async"></div>
+          <div class="project-thumb" data-gallery="retail" data-start="11"><img src="pic/project%20pic/Retail%20Analytics%20%26%20Automated%20Reporting/Screenshot%202026-10-29%20134313.png" alt="Superstore retail analytics - total profit by state map" style="object-position:18% top" loading="lazy" decoding="async"></div>
           <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3 class="project-title">Superstore Retail Analytics &amp; Automated Reporting</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Aug 2026</div>
@@ -999,7 +1007,7 @@
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/salla-call-center-performance" target="_blank" rel="noopener" class="project-card reveal-scale">
-          <div class="project-thumb" data-gallery="salla" data-start="2"><img src="project%20pic/sall%20call%20center/Screenshot%202026-10-26%20154142.png" alt="Salla call center dashboard preview" loading="lazy" decoding="async"></div>
+          <div class="project-thumb" data-gallery="salla" data-start="2"><img src="pic/project%20pic/sall%20call%20center/Screenshot%202026-10-26%20154142.png" alt="Salla call center dashboard preview" loading="lazy" decoding="async"></div>
           <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><h3 class="project-title">Salla Call Center Performance</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jun 2026</div>
@@ -1009,7 +1017,7 @@
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/Dynamic-Dashboard/blob/main/Dynamic%20Dashboard.html" target="_blank" rel="noopener" class="project-card reveal-scale">
-          <div class="project-thumb" data-gallery="dynamic" data-start="4"><img src="project%20pic/Dynamic%20Dashboard/1780144183711.jfif" alt="Dynamic Data Dashboard preview" loading="lazy" decoding="async"></div>
+          <div class="project-thumb" data-gallery="dynamic" data-start="4"><img src="pic/project%20pic/Dynamic%20Dashboard/1780144183711.jfif" alt="Dynamic Data Dashboard preview" loading="lazy" decoding="async"></div>
           <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3 class="project-title">Dynamic Data Dashboard</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>May 2026</div>
@@ -1019,7 +1027,7 @@
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <a href="https://github.com/mostafa-elsawahly/-Electronics-Retail-Executive-Dashboard" target="_blank" rel="noopener" class="project-card reveal-scale">
-          <div class="project-thumb" data-gallery="electronics" data-start="0"><img src="project%20pic/Electronics%20Store%20Performance%20%26%20Customer%20Insights/Screenshot%202026-10-27%20150718.png" alt="Electronics retail dashboard preview" loading="lazy" decoding="async"></div>
+          <div class="project-thumb" data-gallery="electronics" data-start="0"><img src="pic/project%20pic/Electronics%20Store%20Performance%20%26%20Customer%20Insights/Screenshot%202026-10-27%20150718.png" alt="Electronics retail dashboard preview" loading="lazy" decoding="async"></div>
           <span class="featured-badge">★ Featured</span>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><h3 class="project-title">Electronics Retail Executive Dashboard</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mar – Apr 2026</div>
@@ -1029,7 +1037,7 @@
           <div class="project-cta">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
         <div class="project-card reveal-scale">
-          <div class="project-thumb" data-gallery="maven" data-start="0"><img src="project%20pic/Maven%20Toys%20Challenge%20Dashboard/Screenshot%202026-10-26%20153818.png" alt="Maven Toys dashboard preview" loading="lazy" decoding="async"></div>
+          <div class="project-thumb" data-gallery="maven" data-start="0"><img src="pic/project%20pic/Maven%20Toys%20Challenge%20Dashboard/Screenshot%202026-10-26%20153818.png" alt="Maven Toys dashboard preview" loading="lazy" decoding="async"></div>
           <div class="project-top"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3 class="project-title">Maven Toys Challenge Dashboard</h3></div>
           <div class="project-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Oct 2026</div>
           <p class="project-desc">Power BI dashboard for the Maven Toys challenge analyzing sales performance. (Edit this description.)</p>
@@ -1057,14 +1065,14 @@
         <div class="section-divider"></div>
       </div>
       <div class="certs-grid">
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="Data-Fundamentals.jpg" alt="Data Fundamentals" loading="lazy" decoding="async"></div><div class="cert-title">Data Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Aug 2026</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="powerbi-dashboard-certificate.jpg" alt="Power BI Dashboard" loading="lazy" decoding="async"></div><div class="cert-title">Power BI Dashboard (Beginner Level)</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Creativa Hub Alexandria</div><div class="cert-date">Issued Jun 2026 · 24 Hours</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="datacamp-sql.jpg" alt="Intro to SQL" loading="lazy" decoding="async"></div><div class="cert-title">Introduction to SQL</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DataCamp</div><div class="cert-date">Issued Jun 2026</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="huawei.jpg" alt="Huawei Cloud" loading="lazy" decoding="async"></div><div class="cert-title">Huawei Cloud Developer – HCCDA</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Huawei</div><div class="cert-date">Issued Feb 2026 · Valid Until Feb 2029</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="ibm-ai.jpg" alt="AI Fundamentals" loading="lazy" decoding="async"></div><div class="cert-title">Artificial Intelligence Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Jan 2026 · +10 Hours</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="digitera.jpg" alt="Digitera" loading="lazy" decoding="async"></div><div class="cert-title">Digitera – Tech for Non-Techies</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>iCareer</div><div class="cert-date">Issued Dec 2025</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="google-data-analytics.jpg" alt="Google Data Analytics" loading="lazy" decoding="async"></div><div class="cert-title">Google Data Analytics Professional</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera &amp; Google</div><div class="cert-date">Issued Dec 2025 · 6 Months</div></div>
-        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="coursera-l1.jpg" alt="Data Analyst L1" loading="lazy" decoding="async"></div><div class="cert-title">Data Analyst L1</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera</div><div class="cert-date">No Expiration Date</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="pic/Certifications%20pic/Data-Fundamentals.jpg" alt="Data Fundamentals" loading="lazy" decoding="async"></div><div class="cert-title">Data Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Aug 2026</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="pic/Certifications%20pic/powerbi-dashboard-certificate.jpg" alt="Power BI Dashboard" loading="lazy" decoding="async"></div><div class="cert-title">Power BI Dashboard (Beginner Level)</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Creativa Hub Alexandria</div><div class="cert-date">Issued Jun 2026 · 24 Hours</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="pic/Certifications%20pic/datacamp-sql.jpg" alt="Intro to SQL" loading="lazy" decoding="async"></div><div class="cert-title">Introduction to SQL</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DataCamp</div><div class="cert-date">Issued Jun 2026</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="pic/Certifications%20pic/huawei.jpg" alt="Huawei Cloud" loading="lazy" decoding="async"></div><div class="cert-title">Huawei Cloud Developer – HCCDA</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Huawei</div><div class="cert-date">Issued Feb 2026 · Valid Until Feb 2029</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="pic/Certifications%20pic/ibm-ai.jpg" alt="AI Fundamentals" loading="lazy" decoding="async"></div><div class="cert-title">Artificial Intelligence Fundamentals</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>IBM</div><div class="cert-date">Issued Jan 2026 · +10 Hours</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="pic/Certifications%20pic/digitera.jpg" alt="Digitera" loading="lazy" decoding="async"></div><div class="cert-title">Digitera – Tech for Non-Techies</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>iCareer</div><div class="cert-date">Issued Dec 2025</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="pic/Certifications%20pic/google-data-analytics.jpg" alt="Google Data Analytics" loading="lazy" decoding="async"></div><div class="cert-title">Google Data Analytics Professional</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera &amp; Google</div><div class="cert-date">Issued Dec 2025 · 6 Months</div></div>
+        <div class="cert-card reveal-scale"><div class="cert-img-wrapper"><img src="pic/Certifications%20pic/coursera-l1.jpg" alt="Data Analyst L1" loading="lazy" decoding="async"></div><div class="cert-title">Data Analyst L1</div><div class="cert-issuer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Coursera</div><div class="cert-date">No Expiration Date</div></div>
       </div>
     </div>
   </section>
@@ -1425,10 +1433,12 @@
   
     /* Project galleries */
     (function(){
-      var BASE='project pic/';
+      var BASE='pic/project pic/';
       function shots(folder,names){return names.map(function(n){return BASE+folder+'/'+n})}
       function ss(d,t){return 'Screenshot '+d+' '+t+'.png'}
       var G={
+        sql:{title:'Advanced SQL Data Warehouse & Business Analytics',imgs:shots('Depi-Mini-Project-2-Advanced-SQL-Data-Warehouse-Business-Analytics',[
+          ss('2026-10-29','181554'),ss('2026-10-29','181614'),ss('2026-10-29','181712'),ss('2026-10-29','181735'),ss('2026-10-29','181801'),ss('2026-10-29','181817'),ss('2026-10-29','181836'),ss('2026-10-29','181851'),ss('2026-10-29','181910'),ss('2026-10-29','181923'),ss('2026-10-29','182035')])},
         dynamic:{title:'Dynamic Data Dashboard',imgs:shots('Dynamic Dashboard',[
           '1780144181933.jfif','1780144183138.jfif','1780144183424.jfif','1780144183560.jfif','1780144183711.jfif'])},
         electronics:{title:'Electronics Store Performance & Customer Insights',imgs:shots('Electronics Store Performance & Customer Insights',[
@@ -1499,6 +1509,8 @@
       var body=document.getElementById('pyrBody'),labelsEl=document.getElementById('pyrLabels'),stage=document.getElementById('pyrStage'),
           count=document.getElementById('pyrCount'),lay=document.getElementById('pyrLay'),skip=document.getElementById('pyrSkip'),
           again=document.getElementById('pyrAgain'),quoteEl=document.getElementById('pyrQuote');
+      var antsEl=document.getElementById('pyrAnts'),hint=document.getElementById('pyrHint'),hintTxt=hint.textContent,building=false;
+      var ANT='<i class="pyr-ant-stone"></i><svg viewBox="0 0 26 16" width="26" height="16" aria-hidden="true"><g fill="#f4c24a" stroke="#7a5a10" stroke-width=".8"><ellipse cx="5" cy="9" rx="4.6" ry="3.6"/><ellipse cx="13" cy="9" rx="3.2" ry="2.6"/><circle cx="20" cy="8.4" r="2.6"/></g><g stroke="#c99a2e" stroke-width="1" fill="none" stroke-linecap="round"><path d="M11 11L8 15M13 11.5L13 15.5M15 11L18 15M21 6.5L24 3"/></g></svg>';
       var NAMES=['Decision','Insight','Knowledge','Information','Data'],TOTAL=15,placed=0,order=[],left=[],labels=[],rows=[],
           reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var SEG=[['\u201CEgyptians were among the earliest civilizations to systematically ',0],['record, organize, and use data',1],
@@ -1554,15 +1566,35 @@
         if(placed===TOTAL)finish();
       }
       function reset(){
-        placed=0;banner.classList.remove('done');quoteEl.classList.remove('show');
+        placed=0;building=false;antsEl.innerHTML='';skip.disabled=lay.disabled=false;hint.textContent=hintTxt;banner.classList.remove('done');quoteEl.classList.remove('show');
         order.forEach(function(b){b.classList.remove('on','next')});
         labels.forEach(function(l){l.classList.remove('done')});
         for(var i=0;i<5;i++)left[i]=i+1;
         update();
       }
-      stage.addEventListener('click',place);
-      lay.addEventListener('click',place);
-      skip.addEventListener('click',function(){while(placed<TOTAL)place()});
+      function T(x,y,f){return 'translate('+x+'px,'+y+'px) scaleX('+f+')'}
+      function trip(target){
+        var sr=stage.getBoundingClientRect(),cr=target.getBoundingClientRect(),W=sr.width,H=sr.height;
+        var tx=cr.left-sr.left+cr.width/2-13,ty=cr.top-sr.top+cr.height/2-8,gy=H+2;
+        var fromLeft=Math.random()<.5,sx=fromLeft?-34:W+8,f=fromLeft?1:-1;
+        var a=document.createElement('div');a.className='pyr-ant';a.innerHTML=ANT;antsEl.appendChild(a);
+        var go=a.animate([{transform:T(sx,gy,f)},{transform:T(tx,gy,f),offset:.5},{transform:T(tx,ty,f)}],{duration:900,easing:'ease-in-out',fill:'forwards'});
+        go.onfinish=function(){
+          place();a.querySelector('.pyr-ant-stone').style.display='none';
+          var out=a.animate([{transform:T(tx,ty,-f)},{transform:T(tx,gy,-f),offset:.45},{transform:T(sx,gy,-f)}],{duration:900,easing:'ease-in-out',fill:'forwards'});
+          out.onfinish=function(){a.remove()};
+        };
+      }
+      function manual(){if(!building)place()}
+      stage.addEventListener('click',manual);
+      lay.addEventListener('click',manual);
+      skip.addEventListener('click',function(){
+        if(building||placed>=TOTAL)return;
+        if(reduce||!Element.prototype.animate){while(placed<TOTAL)place();return}
+        building=true;skip.disabled=true;lay.disabled=true;hint.textContent='The ants are on it\u2026';
+        var base=placed,n=TOTAL-placed;
+        for(var j=0;j<n;j++)(function(j){setTimeout(function(){trip(order[base+j])},j*330)})(j);
+      });
       again.addEventListener('click',reset);
       update();
     })();
